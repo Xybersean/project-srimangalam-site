@@ -8,9 +8,9 @@
 
   <!-- SEO -->
   <meta name="description"
-    content="Sri Mangalam Soshigaya-Okura — authentic South Indian Chettinad cuisine in Tokyo. Banana-leaf meals, Chef Mahalingam's signature dosas, traditional long-pour chai. Tabelog Hyakumeiten 2024.">
+    content="Sri Mangalam Soshigaya-Okura — authentic South Indian Chettinad cuisine in Tokyo. Banana-leaf meals, Chef Mahalingam's signature dosai, traditional long-pour chai. Tabelog Hyakumeiten 2024.">
   <meta name="keywords"
-    content="Sri Mangalam, Soshigaya-Okura, South Indian restaurant Tokyo, Chettinad cuisine, banana leaf meal, dosa Tokyo, スリマンガラム, 祖師ヶ谷大蔵, 南インド料理, Tabelog Hyakumeiten">
+    content="Sri Mangalam, Soshigaya-Okura, South Indian restaurant Tokyo, Chettinad cuisine, banana leaf meal, dosai Tokyo, スリマンガラム, 祖師ヶ谷大蔵, 南インド料理, Tabelog Hyakumeiten">
   <meta name="theme-color" content="#faf7f0">
   <meta name="author" content="Sri Mangalam">
   <!-- TODO: add <link rel="canonical" href="https://YOUR-DOMAIN/"> once the production domain is registered -->
@@ -32,6 +32,7 @@
   <meta name="twitter:description"
     content="Authentic South Indian Chettinad cuisine in Tokyo. Tabelog Hyakumeiten 2024.">
   <meta name="twitter:image" content="assets/gallery/2026-02-22_02-03-00_UTC_1.jpg">
+  <meta name="twitter:site" content="@srimangalam2">
 
   <!-- Emoji favicon -->
   <link rel="icon"
@@ -45,7 +46,7 @@
     "name": "Sri Mangalam Soshigaya-Okura",
     "alternateName": "スリマンガラム 祖師ヶ谷大蔵店",
     "image": "assets/gallery/2026-02-22_02-03-00_UTC_1.jpg",
-    "description": "Authentic South Indian Chettinad cuisine in Tokyo. Banana-leaf meals, signature dosas, traditional long-pour chai. Chef Mahalingam (Maha-san) brings the soul of Tamil Nadu to Setagaya City.",
+    "description": "Authentic South Indian Chettinad cuisine in Tokyo. Banana-leaf meals, signature dosai, traditional long-pour chai. Chef Mahalingam (Theevan Mahalingam, from Theevankottai) brings the soul of Tamil Nadu to Setagaya City.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Sanko Building B1F, 3-33-2 Soshigaya",
@@ -60,7 +61,9 @@
     "acceptsReservations": "True",
     "award": "Tabelog Hyakumeiten 2024",
     "sameAs": [
-      "https://www.instagram.com/srimangalam_soshigaya/"
+      "https://www.instagram.com/srimangalam_soshigaya/",
+      "https://www.youtube.com/@SriMangalamTV",
+      "https://twitter.com/srimangalam2"
     ]
   }
   </script>
@@ -216,9 +219,7 @@
     .topnav-links a:hover::after { transform: scaleX(1); }
 
     /* Lang dropdown */
-    .lang {
-      position: relative;
-    }
+    .lang { position: relative; }
     .lang-toggle {
       font-size: 0.85rem;
       font-weight: 500;
@@ -339,36 +340,142 @@
     }
     .section-head .lede { margin-top: 6px; }
 
+    /* ---------- About ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: start;
+    }
+    .about-photo img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .about-body p {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 1.1em;
+    }
+    .about-body p:last-child { margin-bottom: 0; }
+    .about-body .pull {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+      line-height: 1.45;
+      color: var(--accent);
+      border-left: 2px solid var(--accent);
+      padding-left: 18px;
+      margin: 28px 0;
+    }
+
     /* ---------- Menu ---------- */
     .menu { background: var(--bg-alt); }
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: clamp(8px, 2vw, 24px);
+      margin-bottom: 56px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0;
+      flex-wrap: wrap;
+    }
+    .menu-tab {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      padding: 14px 18px;
+      color: var(--text-soft);
+      position: relative;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+    .menu-tab .small {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-top: 2px;
+    }
+    .menu-tab:hover { color: var(--text); }
+    .menu-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .menu-now-pill {
+      display: inline-block;
+      margin-left: 6px;
+      font-size: 0.62rem;
+      padding: 2px 6px;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 999px;
+      letter-spacing: 0.06em;
+      vertical-align: middle;
+      text-transform: uppercase;
+    }
+
+    .menu-pane { display: none; }
+    .menu-pane.active { display: block; }
+
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: clamp(40px, 6vw, 80px);
+      gap: clamp(40px, 6vw, 72px);
     }
-    .menu-cat {
-      display: flex;
-      flex-direction: column;
-    }
+    .menu-cat { display: flex; flex-direction: column; }
     .menu-cat h3 {
       font-family: var(--font-display);
       font-weight: 500;
       font-size: 1.4rem;
       letter-spacing: -0.01em;
       padding-bottom: 14px;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
       border-bottom: 1px solid var(--rule);
       color: var(--text);
     }
+    .menu-cat .sub {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin: 18px 0 8px;
+      font-weight: 500;
+    }
+    .menu-cat .sub:first-of-type { margin-top: 4px; }
     .menu-item {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
       gap: 16px;
-      padding: 8px 0;
-      font-size: 0.95rem;
+      padding: 7px 0;
+      font-size: 0.93rem;
     }
     .menu-item .name { color: var(--text); }
+    .menu-item .name .code {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      margin-right: 8px;
+      letter-spacing: 0.04em;
+    }
+    .menu-item .name .note {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      margin-top: 2px;
+      line-height: 1.4;
+    }
     .menu-item .price {
       font-variant-numeric: tabular-nums;
       color: var(--text-soft);
@@ -380,10 +487,30 @@
       font-size: 0.85rem;
       color: var(--text-soft);
       text-align: center;
-      max-width: 32em;
+      max-width: 38em;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.7;
     }
+    .menu-pane > .pane-intro {
+      max-width: 38em;
+      margin: 0 auto 48px;
+      text-align: center;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    /* Single-column lists for shorter sections */
+    .menu-single {
+      display: block;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .menu-single .menu-cat { margin-bottom: 36px; }
+    .menu-single .menu-cat:last-child { margin-bottom: 0; }
 
     /* ---------- Gallery ---------- */
     .gallery-grid {
@@ -489,7 +616,13 @@
       .nav-burger { display: inline-flex; }
       .lang { margin-left: auto; }
 
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-photo img { aspect-ratio: 4 / 5; max-width: 380px; margin: 0 auto; }
+
       .menu-grid { grid-template-columns: 1fr; }
+      .menu-tabs { gap: 4px; }
+      .menu-tab { padding: 12px 12px; font-size: 0.85rem; }
+
       .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
       .visit-grid { grid-template-columns: 1fr; }
       .hero-meta { flex-direction: column; gap: 6px; align-items: center; }
@@ -523,6 +656,8 @@
       </button>
 
       <nav class="topnav-links" id="topnav-links">
+        <a href="#about" class="i18n" data-en="About" data-jp="お店について" data-hi="हमारे बारे में"
+          data-ta="எங்களைப் பற்றி" data-te="మా గురించి" data-ml="ഞങ്ങളെ കുറിച്ച്" data-kn="ನಮ್ಮ ಬಗ್ಗೆ">About</a>
         <a href="#menu" class="i18n" data-en="Menu" data-jp="お品書き" data-hi="मेनू" data-ta="மெனு" data-te="మెను"
           data-ml="മെനു" data-kn="ಮೆನು">Menu</a>
         <a href="#gallery" class="i18n" data-en="Gallery" data-jp="ギャラリー" data-hi="गैलरी" data-ta="கேலரி"
@@ -578,6 +713,53 @@
       </div>
     </section>
 
+    <!-- ============== ABOUT ============== -->
+    <section id="about" class="about">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow i18n" data-en="The Chef" data-jp="シェフ" data-hi="शेफ़" data-ta="சமையற்காரர்"
+            data-te="చెఫ్" data-ml="ഷെഫ്" data-kn="ಬಾಣಸಿಗ">The Chef</p>
+          <h2 class="display i18n" data-en="Theevan Mahalingam." data-jp="テーヴァン・マハリンガム。"
+            data-hi="तेवन महालिंगम।" data-ta="தீவன் மகாலிங்கம்." data-te="తీవన్ మహాలింగం."
+            data-ml="തീവൻ മഹാലിംഗം." data-kn="ತೀವನ್ ಮಹಾಲಿಂಗಂ.">Theevan Mahalingam.</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-photo">
+            <img src="assets/gallery/chef-mahalingam-portrait.jpg"
+              alt="Chef Mahalingam at his prep station at Sri Mangalam Soshigaya-Okura, in a red shirt with stainless steel pots and a banana leaf laid out in front of him">
+          </div>
+          <div class="about-body">
+            <p class="i18n"
+              data-en="Chef Mahalingam — known to everyone as Maha-san — is from Theevankottai, the heart of the Chettinad region in Tamil Nadu. He learned to cook as a child from his mother, who ran a catering business out of their home."
+              data-jp="シェフ・マハリンガム、通称マハさんはチェティナード料理の本場、タミル・ナードゥ州のテーヴァンコタイ出身。幼少の頃、自宅でケータリングを営んでいた母親から料理を教わりました。">
+              Chef Mahalingam — known to everyone as Maha-san — is from Theevankottai, the heart of the Chettinad
+              region in Tamil Nadu. He learned to cook as a child from his mother, who ran a catering business out
+              of their home.</p>
+
+            <p class="i18n"
+              data-en="He spent decades refining his craft across Tamil Nadu — from street stalls and village kitchens to five-star hotels — before bringing his repertoire to Japan. Here he helped open Nirvanam, Nandi, and Yajini as head chef before founding Sri Mangalam in May 2022."
+              data-jp="その後、タミル・ナードゥ州各地の路上店、定食屋、酒場、五ツ星ホテルまで、あらゆる現場で腕を磨きました。来日後はニルヴァナム、ナンディ、ヤジニといった名店の立ち上げに料理長として関わり、2022年5月、ついに自身の店スリ・マンガラムを祖師ヶ谷大蔵にオープンさせました。">
+              He spent decades refining his craft across Tamil Nadu — from street stalls and village kitchens to
+              five-star hotels — before bringing his repertoire to Japan. Here he helped open Nirvanam, Nandi, and
+              Yajini as head chef before founding Sri Mangalam in May 2022.</p>
+
+            <p class="pull i18n"
+              data-en="“I want guests to fill up on delicious food and leave happy.”"
+              data-jp="「美味しい料理をお腹いっぱい食べて喜んでほしい」">
+              “I want guests to fill up on delicious food and leave happy.”</p>
+
+            <p class="i18n"
+              data-en="That motto, and the village-style Tamil home cooking he holds closest to his heart, are what give Sri Mangalam its unmistakable warmth. The cast-iron griddle, the hand-ground spices, the long-pour chai poured at the table — all of it is Maha-san's invitation to sit down and eat with family."
+              data-jp="この言葉と、彼が最も大切にしている「ヴィレッジスタイル」（村の家庭料理）こそが、スリ・マンガラムの唯一無二の温かさを生み出しています。鉄鍋、手挽きのスパイス、テーブルで披露される長いチャイの注ぎ — そのすべてが、家族と食卓を囲むようにというマハさんからの招待状です。">
+              That motto, and the village-style Tamil home cooking he holds closest to his heart, are what give Sri
+              Mangalam its unmistakable warmth. The cast-iron griddle, the hand-ground spices, the long-pour chai
+              poured at the table — all of it is Maha-san's invitation to sit down and eat with family.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============== MENU ============== -->
     <section id="menu" class="menu">
       <div class="container">
@@ -589,148 +771,500 @@
             data-ml="ചെട്ടിനാട്ടിലൂടെ ഒരു യാത്ര." data-kn="ಚೆಟ್ಟಿನಾಡ್ ಮೂಲಕ ಒಂದು ಪ್ರಯಾಣ.">A journey through Chettinad.
           </h2>
           <p class="lede i18n"
-            data-en="Twenty-four-hour fermented batters, hand-ground spice blends, and the cast-iron precision of Chef Mahalingam."
-            data-jp="24時間発酵させた生地、手挽きのスパイス、そして鉄板の上で磨かれたシェフ・マハリンガムの正確な技。">Twenty-four-hour fermented
-            batters, hand-ground spice blends, and the cast-iron precision of Chef Mahalingam.</p>
+            data-en="Twenty-four-hour fermented batters, hand-ground spice blends, and the cast-iron precision of Chef Mahalingam. Different menu by mealtime — Sundays are for biryani."
+            data-jp="24時間発酵させた生地、手挽きのスパイス、鉄板の上で磨かれたシェフ・マハリンガムの正確な技。時間帯によってメニューが変わり、日曜日はビリヤニの日です。">
+            Twenty-four-hour fermented batters, hand-ground spice blends, and the cast-iron precision of Chef
+            Mahalingam. Different menu by mealtime — Sundays are for biryani.</p>
         </header>
 
-        <div class="menu-grid">
-
-          <!-- Banana Leaf Meals -->
-          <div class="menu-cat">
-            <h3 class="i18n" data-en="Banana Leaf Meals" data-jp="バナナリーフミールス" data-hi="केले के पत्ते का भोजन"
-              data-ta="வாழை இலை உணவு" data-te="అరటి ఆకు భోజనం" data-ml="വാഴയില ഭക്ഷണം" data-kn="ಬಾಳೆ ಎಲೆ ಊಟ">Banana
-              Leaf Meals</h3>
-            <div class="menu-item"><span class="name i18n" data-en="Chettinad Veg Meal"
-                data-jp="チェティナード・ベジミールス">Chettinad Veg Meal</span><span class="price">¥2,300</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Chicken Meal" data-jp="チキンミールス">Chicken
-                Meal</span><span class="price">¥2,500</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Mutton Meal" data-jp="マトンミールス">Mutton
-                Meal</span><span class="price">¥2,700</span></div>
-          </div>
-
-          <!-- Dosa -->
-          <div class="menu-cat">
-            <h3 class="i18n" data-en="Dosa" data-jp="ドーサ" data-hi="डोसा" data-ta="தோசை" data-te="దోస" data-ml="ദോശ"
-              data-kn="ದೋಸೆ">Dosa</h3>
-            <div class="menu-item"><span class="name i18n" data-en="Plain Dosa" data-jp="プレーン・ドーサ">Plain Dosa</span><span
-                class="price">¥1,100</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Masala Dosa" data-jp="マサラ・ドーサ">Masala
-                Dosa</span><span class="price">¥1,400</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Paper Roast Dosa" data-jp="ペーパー・ロースト">Paper Roast
-                Dosa</span><span class="price">¥1,500</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Ghee Roast Dosa" data-jp="ギー・ロースト">Ghee Roast
-                Dosa</span><span class="price">¥1,600</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Onion Masala Dosa"
-                data-jp="オニオン・マサラ">Onion Masala Dosa</span><span class="price">¥1,500</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Mysore Masala Dosa"
-                data-jp="マイソール・マサラ">Mysore Masala Dosa</span><span class="price">¥1,650</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Kal Dosa (2 pcs)"
-                data-jp="カル・ドーサ">Kal Dosa (2 pcs)</span><span class="price">¥1,200</span></div>
-          </div>
-
-          <!-- Outhappams -->
-          <div class="menu-cat">
-            <h3 class="i18n" data-en="Outhappams" data-jp="ウッタパム" data-hi="उत्तपम" data-ta="ஊத்தப்பம்"
-              data-te="ఊతప్పం" data-ml="ഊത്തപ്പം" data-kn="ಉತ್ತಪ್ಪಂ">Outhappams</h3>
-            <div class="menu-item"><span class="name i18n" data-en="Plain Outhappam" data-jp="プレーン・ウッタパム">Plain
-                Outhappam</span><span class="price">¥1,100</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Onion Chili Outhappam"
-                data-jp="オニオン・チリ・ウッタパム">Onion Chili Outhappam</span><span class="price">¥1,350</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Tomato Onion Outhappam"
-                data-jp="トマト・オニオン・ウッタパム">Tomato Onion Outhappam</span><span class="price">¥1,350</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Vegetable Outhappam"
-                data-jp="ベジタブル・ウッタパム">Vegetable Outhappam</span><span class="price">¥1,400</span></div>
-          </div>
-
-          <!-- Tiffin Classics -->
-          <div class="menu-cat">
-            <h3 class="i18n" data-en="Tiffin Classics" data-jp="ティフィン・クラシック" data-hi="टिफिन क्लासिक्स"
-              data-ta="டிஃபின் கிளாசிக்ஸ்" data-te="టిఫిన్ క్లాసిక్స్" data-ml="ടിഫിൻ ക്ലാസിക്സ്"
-              data-kn="ಟಿಫಿನ್ ಕ್ಲಾಸಿಕ್ಸ್">Tiffin Classics</h3>
-            <div class="menu-item"><span class="name i18n" data-en="Idli (3 pcs)" data-jp="イドゥリ (3個)">Idli (3
-                pcs)</span><span class="price">¥1,100</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Sambar Idli" data-jp="サンバル・イドゥリ">Sambar
-                Idli</span><span class="price">¥1,250</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Medu Vada (2 pcs)" data-jp="メドゥ・ワダ (2個)">Medu Vada
-                (2 pcs)</span><span class="price">¥950</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Sambar Vada" data-jp="サンバル・ワダ">Sambar
-                Vada</span><span class="price">¥1,100</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Poori Masala (2 pcs)" data-jp="プーリー・マサラ">Poori
-                Masala (2 pcs)</span><span class="price">¥1,400</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Chapati Kurma (2 pcs)" data-jp="チャパティ・クルマ">Chapati
-                Kurma (2 pcs)</span><span class="price">¥1,300</span></div>
-          </div>
-
-          <!-- Biryani & Rice -->
-          <div class="menu-cat">
-            <h3 class="i18n" data-en="Biryani &amp; Rice" data-jp="ビリヤニと米料理" data-hi="बिरयानी और चावल"
-              data-ta="பிரியாணி & சாதம்" data-te="బిర్యానీ & రైస్" data-ml="ബിരിയാണി & അരി"
-              data-kn="ಬಿರಿಯಾನಿ ಮತ್ತು ಅನ್ನ">Biryani &amp; Rice</h3>
-            <div class="menu-item"><span class="name i18n" data-en="Chettinad Chicken Biryani"
-                data-jp="チェティナード・チキンビリヤニ">Chettinad Chicken Biryani</span><span class="price">¥1,800</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Mutton Biryani" data-jp="マトンビリヤニ">Mutton
-                Biryani</span><span class="price">¥2,100</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Lemon Rice" data-jp="レモンライス">Lemon Rice</span><span
-                class="price">¥1,300</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Curd Rice" data-jp="カードライス">Curd Rice</span><span
-                class="price">¥1,200</span></div>
-          </div>
-
-          <!-- Chettinad Curries -->
-          <div class="menu-cat">
-            <h3 class="i18n" data-en="Chettinad Curries" data-jp="チェティナード・カレー" data-hi="चेट्टीनाड करी"
-              data-ta="செட்டிநாடு கறி" data-te="చెట్టినాడు కూర" data-ml="ചെട്ടിനാട് കറി"
-              data-kn="ಚೆಟ್ಟಿನಾಡ್ ಕರಿ">Chettinad Curries</h3>
-            <div class="menu-item"><span class="name i18n" data-en="Chicken Chettinad" data-jp="チキン・チェティナード">Chicken
-                Chettinad</span><span class="price">¥1,600</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Mutton Chukka (Dry)" data-jp="マトン・チュッカ">Mutton
-                Chukka (Dry)</span><span class="price">¥1,900</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Fish Curry (Madras)" data-jp="フィッシュカレー">Fish Curry
-                (Madras)</span><span class="price">¥1,850</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Paneer Butter Masala"
-                data-jp="パニール・バター・マサラ">Paneer Butter Masala</span><span class="price">¥1,500</span></div>
-          </div>
-
-          <!-- Desserts & Coffee -->
-          <div class="menu-cat">
-            <h3 class="i18n" data-en="Desserts &amp; Coffee" data-jp="デザートとコーヒー" data-hi="मिठाई और कॉफी"
-              data-ta="இனிப்புகள் & காபி" data-te="స్వీట్స్ & కాఫీ" data-ml="മിഠായികൾ & കാപ്പി"
-              data-kn="ಸಿಹಿತಿಂಡಿಗಳು ಮತ್ತು ಕಾಫಿ">Desserts &amp; Coffee</h3>
-            <div class="menu-item"><span class="name i18n" data-en="Payasam of the Day" data-jp="日替わりパヤサム">Payasam of
-                the Day</span><span class="price">¥600</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Gulab Jamun (2 pcs)" data-jp="グラブジャムン">Gulab Jamun
-                (2 pcs)</span><span class="price">¥550</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Madras Filter Coffee"
-                data-jp="マドラス・フィルター・コーヒー">Madras Filter Coffee</span><span class="price">¥500</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Mango Lassi" data-jp="マンゴーラッシー">Mango
-                Lassi</span><span class="price">¥700</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Salt/Sweet Lassi" data-jp="ラッシー (塩・甘)">Salt/Sweet
-                Lassi</span><span class="price">¥600</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Masala Chai" data-jp="マサラチャイ">Masala
-                Chai</span><span class="price">¥500</span></div>
-          </div>
-
-          <!-- Sides & Bites -->
-          <div class="menu-cat">
-            <h3 class="i18n" data-en="Sides &amp; Bites" data-jp="サイドメニュー" data-hi="साइड्स" data-ta="பக்கச் சார்ந்தவை"
-              data-te="సైడ్స్" data-ml="സൈഡ്സ്" data-kn="ಸೈಡ್ಸ್">Sides &amp; Bites</h3>
-            <div class="menu-item"><span class="name i18n" data-en="Chicken 65" data-jp="チキン65">Chicken 65</span><span
-                class="price">¥1,100</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Masala Omelette" data-jp="マサラ・オムレツ">Masala
-                Omelette</span><span class="price">¥600</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Paper Papadam" data-jp="パパダム">Paper
-                Papadam</span><span class="price">¥300</span></div>
-            <div class="menu-item"><span class="name i18n" data-en="Extra Parotta" data-jp="追加パロッタ">Extra
-                Parotta</span><span class="price">¥450</span></div>
-          </div>
-
+        <!-- Tabs -->
+        <div class="menu-tabs" role="tablist" aria-label="Menu by mealtime">
+          <button class="menu-tab" data-tab="lunch" role="tab">
+            <span class="i18n" data-en="Lunch" data-jp="ランチ" data-hi="दोपहर" data-ta="மதியம்" data-te="లంచ్"
+              data-ml="ഉച്ച" data-kn="ಮಧ್ಯಾಹ್ನ">Lunch</span>
+            <span class="small i18n" data-en="11:30 – 14:30" data-jp="11:30 – 14:30">11:30 – 14:30</span>
+          </button>
+          <button class="menu-tab" data-tab="dinner" role="tab">
+            <span class="i18n" data-en="Dinner" data-jp="ディナー" data-hi="रात" data-ta="இரவு" data-te="డిన్నర్"
+              data-ml="അത്താഴം" data-kn="ರಾತ್ರಿ ಊಟ">Dinner</span>
+            <span class="small i18n" data-en="17:30 – 22:00" data-jp="17:30 – 22:00">17:30 – 22:00</span>
+          </button>
+          <button class="menu-tab" data-tab="sunday" role="tab">
+            <span class="i18n" data-en="Sunday Biryani" data-jp="日曜ビリヤニ" data-hi="रविवार बिरयानी"
+              data-ta="ஞாயிறு பிரியாணி" data-te="ఆదివారం బిర్యానీ" data-ml="ഞായർ ബിരിയാണി"
+              data-kn="ಭಾನುವಾರ ಬಿರಿಯಾನಿ">Sunday Biryani</span>
+            <span class="small i18n" data-en="Sunday only" data-jp="日曜限定">Sunday only</span>
+          </button>
         </div>
 
-        <p class="menu-foot i18n"
-          data-en="Banana-leaf meals come with unlimited refills. Prices include tax. Vegetarian and vegan options across all categories — please ask Chef Maha if you have a severe allergy."
-          data-jp="バナナリーフミールスはお代わり自由。価格は税込みです。すべてのカテゴリーに菜食・ヴィーガン対応がございます。重度のアレルギーをお持ちの方はシェフ・マハまで直接お声がけください。">
-          Banana-leaf meals come with unlimited refills. Prices include tax.</p>
+        <!-- ====== LUNCH PANE ====== -->
+        <div class="menu-pane" data-pane="lunch" role="tabpanel">
+          <p class="pane-intro i18n"
+            data-en="Lunch is built around curry sets and meals — quick, generous, and great for take-out. Add any extra curry to a lunch menu for +¥300."
+            data-jp="ランチはカレーセットとミールスが中心。手早く、たっぷり、テイクアウトもおすすめ。どのランチメニューにもカレーを＋300円で追加できます。">
+            Lunch is built around curry sets and meals — quick, generous, and great for take-out. Add any extra
+            curry to a lunch menu for +¥300.
+          </p>
+
+          <div class="menu-grid">
+
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Curry Sets" data-jp="カレーセット" data-hi="करी सेट" data-ta="கறி செட்"
+                data-te="కర్రీ సెట్" data-ml="കറി സെറ്റ്" data-kn="ಕರಿ ಸೆಟ್">Curry Sets</h3>
+              <p class="sub i18n" data-en="Comes with parotta, chapati or rice" data-jp="パロタ、チャパティまたはライス付き">Comes with
+                parotta, chapati or rice</p>
+              <div class="menu-item"><span class="name"><span class="code">CS-01</span><span class="i18n"
+                    data-en="1 Curry Set" data-jp="1カレーセット">1 Curry Set</span></span><span
+                  class="price">¥1,000</span></div>
+              <div class="menu-item"><span class="name"><span class="code">CS-02</span><span class="i18n"
+                    data-en="2 Small Curries Set" data-jp="2小カレーセット">2 Small Curries Set</span></span><span
+                  class="price">¥1,200</span></div>
+              <p class="sub i18n" data-en="Choose your curry" data-jp="カレーをお選びください">Choose your curry</p>
+              <div class="menu-item"><span class="name i18n" data-en="Chicken Curry" data-jp="チキンカレー">Chicken Curry</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Chicken Kothu Curry" data-jp="チキン・コットゥ・カレー">Chicken
+                  Kothu Curry</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Mutton Curry" data-jp="マトンカレー">Mutton Curry</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Ghee Dal" data-jp="ギー・ダール">Ghee Dal</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Veg Kurma" data-jp="ベジ・クルマ">Veg Kurma</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Pattani Kurma" data-jp="パッタニ・クルマ">Pattani
+                  Kurma</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Sambar" data-jp="サンバル">Sambar</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Today's Curry (chef's choice)"
+                    data-jp="日替わりカレー（シェフのおすすめ）">Today's Curry (chef's choice)</span></div>
+            </div>
+
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Lunch Take-out (Parcel)" data-jp="ランチ テイクアウト">Lunch Take-out (Parcel)</h3>
+              <p class="sub i18n" data-en="Banana-leaf meals" data-jp="バナナリーフミールス">Banana-leaf meals</p>
+              <div class="menu-item"><span class="name i18n" data-en="Veg Meals" data-jp="ベジミールス">Veg
+                  Meals</span><span class="price">¥1,500</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Non-Veg Meals" data-jp="ノンベジミールス">Non-Veg
+                  Meals</span><span class="price">¥1,800</span></div>
+              <p class="sub i18n" data-en="Parotta or chapati combos" data-jp="パロタ・チャパティセット">Parotta or chapati
+                combos</p>
+              <div class="menu-item"><span class="name i18n" data-en="Parotta/Chapati + Small Rice + Chicken Gravy"
+                    data-jp="パロタかチャパティ + 小ライス + チキンカレー">Parotta/Chapati + Small Rice + Chicken Gravy</span><span
+                  class="price">¥1,000</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Parotta/Chapati + Small Rice + Mutton Gravy"
+                    data-jp="パロタかチャパティ + 小ライス + マトンカレー">Parotta/Chapati + Small Rice + Mutton Gravy</span><span
+                  class="price">¥1,100</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Parotta/Chapati + Small Rice + Pattani Kurma"
+                    data-jp="パロタかチャパティ + 小ライス + パッタニ・クルマ">Parotta/Chapati + Small Rice + Pattani Kurma</span><span
+                  class="price">¥900</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Parotta/Chapati + Small Rice + Veg Gravy"
+                    data-jp="パロタかチャパティ + 小ライス + ヴェジ・グレービー">Parotta/Chapati + Small Rice + Veg Gravy</span><span
+                  class="price">¥900</span></div>
+            </div>
+
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Lunch Options (Sides)" data-jp="ランチ オプション">Lunch Options (Sides)</h3>
+              <p class="sub i18n" data-en="Add to any lunch meal" data-jp="ランチに一品追加">Add to any lunch meal</p>
+              <div class="menu-item"><span class="name"><span class="code">O-1</span><span class="i18n"
+                    data-en="Mutton Chukka" data-jp="マトン・チュッカ">Mutton Chukka</span></span><span
+                  class="price">¥800</span></div>
+              <div class="menu-item"><span class="name"><span class="code">O-2</span><span class="i18n"
+                    data-en="Chicken Chukka" data-jp="チキン・チュッカ">Chicken Chukka</span></span><span
+                  class="price">¥750</span></div>
+              <div class="menu-item"><span class="name"><span class="code">O-3</span><span class="i18n"
+                    data-en="Intestine Fry (Kodal)" data-jp="コダル・フライ">Intestine Fry (Kodal)</span></span><span
+                  class="price">¥800</span></div>
+              <div class="menu-item"><span class="name"><span class="code">O-4</span><span class="i18n"
+                    data-en="Fish Tawa Dry" data-jp="フィッシュ・タワ・フライ">Fish Tawa Dry</span></span><span
+                  class="price">¥800</span></div>
+              <div class="menu-item"><span class="name"><span class="code">O-5</span><span class="i18n"
+                    data-en="Crab Fry (Nandu Varuval)" data-jp="ナンドゥ・ヴァルヴァル">Crab Fry (Nandu Varuval)</span></span><span
+                  class="price">¥850</span></div>
+              <div class="menu-item"><span class="name"><span class="code">O-6</span><span class="i18n"
+                    data-en="Prawn Varuval Dry" data-jp="海老ヴァルヴァル">Prawn Varuval Dry</span></span><span
+                  class="price">¥850</span></div>
+            </div>
+
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Kids Menu" data-jp="お子様メニュー">Kids Menu</h3>
+              <div class="menu-item"><span class="name"><span class="code">K-1</span><span class="i18n"
+                    data-en="Mini Cheese Dosai" data-jp="ミニチーズドーサ">Mini Cheese Dosai</span></span><span
+                  class="price">¥600</span></div>
+              <div class="menu-item"><span class="name"><span class="code">K-2</span><span class="i18n"
+                    data-en="Chicken Curry & Rice for Kids" data-jp="キッズ・チキンカレー＆ライス">Chicken Curry &amp; Rice for
+                    Kids</span></span><span class="price">¥600</span></div>
+            </div>
+
+          </div>
+
+          <p class="menu-foot i18n"
+            data-en="Lunch is take-out friendly — call ahead to have it ready when you arrive. Vegetarian and vegan options available across all categories."
+            data-jp="ランチはテイクアウトに便利。事前にお電話いただければご来店時にお渡しできるよう準備しておきます。すべてのカテゴリーに菜食・ヴィーガン対応がございます。">
+            Lunch is take-out friendly — call ahead to have it ready when you arrive.</p>
+        </div>
+
+        <!-- ====== DINNER PANE ====== -->
+        <div class="menu-pane" data-pane="dinner" role="tabpanel">
+          <p class="pane-intro i18n"
+            data-en="The full Chettinad experience: a banana-leaf meal with unlimited refills, the long form of every dosai and curry, and Chef Maha's signature dishes."
+            data-jp="チェティナード料理の真髄を味わえるディナー。お代わり自由のバナナリーフミールス、本格ドーサとカレーの全ラインナップ、そしてシェフ・マハのスペシャリテをお楽しみください。">
+            The full Chettinad experience: a banana-leaf meal with unlimited refills, the long form of every dosai
+            and curry, and Chef Maha's signature dishes.
+          </p>
+
+          <div class="menu-grid">
+
+            <!-- Banana Leaf Meals -->
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Banana Leaf Meals" data-jp="バナナリーフミールス" data-hi="केले के पत्ते का भोजन"
+                data-ta="வாழை இலை உணவு" data-te="అరటి ఆకు భోజనం" data-ml="വാഴയില ഭക്ഷണം" data-kn="ಬಾಳೆ ಎಲೆ ಊಟ">Banana
+                Leaf Meals</h3>
+              <p class="sub i18n" data-en="Unlimited refills (お代わり自由)" data-jp="お代わり自由">Unlimited refills (お代わり自由)
+              </p>
+              <div class="menu-item"><span class="name"><span class="code">DM-1</span><span class="i18n"
+                    data-en="Veg Meals" data-jp="ベジ ミールス">Veg Meals</span>
+                  <span class="note i18n"
+                    data-en="Sambar · Rasam · Kara Kuzhambu · Kootu · Poriyal · Rice · Appalam · Payasam"
+                    data-jp="サンバル・ラッサム・カラ・クズランブ・コートゥ・ポリヤル・ライス・アッパラム・パヤサム">Sambar · Rasam · Kara Kuzhambu · Kootu ·
+                    Poriyal · Rice · Appalam · Payasam</span>
+                </span><span class="price">¥2,300</span></div>
+              <div class="menu-item"><span class="name"><span class="code">DM-2</span><span class="i18n"
+                    data-en="Non-Veg Meals" data-jp="ノン・ベジ ミールス">Non-Veg Meals</span>
+                  <span class="note i18n"
+                    data-en="Mutton/Chicken/Fish kuzhambu + sambar, rasam, kootu, poriyal, rice, appalam, payasam"
+                    data-jp="マトン／チキン／フィッシュ・クズランブ + サンバル・ラッサム・コートゥ・ポリヤル・ライス・アッパラム・パヤサム">Mutton/Chicken/Fish kuzhambu
+                    + sambar, rasam, kootu, poriyal, rice, appalam, payasam</span>
+                </span><span class="price">¥2,700</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Curd add-on (Thai-style yogurt)"
+                    data-jp="ミールスの締めにどうぞ（タイ製プレーンヨーグルト）">Curd add-on (Thai-style yogurt)</span><span
+                  class="price">¥200</span></div>
+            </div>
+
+            <!-- Salad / Soup / Egg -->
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Salad · Soup · Egg" data-jp="サラダ・スープ・卵料理">Salad · Soup · Egg</h3>
+              <div class="menu-item"><span class="name"><span class="code">S-1</span><span class="i18n"
+                    data-en="Potato Tawa Fry Salad" data-jp="グリルポテトサラダ">Potato Tawa Fry Salad</span></span><span
+                  class="price">¥400</span></div>
+              <div class="menu-item"><span class="name"><span class="code">S-2</span><span class="i18n"
+                    data-en="Green Salad with Tamarind" data-jp="タマリンドサラダ">Green Salad with Tamarind</span></span><span
+                  class="price">¥600</span></div>
+              <div class="menu-item"><span class="name"><span class="code">S-3</span><span class="i18n"
+                    data-en="Grilled Chicken Salad" data-jp="グリルチキンサラダ">Grilled Chicken Salad</span></span><span
+                  class="price">¥700</span></div>
+              <div class="menu-item"><span class="name"><span class="code">S-4</span><span class="i18n"
+                    data-en="Rasam" data-jp="ラッサム">Rasam</span></span><span class="price">¥550</span></div>
+              <div class="menu-item"><span class="name"><span class="code">S-5</span><span class="i18n"
+                    data-en="Paruppu Rasam" data-jp="パルップラッサム">Paruppu Rasam</span></span><span
+                  class="price">¥550</span></div>
+              <div class="menu-item"><span class="name"><span class="code">S-6</span><span class="i18n"
+                    data-en="Mutton Soup" data-jp="マトンスープ">Mutton Soup</span></span><span
+                  class="price">¥650</span></div>
+              <div class="menu-item"><span class="name"><span class="code">S-7</span><span class="i18n"
+                    data-en="Kalakki (Tamil street omelette)" data-jp="カラッキ">Kalakki (Tamil street
+                    omelette)</span></span><span class="price">¥600</span></div>
+              <div class="menu-item"><span class="name"><span class="code">S-8</span><span class="i18n"
+                    data-en="Half Boiled Egg" data-jp="ハーフボイルド">Half Boiled Egg</span></span><span
+                  class="price">¥200</span></div>
+            </div>
+
+            <!-- Veg & Beans -->
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Veg & Beans" data-jp="野菜と豆料理">Veg &amp; Beans</h3>
+              <p class="sub i18n" data-en="Starters Dry" data-jp="スターター・ドライ">Starters Dry</p>
+              <div class="menu-item"><span class="name i18n" data-en="Veg Butter Tawa Fry"
+                    data-jp="ベジバター タワ フライ">Veg Butter Tawa Fry</span><span class="price">¥750</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Onion Pakoda" data-jp="タマネギ パコダ">Onion
+                  Pakoda</span><span class="price">¥850</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Cauliflower Pakoda" data-jp="カリフラワー パコダ">Cauliflower
+                  Pakoda</span><span class="price">¥800</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Appalam (2P)" data-jp="アップラム (2P)">Appalam
+                  (2P)</span><span class="price">¥350</span></div>
+              <p class="sub i18n" data-en="Curry / Gravy" data-jp="カレー / グレービー">Curry / Gravy</p>
+              <div class="menu-item"><span class="name i18n" data-en="Veg Kuruma" data-jp="ヴェジ クルマ">Veg Kuruma</span><span
+                  class="price">¥1,400</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Peas Kuruma" data-jp="パッタニ クルマ">Peas
+                  Kuruma</span><span class="price">¥1,300</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Okra Chettinad Curry" data-jp="オクラ チェティナードゥ カレー">Okra
+                  Chettinad Curry</span><span class="price">¥1,250</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Ghee Dal" data-jp="ギー ダル カレー">Ghee
+                  Dal</span><span class="price">¥1,400</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Sambar" data-jp="サンバル">Sambar</span><span
+                  class="price">¥1,200</span></div>
+            </div>
+
+            <!-- Tiffin / Dosai -->
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Tiffin · Dosai" data-jp="ティファン・ドーサ">Tiffin · Dosai</h3>
+              <div class="menu-item"><span class="name"><span class="code">D-1</span><span class="i18n"
+                    data-en="Plain Dosai" data-jp="プレーン・ドーサ">Plain Dosai</span></span><span
+                  class="price">¥1,200</span></div>
+              <div class="menu-item"><span class="name"><span class="code">D-2</span><span class="i18n"
+                    data-en="Ghee Roast Dosai" data-jp="ギー・ロースト・ドーサ">Ghee Roast Dosai</span></span><span
+                  class="price">¥1,300</span></div>
+              <div class="menu-item"><span class="name"><span class="code">D-3</span><span class="i18n"
+                    data-en="Thattu Dosai" data-jp="タットゥ・ドーサ">Thattu Dosai</span></span><span
+                  class="price">¥1,400</span></div>
+              <div class="menu-item"><span class="name"><span class="code">D-4</span><span class="i18n"
+                    data-en="Masala Dosai" data-jp="マサラ・ドーサ">Masala Dosai</span></span><span
+                  class="price">¥1,500</span></div>
+              <div class="menu-item"><span class="name"><span class="code">D-5</span><span class="i18n"
+                    data-en="Onion Dosai" data-jp="オニオン・ドーサ">Onion Dosai</span></span><span
+                  class="price">¥1,500</span></div>
+              <div class="menu-item"><span class="name"><span class="code">D-6</span><span class="i18n"
+                    data-en="Egg Dosai" data-jp="エッグ・ドーサ">Egg Dosai</span></span><span
+                  class="price">¥1,600</span></div>
+              <div class="menu-item"><span class="name"><span class="code">D-7</span><span class="i18n"
+                    data-en="Egg Pepper Dosai" data-jp="エッグ・ペッパー・ドーサ">Egg Pepper Dosai</span></span><span
+                  class="price">¥1,650</span></div>
+              <div class="menu-item"><span class="name"><span class="code">D-8</span><span class="i18n"
+                    data-en="Cheese Dosai" data-jp="チーズ・ドーサ">Cheese Dosai</span></span><span
+                  class="price">¥1,700</span></div>
+              <div class="menu-item"><span class="name"><span class="code">D-9</span><span class="i18n"
+                    data-en="Mutton Kari Dosai" data-jp="マトン・カリ・ドーサ">Mutton Kari Dosai</span></span><span
+                  class="price">¥1,800</span></div>
+              <div class="menu-item"><span class="name"><span class="code">D-10</span><span class="i18n"
+                    data-en="Rava Dosai" data-jp="ラヴァ・ドーサ">Rava Dosai</span></span><span
+                  class="price">¥1,500</span></div>
+              <div class="menu-item"><span class="name"><span class="code">D-11</span><span class="i18n"
+                    data-en="Ulundu Vadai (2P)" data-jp="ウルンドゥ ワダ (2個)">Ulundu Vadai (2P)</span></span><span
+                  class="price">¥600</span></div>
+              <div class="menu-item"><span class="name"><span class="code">D-12</span><span class="i18n"
+                    data-en="Ulundu Vadai (4P)" data-jp="ウルンドゥ ワダ (4個)">Ulundu Vadai (4P)</span></span><span
+                  class="price">¥1,100</span></div>
+            </div>
+
+            <!-- Chicken -->
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Chicken" data-jp="鶏肉料理">Chicken</h3>
+              <p class="sub i18n" data-en="Starters Dry" data-jp="スターター・ドライ">Starters Dry</p>
+              <div class="menu-item"><span class="name"><span class="code">C-1</span><span class="i18n"
+                    data-en="Chicken 65" data-jp="チキン65">Chicken 65</span></span><span
+                  class="price">¥1,100</span></div>
+              <div class="menu-item"><span class="name"><span class="code">C-2</span><span class="i18n"
+                    data-en="Chicken Pakoda" data-jp="チキン・パコダ">Chicken Pakoda</span></span><span
+                  class="price">¥1,300</span></div>
+              <div class="menu-item"><span class="name"><span class="code">C-3</span><span class="i18n"
+                    data-en="Special Ginger Chicken Dry" data-jp="スリマンガラム・チキン・ドライ">Special Ginger Chicken
+                    Dry</span></span><span class="price">¥1,400</span></div>
+              <div class="menu-item"><span class="name"><span class="code">C-4</span><span class="i18n"
+                    data-en="Chicken Chukka" data-jp="チキン・チュッカ">Chicken Chukka</span></span><span
+                  class="price">¥1,200</span></div>
+              <div class="menu-item"><span class="name"><span class="code">C-5</span><span class="i18n"
+                    data-en="Chicken Fry with Onion Masala" data-jp="チキン・ヴァルヴァル">Chicken Fry with Onion
+                    Masala</span></span><span class="price">¥1,300</span></div>
+              <div class="menu-item"><span class="name"><span class="code">C-6</span><span class="i18n"
+                    data-en="Chicken Pepper Dry" data-jp="チキン・ペッパー・ドライ">Chicken Pepper Dry</span></span><span
+                  class="price">¥1,200</span></div>
+              <div class="menu-item"><span class="name"><span class="code">C-7</span><span class="i18n"
+                    data-en="Chicken Ghee Roast" data-jp="チキン・ギー・ロースト">Chicken Ghee Roast</span></span><span
+                  class="price">¥1,200</span></div>
+              <p class="sub i18n" data-en="Curry / Gravy" data-jp="カレー / グレービー">Curry / Gravy</p>
+              <div class="menu-item"><span class="name"><span class="code">C-8</span><span class="i18n"
+                    data-en="Special Ginger Chicken Curry" data-jp="スリマンガラム・チキン・カレー">Special Ginger Chicken
+                    Curry</span></span><span class="price">¥1,600</span></div>
+              <div class="menu-item"><span class="name"><span class="code">C-9</span><span class="i18n"
+                    data-en="Chicken Chettinad Kurma" data-jp="チキン・チェティナードゥ・クルマ">Chicken Chettinad
+                    Kurma</span></span><span class="price">¥1,400</span></div>
+              <div class="menu-item"><span class="name"><span class="code">C-10</span><span class="i18n"
+                    data-en="Chicken Pepper Masala" data-jp="チキン・ペッパー・マサラ">Chicken Pepper Masala</span></span><span
+                  class="price">¥1,450</span></div>
+              <div class="menu-item"><span class="name"><span class="code">C-11</span><span class="i18n"
+                    data-en="Spinach Chicken Curry" data-jp="ほうれん草チキンカレー">Spinach Chicken Curry</span></span><span
+                  class="price">¥1,400</span></div>
+            </div>
+
+            <!-- Mutton -->
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Mutton" data-jp="羊肉料理">Mutton</h3>
+              <p class="sub i18n" data-en="Dry" data-jp="ドライ">Dry</p>
+              <div class="menu-item"><span class="name"><span class="code">M-1</span><span class="i18n"
+                    data-en="Mutton Kola Urundai" data-jp="マトン・コラ・ウルンダイ">Mutton Kola Urundai</span></span><span
+                  class="price">¥1,400</span></div>
+              <div class="menu-item"><span class="name"><span class="code">M-2</span><span class="i18n"
+                    data-en="Mutton Chukka" data-jp="マトン・チュッカ">Mutton Chukka</span></span><span
+                  class="price">¥1,300</span></div>
+              <div class="menu-item"><span class="name"><span class="code">M-3</span><span class="i18n"
+                    data-en="Mutton Varuval Dry" data-jp="マトン・ヴァルヴァル">Mutton Varuval Dry</span></span><span
+                  class="price">¥1,300</span></div>
+              <div class="menu-item"><span class="name"><span class="code">M-4</span><span class="i18n"
+                    data-en="Mutton Fry" data-jp="マトン・フライ">Mutton Fry</span></span><span
+                  class="price">¥1,300</span></div>
+              <p class="sub i18n" data-en="Gravy" data-jp="グレービー">Gravy</p>
+              <div class="menu-item"><span class="name"><span class="code">M-5</span><span class="i18n"
+                    data-en="Mutton Chettinad Curry" data-jp="マトン・チェティナードゥ・カレー">Mutton Chettinad
+                    Curry</span></span><span class="price">¥1,500</span></div>
+              <div class="menu-item"><span class="name"><span class="code">M-6</span><span class="i18n"
+                    data-en="Mutton Chettinad Kurma" data-jp="マトン・チェティナードゥ・クルマ">Mutton Chettinad
+                    Kurma</span></span><span class="price">¥1,500</span></div>
+              <div class="menu-item"><span class="name"><span class="code">M-7</span><span class="i18n"
+                    data-en="Mutton Pepper Masala" data-jp="マトン・ペッパー・マサラ">Mutton Pepper Masala</span></span><span
+                  class="price">¥1,400</span></div>
+              <div class="menu-item"><span class="name"><span class="code">M-8</span><span class="i18n"
+                    data-en="Mutton Kothu Curry" data-jp="マトン・キーマ・カレー">Mutton Kothu Curry</span></span><span
+                  class="price">¥1,450</span></div>
+            </div>
+
+            <!-- Seafood -->
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Seafood" data-jp="魚介料理">Seafood</h3>
+              <p class="sub i18n" data-en="Dry" data-jp="ドライ">Dry</p>
+              <div class="menu-item"><span class="name"><span class="code">F-1</span><span class="i18n"
+                    data-en="Fish Varuval Dry" data-jp="フィッシュ・ヴァルヴァル">Fish Varuval Dry</span></span><span
+                  class="price">¥1,400</span></div>
+              <div class="menu-item"><span class="name"><span class="code">F-2</span><span class="i18n"
+                    data-en="Fish Poriyal" data-jp="フィッシュ・ポリヤル">Fish Poriyal</span></span><span
+                  class="price">¥1,400</span></div>
+              <div class="menu-item"><span class="name"><span class="code">F-3</span><span class="i18n"
+                    data-en="Prawn Varuval Dry" data-jp="海老ヴァルヴァル">Prawn Varuval Dry</span></span><span
+                  class="price">¥1,400</span></div>
+              <div class="menu-item"><span class="name"><span class="code">F-4</span><span class="i18n"
+                    data-en="Prawn Pepper Fry" data-jp="海老ペッパー・フライ">Prawn Pepper Fry</span></span><span
+                  class="price">¥1,400</span></div>
+              <div class="menu-item"><span class="name"><span class="code">F-5</span><span class="i18n"
+                    data-en="Meen Pollichathu" data-jp="ミーン ポリチャトゥ">Meen Pollichathu</span>
+                  <span class="note i18n" data-en="Fish wrapped in banana leaf — advance reservation required"
+                    data-jp="魚をフライしてマサラと一緒にバナナの葉で包んで蒸した料理 — 要事前予約">Fish wrapped in banana leaf — advance reservation
+                    required</span>
+                </span><span class="price">¥1,600</span></div>
+              <p class="sub i18n" data-en="Gravy" data-jp="グレービー">Gravy</p>
+              <div class="menu-item"><span class="name"><span class="code">F-6</span><span class="i18n"
+                    data-en="Chettinad Fish Curry" data-jp="チェティナードゥ・フィッシュ・カレー">Chettinad Fish
+                    Curry</span></span><span class="price">¥1,400</span></div>
+              <div class="menu-item"><span class="name"><span class="code">F-7</span><span class="i18n"
+                    data-en="Chettinad Fish Masala" data-jp="チェティナードゥ・フィッシュ・マサラ">Chettinad Fish
+                    Masala</span></span><span class="price">¥1,500</span></div>
+              <div class="menu-item"><span class="name"><span class="code">F-8</span><span class="i18n"
+                    data-en="Chettinad Prawn Curry" data-jp="チェティナードゥ・海老カレー">Chettinad Prawn Curry</span></span><span
+                  class="price">¥1,400</span></div>
+            </div>
+
+            <!-- Beverages -->
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Beverages" data-jp="ソフトドリンク">Beverages</h3>
+              <div class="menu-item"><span class="name i18n" data-en="Cola" data-jp="コーラ">Cola</span><span
+                  class="price">¥400</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Orange / Apple Juice"
+                    data-jp="オレンジ／アップルジュース">Orange / Apple Juice</span><span class="price">¥400</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Jigarthanda" data-jp="ジガルタンダ">Jigarthanda</span><span
+                  class="price">¥600</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Solty Mor (yogurt drink)"
+                    data-jp="ソルティ・モール">Solty Mor (yogurt drink)</span><span class="price">¥500</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Solty Lemon Soda" data-jp="ソルティ・レモンソーダ">Solty Lemon
+                  Soda</span><span class="price">¥450</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Sweet Lemon Soda" data-jp="スイート・レモンソーダ">Sweet Lemon
+                  Soda</span><span class="price">¥450</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Mango Juice" data-jp="マンゴージュース">Mango
+                  Juice</span><span class="price">¥450</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Lassi" data-jp="ラッシー">Lassi</span><span
+                  class="price">¥400</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Mango Lassi" data-jp="マンゴーラッシー">Mango
+                  Lassi</span><span class="price">¥500</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Hot Chai" data-jp="ティー (チャーイ)">Hot
+                  Chai</span><span class="price">¥400</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Iced Chai" data-jp="アイスティー (チャーイ)">Iced
+                  Chai</span><span class="price">¥500</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="South Indian Milk Coffee" data-jp="ミルクコーヒー">South
+                  Indian Milk Coffee</span><span class="price">¥450</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="South Indian Iced Milk Coffee"
+                    data-jp="アイスミルクコーヒー">South Indian Iced Milk Coffee</span><span class="price">¥450</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Dry Ginger & Coriander Masala Coffee"
+                    data-jp="スック・マリ・カーピ">Dry Ginger &amp; Coriander Masala Coffee</span><span
+                  class="price">¥400</span></div>
+            </div>
+
+            <!-- Alcohol -->
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Alcohol" data-jp="アルコール">Alcohol</h3>
+              <div class="menu-item"><span class="name i18n" data-en="Draft Beer" data-jp="生ビール">Draft
+                  Beer</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Kingfisher Beer" data-jp="キングフィッシャー">Kingfisher
+                  Beer</span><span class="price">¥500</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Taj Mahal Beer" data-jp="タージマハル">Taj Mahal
+                  Beer</span><span class="price">¥700</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Salty Lemon Sour" data-jp="塩レモンサワー">Salty Lemon
+                  Sour</span><span class="price">¥450</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Old Monk Rum" data-jp="オールドモンク・ラム">Old Monk
+                  Rum</span><span class="price">¥700</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Old Monk Rum & Coke" data-jp="オールドモンク・ラムコーク">Old Monk
+                  Rum &amp; Coke</span><span class="price">¥750</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="McDowell's Rum" data-jp="マクダウェルズ ラム">McDowell's
+                  Rum</span><span class="price">¥650</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="McDowell's Rum & Coke" data-jp="マクダウェルズ ラムコーク">McDowell's
+                  Rum &amp; Coke</span><span class="price">¥700</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="McDowell's Whisky" data-jp="マクダウェルズ ウィスキー">McDowell's
+                  Whisky</span><span class="price">¥600</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="McDowell's Highball"
+                    data-jp="マクダウェルズ ハイボール">McDowell's Highball</span><span class="price">¥650</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Red Label Scotch" data-jp="赤ラベル スコッチ">Red Label
+                  Scotch</span><span class="price">¥650</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Black Label Scotch" data-jp="黒ラベル スコッチ">Black Label
+                  Scotch</span><span class="price">¥700</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Shochu" data-jp="焼酎">Shochu</span><span
+                  class="price">¥500</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Shochu Soda" data-jp="焼酎ソーダ">Shochu
+                  Soda</span><span class="price">¥550</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Indian Wine — Bottle (red or white)"
+                    data-jp="インドワイン（ボトル）赤・白">Indian Wine — Bottle (red or white)</span><span
+                  class="price">¥3,500</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Indian Wine — Glass (red or white)"
+                    data-jp="インドワイン（グラス）赤・白">Indian Wine — Glass (red or white)</span><span
+                  class="price">¥600</span></div>
+            </div>
+
+            <!-- Kids -->
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Kids Menu" data-jp="お子様メニュー">Kids Menu</h3>
+              <div class="menu-item"><span class="name"><span class="code">K-1</span><span class="i18n"
+                    data-en="Mini Cheese Dosai" data-jp="ミニチーズドーサ">Mini Cheese Dosai</span></span><span
+                  class="price">¥600</span></div>
+              <div class="menu-item"><span class="name"><span class="code">K-2</span><span class="i18n"
+                    data-en="Chicken Curry & Rice for Kids" data-jp="キッズ・チキンカレー＆ライス">Chicken Curry &amp; Rice for
+                    Kids</span></span><span class="price">¥600</span></div>
+            </div>
+
+            <!-- Private Party -->
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Private Party Plan" data-jp="貸切パーティプラン">Private Party Plan</h3>
+              <p class="sub i18n" data-en="40 – 50 people · advance reservation required · banana-leaf course"
+                data-jp="40〜50名様 · 要事前予約 · バナナリーフ食べ放題コース">40 – 50 people · advance reservation required ·
+                banana-leaf course</p>
+              <div class="menu-item"><span class="name i18n" data-en="Veg Course (per person)" data-jp="ベジ（1名様）">Veg
+                  Course (per person)</span><span class="price">¥4,000</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Non-Veg Course (per person)"
+                    data-jp="ノン・ベジ（1名様）">Non-Veg Course (per person)</span><span class="price">¥4,500</span></div>
+            </div>
+
+          </div>
+
+          <p class="menu-foot i18n"
+            data-en="Banana-leaf meals come with unlimited refills (お代わり自由). Many dishes are naturally gluten-free and vegan-friendly. For severe allergies, please speak to Chef Maha directly."
+            data-jp="バナナリーフミールスはお代わり自由。グルテンフリー・ヴィーガン対応の料理も多数ございます。重度のアレルギーをお持ちの方はシェフ・マハまで直接お声がけください。">
+            Banana-leaf meals come with unlimited refills. Many dishes are naturally gluten-free and vegan-friendly.
+          </p>
+        </div>
+
+        <!-- ====== SUNDAY PANE ====== -->
+        <div class="menu-pane" data-pane="sunday" role="tabpanel">
+          <p class="pane-intro i18n"
+            data-en="Sunday is biryani day at Sri Mangalam. The full Chettinad biryani — long-grain basmati slow-cooked with hand-ground masala and tender meat. The chef picks the variety each week, so you get whichever biryani is being made."
+            data-jp="日曜日はスリ・マンガラムのビリヤニの日。手挽きのマサラと柔らかな肉、長粒バスマティ米でじっくり仕上げる本格チェティナード・ビリヤニ。シェフが週替わりで具材を選ぶので、その週のビリヤニが楽しめます。">
+            Sunday is biryani day at Sri Mangalam. The full Chettinad biryani — long-grain basmati slow-cooked with
+            hand-ground masala and tender meat.
+          </p>
+
+          <div class="menu-single">
+            <div class="menu-cat">
+              <h3 class="i18n" data-en="Sunday Biryani" data-jp="日曜ビリヤニ">Sunday Biryani</h3>
+              <p class="sub i18n" data-en="Sundays only · weekly variety changes" data-jp="日曜限定 · 週によって種類が変わります">
+                Sundays only · weekly variety changes</p>
+              <div class="menu-item"><span class="name i18n" data-en="Chicken Biryani" data-jp="チキンビリヤニ">Chicken
+                  Biryani</span><span class="price">¥1,400</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Mutton Biryani" data-jp="マトンビリヤニ">Mutton
+                  Biryani</span><span class="price">¥1,600</span></div>
+            </div>
+          </div>
+
+          <p class="menu-foot i18n"
+            data-en="Sundays sell out fast — call ahead to reserve a portion. The Sunday menu also includes the full dinner menu after 17:30."
+            data-jp="日曜のビリヤニは早くに売り切れることがあります。お電話でお取り置きを承ります。日曜の17:30以降は通常のディナーメニューもご利用いただけます。">
+            Sundays sell out fast — call ahead to reserve a portion.</p>
+        </div>
+
       </div>
     </section>
 
@@ -753,7 +1287,7 @@
           </a>
           <a href="assets/gallery/2026-02-21_02-28-14_UTC_1.jpg" target="_blank" rel="noopener">
             <img src="assets/gallery/2026-02-21_02-28-14_UTC_1.jpg" loading="lazy"
-              alt="Crisp golden dosa fresh off the cast-iron griddle at Sri Mangalam">
+              alt="Crisp golden dosai fresh off the cast-iron griddle at Sri Mangalam">
           </a>
           <a href="assets/gallery/2026-02-21_02-28-14_UTC_2.jpg" target="_blank" rel="noopener">
             <img src="assets/gallery/2026-02-21_02-28-14_UTC_2.jpg" loading="lazy"
@@ -794,6 +1328,10 @@
           <a href="assets/gallery/2026-01-04_02-03-20_UTC.jpg" target="_blank" rel="noopener">
             <img src="assets/gallery/2026-01-04_02-03-20_UTC.jpg" loading="lazy"
               alt="A close-up of Chettinad spice work at Sri Mangalam Soshigaya-Okura">
+          </a>
+          <a href="assets/gallery/sri-mangalam-banquet.jpg" target="_blank" rel="noopener">
+            <img src="assets/gallery/sri-mangalam-banquet.jpg" loading="lazy"
+              alt="Chef Mahalingam serving guests at a long banquet table set with banana leaves and beer mugs at Sri Mangalam Soshigaya-Okura">
           </a>
         </div>
 
@@ -843,6 +1381,8 @@
               data-te="మమ్మల్ని కనుగొనండి" data-ml="ഞങ്ങളെ കണ്ടെത്തുക" data-kn="ನಮ್ಮನ್ನು ಹುಡುಕಿ">Find us</h4>
             <a href="https://www.instagram.com/srimangalam_soshigaya/" target="_blank" rel="noopener">Instagram
               ↗</a>
+            <a href="https://www.youtube.com/@SriMangalamTV" target="_blank" rel="noopener">YouTube ↗</a>
+            <a href="https://twitter.com/srimangalam2" target="_blank" rel="noopener">Twitter ↗</a>
             <!-- TODO: replace with the canonical Tabelog page URL once confirmed -->
             <a href="https://tabelog.com/en/rstLst/?sk=Sri+Mangalam&amp;sa=&amp;LstRange=4" target="_blank"
               rel="noopener">Tabelog ↗</a>
@@ -864,7 +1404,13 @@
 
   <footer>
     <p>© 2026 Sri Mangalam Soshigaya-Okura · スリマンガラム 祖師ヶ谷大蔵店</p>
-    <p><a href="https://www.instagram.com/srimangalam_soshigaya/" target="_blank" rel="noopener">@srimangalam_soshigaya</a></p>
+    <p>
+      <a href="https://www.instagram.com/srimangalam_soshigaya/" target="_blank" rel="noopener">Instagram</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.youtube.com/@SriMangalamTV" target="_blank" rel="noopener">YouTube</a>
+      &nbsp;·&nbsp;
+      <a href="https://twitter.com/srimangalam2" target="_blank" rel="noopener">Twitter</a>
+    </p>
   </footer>
 
   <!-- ============== Script ============== -->
@@ -872,7 +1418,8 @@
     (function () {
       const LANGS = ["en", "jp", "hi", "ta", "te", "ml", "kn"];
       const state = {
-        lang: localStorage.getItem("lang-preference") || "en"
+        lang: localStorage.getItem("lang-preference") || "en",
+        tab: null
       };
       if (!LANGS.includes(state.lang)) state.lang = "en";
 
@@ -885,6 +1432,8 @@
       const burger = $("#burger");
       const navLinks = $("#topnav-links");
       const topnav = $("#topnav");
+      const tabs = $$(".menu-tab");
+      const panes = $$(".menu-pane");
 
       // ---- i18n ----
       function applyLang() {
@@ -907,6 +1456,29 @@
           langMenu.classList.remove("open");
           langToggle.setAttribute("aria-expanded", "false");
         });
+      });
+
+      // ---- Day-aware default tab ----
+      function pickDefaultTab() {
+        const stored = localStorage.getItem("menu-tab");
+        if (stored && ["lunch", "dinner", "sunday"].includes(stored)) return stored;
+        const d = new Date();
+        const day = d.getDay();      // 0 = Sun, 6 = Sat
+        const hour = d.getHours();
+        if (day === 0) return "sunday";
+        if (hour >= 11 && hour < 15) return "lunch";
+        return "dinner";
+      }
+
+      function setTab(tab, persist) {
+        state.tab = tab;
+        tabs.forEach(t => t.classList.toggle("active", t.dataset.tab === tab));
+        panes.forEach(p => p.classList.toggle("active", p.dataset.pane === tab));
+        if (persist) localStorage.setItem("menu-tab", tab);
+      }
+
+      tabs.forEach(t => {
+        t.addEventListener("click", () => setTab(t.dataset.tab, true));
       });
 
       // ---- Lang dropdown toggle ----
@@ -952,6 +1524,7 @@
 
       // ---- Init ----
       applyLang();
+      setTab(pickDefaultTab(), false);
     })();
   </script>
 
