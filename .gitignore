@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+._*
+
+# Node / leftover Vite scaffolding (project is intentionally no-build)
+node_modules/
+.vite/
+dist/
+*.log
+
+# Heavy local-only reference dump (Instagram archive, council notes, etc.)
+References/
+
+# Editor / OS noise
+*.swp
+*.swo
+.vscode/
+.idea/
+Thumbs.db

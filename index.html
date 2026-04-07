@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Sri Mangalam | Authentic South Indian Soul Food</title>
+
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      /* Exact XS-Site Design Tokens */
+      --bg-color: #0a0a0a;
+      --card-bg: #141414;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1a1;
+      --accent: #ff9933;
+      /* Saffron Glow */
+      --border-color: rgba(255, 255, 255, 0.1);
+      --glass-bg: rgba(20, 20, 20, 0.7);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-color: #f7f7f7;
+      --card-bg: #eaeaea;
+      --text-primary: #121212;
+      --text-secondary: #555555;
+      --accent: #1f6a56;
+      /* Emerald */
+      --border-color: rgba(0, 0, 0, 0.1);
+      --glass-bg: rgba(255, 255, 255, 0.85);
+    }
+
+    [data-theme="saffron"] {
+      --bg-color: #1a0b2e;
+      /* Darker base for saffron vibrancy */
+      --bg-gradient: linear-gradient(90deg, #ff9933, #d35400, #ff9933);
+      --bg-size: 200% 100%;
+      --bg-anim: rainbowMotion 10s linear infinite;
+      --card-bg: rgba(0, 0, 0, 0.75);
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.8);
+      --accent: #ff9933;
+      --border-color: rgba(255, 153, 51, 0.3);
+      --glass-bg: rgba(10, 10, 15, 0.7);
+    }
+
+    [data-theme="rainbow"] {
+      --bg-color: #1a0b2e;
+      --bg-gradient: linear-gradient(90deg, #ff2a2a, #ff7a00, #ffc900, #2eea2e, #00a8ff, #8a2be2, #e056fd, #ff2a2a);
+      --bg-size: 800% 100%;
+      --bg-anim: rainbowMotion 20s linear infinite;
+      --card-bg: rgba(0, 0, 0, 0.75);
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.85);
+      --accent: #ffffff;
+      --border-color: rgba(255, 255, 255, 0.2);
+      --glass-bg: rgba(10, 10, 15, 0.6);
+    }
+
+    [data-theme="calm"] {
+      --bg-color: #f0f4f8;
+      --card-bg: #ffffff;
+      --text-primary: #2d3748;
+      --text-secondary: #718096;
+      --accent: #4299e1;
+      /* Soft Blue */
+      --border-color: rgba(66, 153, 225, 0.2);
+      --glass-bg: rgba(255, 255, 255, 0.85);
+    }
+
+    [data-theme="nature"] {
+      --bg-color: #0f1712;
+      --bg-gradient: linear-gradient(135deg, #0f1712, #1a2e20);
+      --card-bg: rgba(20, 30, 20, 0.8);
+      --text-primary: #e2e8f0;
+      --text-secondary: #a0aec0;
+      --accent: #48bb78;
+      /* Leaf Green */
+      --border-color: rgba(72, 187, 120, 0.2);
+      --glass-bg: rgba(10, 15, 12, 0.7);
+    }
+
+    @keyframes rainbowMotion {
+      0% {
+        background-position: 100% 0%;
+      }
+
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      background-image: var(--bg-gradient, none);
+      background-size: var(--bg-size, auto);
+      animation: var(--bg-anim, none);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      transition: background-color 0.4s ease, color 0.4s ease;
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .glass-panel {
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Typography */
+    h1,
+    h2,
+    h3 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .uppercase {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.8rem;
+    }
+
+    .text-secondary {
+      color: var(--text-secondary);
+    }
+
+    /* Sections */
+    section {
+      padding: clamp(60px, 10vh, 120px) 20px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .hero {
+      min-height: 80vh;
+      /* Reduced from 100vh for higher density */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('assets/gallery/2026-02-22_02-03-00_UTC_1.jpg') center/cover no-repeat;
+      border-top: none;
+      padding: clamp(40px, 8vh, 80px) 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.5rem, 15vw, 8rem);
+      line-height: 0.9;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      opacity: 0.8;
+    }
+
+    /* Content Blocks */
+    .grid {
+      display: grid;
+      gap: 40px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    .menu-category h3 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: var(--accent);
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+
+    .menu-price {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* Liquid Glass Nav 2.0: Engineered for Intent */
+    .bottom-nav {
+      position: fixed;
+      /* Dynamic positioning via CSS variables & Safe Area */
+      bottom: calc(max(30px, env(safe-area-inset-bottom)) + var(--nav-offset, 0px));
+      left: 50%;
+      transform: translateX(-50%) translate3d(var(--nav-shake-x, 0px), var(--nav-shake-y, 0px), 0) rotate(var(--nav-rotation, 0deg));
+
+      /* Morphing Dimensions */
+      width: var(--nav-width, auto);
+      min-width: 60px;
+      height: var(--nav-height, 64px);
+      padding: var(--nav-padding, 12px 30px);
+      border-radius: var(--nav-radius, 40px);
+
+      z-index: 1000;
+      display: flex;
+      gap: var(--nav-gap, 25px);
+      align-items: center;
+      justify-content: center;
+
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+
+      /* Physics-ready transitions for non-JS states */
+      transition: background 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
+      overflow: hidden;
+
+      /* Dual Layer Glass Fidelity */
+      backdrop-filter: blur(var(--nav-blur, 16px));
+      -webkit-backdrop-filter: blur(var(--nav-blur, 16px));
+    }
+
+    /* Noise and Highlight Overlays */
+    .bottom-nav::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+    }
+
+    .bottom-nav::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.1) 100%);
+      pointer-events: none;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      opacity: var(--nav-item-opacity, 0.8);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .nav-item span {
+      display: var(--nav-label-display, block);
+      opacity: var(--nav-label-opacity, 1);
+      transform: translateY(var(--nav-label-y, 0px));
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-item.active,
+    .nav-item:hover {
+      color: var(--text-primary);
+      opacity: 1;
+    }
+
+    .nav-icon {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .nav-item:hover .nav-icon {
+      transform: scale(1.15) translateY(-2px);
+    }
+
+    /* Internal Submenu Morph - Contained inside .bottom-nav */
+    .internal-submenu {
+      display: none;
+      /* Controlled by JS height expansion */
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+      padding: 15px 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .internal-submenu.visible {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .submenu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .submenu-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid transparent;
+      border-radius: 12px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .submenu-item:hover,
+    .submenu-item.active {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Cookie Animation */
+    .animated-cookie {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      margin-left: -25px;
+      z-index: 9999;
+      width: 50px;
+      height: 50px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .animated-cookie.rolling {
+      animation: rollIntoMenu 0.8s cubic-bezier(0.25, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes rollIntoMenu {
+      0% {
+        transform: translateY(-80px) rotate(0deg) scale(1.5);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 1;
+      }
+
+      75% {
+        transform: translateY(-20px) rotate(-360deg) scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(10px) rotate(-720deg) scale(0);
+        opacity: 0;
+      }
+    }
+
+    .cookie-popup {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      margin-left: -160px;
+      width: 320px;
+      padding: 24px;
+      border-radius: 16px;
+      z-index: 1000;
+      transform-origin: bottom center;
+      transform: scale(1) translateY(0);
+      opacity: 1;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .cookie-popup.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.2) translateY(80px);
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-switch .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .toggle-switch .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    .toggle-switch input:checked+.slider {
+      background-color: #4CAF50;
+    }
+
+    .toggle-switch input:checked+.slider:before {
+      transform: translateX(20px);
+    }
+
+    footer {
+      padding: 100px 20px 200px;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+      opacity: 0.5;
+      font-size: 0.8rem;
+    }
+
+    .current-indicator.hidden {
+      display: none !important;
+    }
+
+    /* Liquid Ripple Effect */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(0);
+      animation: rippleEffect 0.6s ease-out;
+      pointer-events: none;
+      filter: blur(4px);
+    }
+
+    @keyframes rippleEffect {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 4rem;
+      }
+
+      section {
+        padding: clamp(40px, 6vh, 80px) 20px;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <header class="hero" id="home">
+    <h1 class="i18n" data-en="Sri Mangalam" data-jp="スリマンガラム">Sri Mangalam</h1>
+    <p class="i18n uppercase" data-en="Authentic South Indian Soul Food" data-jp="本場南インドのソウルフード">Authentic South Indian
+      Soul Food</p>
+  </header>
+
+  <!-- The Gateway: Social & Contact -->
+  <section id="gateway" class="container">
+    <div class="grid grid-3" style="gap: 20px;">
+      <div class="glass-panel"
+        style="padding: 30px; text-align: center; border-radius: 20px; transition: var(--spring);">
+        <div style="font-size: 2rem; margin-bottom: 15px;">📸</div>
+        <h4 class="i18n" data-en="Instagram" data-jp="インスタグラム" data-hi="इंस्टाग्राम" data-ta="இன்ஸ்டாகிராம்"
+          data-te="ఇన్‌స్టాగ్రామ్" data-ml="ഇൻസ്റ്റാഗ്രാം" data-kn="ಇನ್‌ಸ್ಟಾಗ್ರಾಮ್">Instagram</h4>
+        <p class="text-secondary i18n" data-en="Follow our spice journey" data-jp="スパイスの旅をフォロー"
+          data-hi="हमारी मसाला यात्रा का पालन करें" data-ta="எங்கள் மசாலா பயணத்தை பின்பற்றவும்"
+          data-te="మా మసాలా ప్రయాణాన్ని అనుసరించండి" data-ml="ഞങ്ങളുടെ സുഗന്ധവ്യഞ്ജന യാത്ര പിന്തുടരുക"
+          data-kn="ನಮ್ಮ ಮಸಾಲೆ ಪ್ರಯಾಣವನ್ನು ಅನುಸರಿಸಿ">Follow our spice journey</p>
+        <a href="https://www.instagram.com/srimangalam_soshigaya/" target="_blank" class="submenu-item active i18n"
+          style="margin-top: 20px; text-align: center; justify-content: center;" data-en="View Feed" data-jp="フィードを見る"
+          data-hi="फ़ीड देखें" data-ta="ஃபீடைப் பார்க்கவும்" data-te="ఫీడ్‌ని వీక్షించండి" data-ml="ഫീഡ് കാണുക"
+          data-kn="ಫೀಡ್ ವೀಕ್ಷಿಸಿ">View Feed</a>
+      </div>
+      <div class="glass-panel"
+        style="padding: 30px; text-align: center; border-radius: 20px; transition: var(--spring);">
+        <div style="font-size: 2rem; margin-bottom: 15px;">📺</div>
+        <h4 class="i18n" data-en="YouTube" data-jp="ユーチューブ" data-hi="यूट्यूब" data-ta="யூடியூப்" data-te="యూట్యూబ్"
+          data-ml="யூട്യൂബ്" data-kn="ಯೂಟ್ಯೂಬ್">YouTube</h4>
+        <p class="text-secondary i18n" data-en="Chef Maha's Secrets" data-jp="シェフ・マハの秘密" data-hi="शेफ महा के रहस्य"
+          data-ta="செஃப் மகாவின் ரகசியங்கள்" data-te="చెఫ్ మహా రహస్యాలు" data-ml="ഷെഫ് മഹയുടെ രഹസ്യങ്ങൾ"
+          data-kn="ಬಾಣಸಿಗ ಮಹಾ ಅವರ ರಹಸ್ಯಗಳು">Chef Maha's Secrets</p>
+        <a href="https://www.youtube.com/@SriMangalam" target="_blank" class="submenu-item i18n"
+          style="margin-top: 20px; text-align: center; justify-content: center;" data-en="Subscribe" data-jp="登録する"
+          data-hi="सब्सक्राइब" data-ta="சந்தாதாரராக" data-te="సబ్‌స్క్రయిబ్" data-ml="സബ്സ്ക്രൈബ്"
+          data-kn="ಸದಸ್ಯರಾಗಿ">Subscribe</a>
+      </div>
+      <div class="glass-panel"
+        style="padding: 30px; text-align: center; border-radius: 20px; transition: var(--spring);">
+        <div style="font-size: 2rem; margin-bottom: 15px;">📞</div>
+        <h4 class="i18n" data-en="Quick Contact" data-jp="お問い合わせ" data-hi="त्वरित संपर्क" data-ta="விரைவான தொடர்பு"
+          data-te="త్వరిత పరిచయం" data-ml="ദ്രുത കോൺടാക്റ്റ്" data-kn="ತ್ವರಿತ ಸಂಪರ್ಕ">Quick Contact</h4>
+        <p class="text-secondary">+81 3-6676-2812</p>
+        <a href="tel:+81366762812" class="submenu-item i18n"
+          style="margin-top: 20px; text-align: center; justify-content: center;" data-en="Call Now" data-jp="今すぐ電話"
+          data-hi="अभी कॉल करें" data-ta="இப்போதே அழைக்கவும்" data-te="ఇప్పుడే కాల్ చేయండి" data-ml="ഇപ്പോൾ വിളിക്കുക"
+          data-kn="ಈಗ ಕರೆ ಮಾಡಿ">Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Sections -->
+  <section id="about" class="container">
+    <div class="grid grid-2" style="align-items: center;">
+      <div class="glass-panel" style="padding: 0; overflow: hidden; border-radius: 16px;">
+        <img src="assets/gallery/2026-01-30_10-02-13_UTC.jpg" alt="Chef"
+          style="width: 100%; display: block; filter: saturate(1.1);">
+      </div>
+      <div>
+        <h2 class="uppercase text-secondary i18n" data-en="The Master" data-jp="職人" data-hi="मास्टर" data-ta="மாஸ்டர்"
+          data-te="మాస్టర్" data-ml="മാസ്റ്റർ" data-kn="ಮಾಸ್ಟರ್">The Master</h2>
+        <h3 style="font-size: 2.5rem; margin-top: 10px;" class="i18n" data-en="Chef Mahalingam" data-jp="シェフ・マハリンガム"
+          data-hi="शेफ महालिंगम" data-ta="செஃப் மகாலிங்கம்" data-te="చెఫ్ మహాలింగం" data-ml="ഷെഫ് മഹാലിംഗം"
+          data-kn="ಬಾಣಸಿಗ ಮಹಾಲಿಂಗಂ">
+          Chef Mahalingam</h3>
+        <p style="margin-top: 30px; font-size: 1.1rem;" class="i18n"
+          data-en="Decades of precision on the cast iron, serving the bold and unapologetic soul of Chettinad cuisine."
+          data-jp="鉄板の上で数十年磨き続けた職人技。チェティナード料理の大胆で妥協のない魂を提供します。"
+          data-hi="कास्ट आयरन पर दशकों की सटीकता, चेट्टीनाड व्यंजनों की साहसिक और निर्भीक आत्मा परोसना।"
+          data-ta="வாணலியில் பல தசாப்த கால துல்லியம், செட்டிநாடு உணவு வகைகளின் தைரியமான மற்றும் சமரசமற்ற ஆன்மாவை வழங்குகிறது."
+          data-te="కాస్ట్ ఐరన్‌పై దశాబ్దాల ఖచ్చితత్వం, చెట్టినాడ్ వంటకాల యొక్క సాహసోపేతమైన మరియు రాజీపడని ఆత్మను వడ్డిస్తుంది."
+          data-ml="കാസ്റ്റ് അയേണിലെ പതിറ്റാണ്ടുകളുടെ കൃത്യത, ചെട്ടിനാട് പാചകരീതിയുടെ ധീരവും വിട്ടുവീഴ്ചയില്ലാത്തതുമായ ആത്മാവിനെ വിളമ്പുന്നു."
+          data-kn="ಎರಕಹೊಯ್ದ ಕಬ್ಬಿಣದ ಮೇಲಿನ ದಶಕಗಳ ನಿಖರತೆ, ಚೆಟ್ಟಿನಾಡ್ ಪಾಕಪದ್ಧತಿಯ ದಿಟ್ಟ ಮತ್ತು ರಾಜಿ ಮಾಡಿಕೊಳ್ಳದ ಆತ್ಮವನ್ನು ಬಡಿಸುವುದು।">
+          Decades of precision on the cast iron, serving the bold and unapologetic soul of Chettinad cuisine.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Heritage Timeline: A Vertical Journey -->
+  <section id="heritage" class="container" style="padding-top: 100px;">
+    <h2 class="uppercase text-secondary i18n" data-en="The Heritage Timeline" data-jp="伝統の軌跡"
+      data-hi="विरासत की समयरेखा" data-ta="பாரம்பரிய காலவரிசை" data-te="హెరిటేజ్ టైమ్ లైన్" data-ml="പൈതൃక കാലயളവ്"
+      data-kn="ಪರಂಪರೆಯ ಕಾಲಾನುಕ್ರಮ">The Heritage
+      Timeline</h2>
+    <div style="position: relative; margin-top: 60px; padding-left: 40px; border-left: 2px solid var(--accent);">
+      <div class="glass-panel" style="padding: 25px; border-radius: 20px; margin-bottom: 40px; position: relative;">
+        <div
+          style="position: absolute; left: -51px; top: 30px; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 15px var(--accent);">
+        </div>
+        <h4 style="color: var(--accent);">1990 — The Chennai Roots</h4>
+        <p class="i18n"
+          data-en="It began in the heart of Chennai. Chef Mahalingam starts his journey mastering the art of the 24-hour fermentation."
+          data-jp="すべての始まりはチェンナイの心臓部。シェフ・マハリンガムが24時間発酵技術の習得を開始しました。"
+          data-hi="इसकी शुरुआत चेन्नई के केंद्र में हुई थी। शेफ महालिंगम ने 24 घंटे की किण्वन की कला में महारत हासिल करने की अपनी यात्रा शुरू की।"
+          data-ta="இது சென்னையின் மையப்பகுதியில் தொடங்கியது. செஃப் மகாலிங்கம் 24 மணிநேர நொதித்தல் கலையில் தேர்ச்சி பெறும் தனது பயணத்தைத் தொடங்குகிறார்."
+          data-te="ఇది చెన్నై నడిబొడ్డున ప్రారంభమైంది. చెఫ్ మహాలింగం 24 గంటల కిణ్వ ప్రక్రియ కళలో ప్రావీణ్యం సంపాదించే తన ప్రయాణాన్ని ప్రారంభించాడు."
+          data-ml="ഇത് ചെന്നൈയുടെ ഹൃദയഭാഗത്താണ് തുടങ്ങിയത്. 24 മണിക്കൂർ അഴുകൽ കലയിൽ വൈദഗ്ദ്ധ്യം നേടിക്കൊണ്ട് ഷೆഫ് മഹാലിംഗം തന്റെ യാത്ര ആരംഭിക്കുന്നു."
+          data-kn="ಇದು ಚೆಟ್ಟಿನೈ ನ ಹೃದಯಭಾಗದಲ್ಲಿ ಪ್ರಾರಂಭವಾಯಿತು. ಬಾಣಸಿಗ ಮಹಲಿಂಗಂ ಅವರು 24 ಗಂಟೆಗಳ ಹುದುಗುವಿಕೆಯ ಕಲೆಯನ್ನು ಕರಗತ ಮಾಡಿಕೊಳ್ಳುವ ಮೂಲಕ ತಮ್ಮ ಪ್ರಯಾಣವನ್ನು ಪ್ರಾರಂಭಿಸುತ್ತಾರೆ.">
+          It began in the heart of Chennai. Chef Mahalingam starts his journey mastering the art of the 24-hour
+          fermentation.</p>
+      </div>
+      <div class="glass-panel" style="padding: 25px; border-radius: 20px; margin-bottom: 40px; position: relative;">
+        <div
+          style="position: absolute; left: -51px; top: 30px; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 15px var(--accent);">
+        </div>
+        <h4 style="color: var(--accent);">2005 — The Global Call</h4>
+        <p class="i18n"
+          data-en="Chef Maha travels across South Asia, perfecting Chettinad spice blends for an international palate while maintaining the ridge-fidelity of tradition."
+          data-jp="シェフ・マハは南アジアを旅し、伝統の忠実さを維持しながら、国際的な味覚に合わせたチェティナード・スパイス・ブレンドを完成させました。"
+          data-hi="शेफ महा दक्षिण एशिया की यात्रा करते हैं, परंपरा की निष्ठा को बनाए रखते हुए अंतरराष्ट्रीय स्वाद के लिए चेट्टीनाड मसाला मिश्रणों को पूर्ण करते हैं।"
+          data-ta="செஃப் மஹா தெற்காசியா முழுவதும் பயணம் செய்கிறார், பாரம்பரியத்தின் நம்பகத்தன்மையை பராமரிக்கும் அதே வேளையில் சர்வதேச அண்ணத்திற்காக செட்டிநாடு மசாலா கலவைகளை முழுமையாக்குகிறார்."
+          data-te="చెఫ్ మహా దక్షిణాసియా అంతటా ప్రయాణిస్తాడు, సాంప్రదాయం యొక్క విశ్వసనీయతను కాపాడుకుంటూ అంతర్జాతీయ రుచి కోసం చెట్టినాడు మసాలా మిశ్రమాలను పరిపూర్ణం చేస్తాడు."
+          data-ml="പരമ്പരാഗതമായ തനിമ നിലനിർത്തിക്കൊണ്ട് ഷെഫ് മഹ ദക്ഷിണേഷ്യയിലുടനീളം സഞ്ചരിക്കുകയും വ്യത്യസ്ത സുగന്ധവ്യഞ്ജന മിശ്രിതങ്ങൾ വിకസിപ്പിക്കുകയും ചെയ്തു."
+          data-kn="ಬಾಣಸಿಗ ಮಹಾ ಅವರು ದಕ್ಷಿಣ ಏಷ್ಯಾದಾದ್ಯಂತ ಪ್ರಯಾಣಿಸುತ್ತಾರೆ, ಸಂಪ್ರದಾಯದ ನಿಷ್ಠೆಯನ್ನು ಕಾಯ್ದುಕೊಳ್ಳುವಾಗ ಅಂತರರಾಷ್ಟ್ರೀಯ ರುಚಿಗೆ ತಕ್ಕಂತೆ ಚೆಟ್ಟಿನಾಡ್ ಮಸಾಲೆ ಮಿಶ್ರಣಗಳನ್ನು ಪರಿಪೂರ್ಣಗೊಳಿಸುತ್ತಾರೆ.">
+          Chef Maha travels across South East Asia, perfecting blends for the world.</p>
+      </div>
+      <div class="glass-panel" style="padding: 25px; border-radius: 20px; margin-bottom: 40px; position: relative;">
+        <div
+          style="position: absolute; left: -51px; top: 30px; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 15px var(--accent);">
+        </div>
+        <h4 style="color: var(--accent);">2015 — Tokyo Entry</h4>
+        <p class="i18n"
+          data-en="The first authentic Chettinad kitchen in Tokyo opens. Sri Mangalam becomes the benchmark for South Indian soul food in Japan."
+          data-jp="東京で最初の本物のチェティナード・キッチンがオープン。スリ・マンガラムは日本における南インド料理のベンチマークとなりました。"
+          data-hi="टोक्यो में पहली प्रामाणिक चेट्टीनाड रसोई खुली। श्री मंगलम जापान में दक्षिण भारतीय सोल फूड के लिए मानक बन गया।"
+          data-ta="டோக்கியோவில் முதல் உண்மையான செட்டிநாடு சமையலறை திறக்கப்பட்டது. ஸ்ரீ மங்களம் ஜப்பானில் தென்னிந்திய ஆன்மா உணவிற்கான அளவுகோலாக மாறுகிறது."
+          data-te="టోక్యోలో మొదటి ప్రామాణిక చెట్టినాడు వంటగది ప్రారంభమైంది. శ్రీ మంగళం జపాన్‌లో దక్షిణాది ఆత్మ ఆహారానికి గీటురాయిగా మారుతుంది."
+          data-ml="ടോക്കിയോയിലെ ആദ്യത്തെ ആധികാരിക ചെട്ടിനാട് അടുക്കള തുറക്കുന്നു. ശ്രീ മംഗളം ജപ്പാനിലെ ദക്ഷിണേന്ത്യൻ ഭക്ഷണത്തിന്റെ മാനദണ്ഡമായി മാറുന്നു."
+          data-kn="ಟೋಕಿಯೊದಲ್ಲಿ ಮೊದಲ ಅಧಿಕೃತ ಚೆಟ್ಟಿನಾಡ್ ಅಡುಗೆಮನೆ ತೆರೆಯುತ್ತದೆ. ಶ್ರೀ ಮಂಗಳಂ ಜಪಾನ್‌ನಲ್ಲಿ ದಕ್ಷಿಣ ಭಾರತದ ಆತ್ಮ ಆಹಾರದ ಮಾನದಂಡವಾಗುತ್ತದೆ.">
+          The first authentic kitchen in Tokyo opens.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Content: Dining Etiquette -->
+  <section id="etiquette" class="container">
+    <h2 class="uppercase text-secondary i18n" data-en="The Experience" data-jp="体験" data-hi="अनुभव" data-ta="அனுபவம்"
+      data-te="అనుభవం" data-ml="അനുഭവം" data-kn="ಅನುಭವ">The Experience</h2>
+    <h3 style="font-size: 2.5rem; margin-bottom: 40px;" class="i18n" data-en="How to Eat Like a Local" data-jp="地元の作法"
+      data-hi="स्थानीय लोगों की तरह कैसे खाएं" data-ta="உள்ளூர்வாசிகளைப் போல சாப்பிடுவது எப்படி"
+      data-te="స్థానికుల్లాగా ఎలా తినాలి" data-ml="തദ്ദേശവാസികളെപ്പോലെ എങ്ങനെ കഴിക്കാം"
+      data-kn="ಸ್ಥಳೀಯರಂತೆ ತಿನ್ನುವುದು ಹೇಗೆ">How to Eat Like a Local</h3>
+
+    <div class="grid grid-2">
+      <div class="glass-panel" style="padding: 30px; border-radius: 16px;">
+        <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--accent);" class="i18n"
+          data-en="The Right Hand Rule" data-jp="右手の法則" data-hi="दाहिने हाथ का नियम" data-ta="வலது கை விதி"
+          data-te="కుడి చేతి నియమం" data-ml="വലത് കൈ നിയമം" data-kn="ಬಲಗೈ ನಿಯಮ">The Right Hand Rule</h4>
+        <p class="i18n"
+          data-en="In South India, eating with your hands is a sensory experience. Always use your right hand for eating. The left hand is reserved for serving and holding glasses."
+          data-jp="南インドでは、手で食べることは五感を使った体験です。常に右手を使って食べましょう。左手は給仕やグラスを持つために使います。"
+          data-hi="दक्षिण भारत में, हाथों से खाना एक संवेदी अनुभव है। खाने के लिए हमेशा अपने दाहिने हाथ का इस्तेमाल करें। बायां हाथ परोसने और गिलास पकड़ने के लिए आरक्षित है।"
+          data-ta="தென்னிந்தியாவில், கைகளால் சாப்பிடுவது ஒரு உணர்வுபூர்வமான அனுபவம். சாப்பிடுவதற்கு எப்போதும் வலது கையைப் பயன்படுத்தவும். இடது கை பரிமாறுவதற்கும் கண்ணாடிகளைப் பிடிப்பதற்கும் ஒதுக்கப்பட்டுள்ளது."
+          data-te="దక్షిణ భారతదేశంలో, చేతులతో తినడం ఒక ఇంద్రియ అనుభవం. తినడానికి ఎల్లప్పుడూ మీ కుడి చేతిని ఉపయోగించండి. ఎడమ చేయి వడ్డించడానికి మరియు గ్లాసులను పట్టుకోవడానికి కేటాయించబడింది."
+          data-ml="ദക്ഷിണേന്ത്യയിൽ, കൈകൊണ്ട് കഴിക്കുന്നത് ഒരു ഇന്ദ്രിയ അനുഭവമാണ്. കഴിക്കാൻ എപ്പോഴും നിങ്ങളുടെ വലതു കൈ ഉപയോഗിക്കുക. ഇടത് കൈ വിളമ്പുന്നതിനും ഗ്ലാസുകൾ പിടിക്കുന്നതിനും നീക്കിവച്ചിരിക്കുന്നു."
+          data-kn="ದಕ್ಷಿಣ ಭಾರತದಲ್ಲಿ, ಕೈಗಳಿಂದ ತಿನ್ನುವುದು ಒಂದು ಇಂದ್ರಿಯ ಅನುಭವವಾಗಿದೆ. ತಿನ್ನಲು ಯಾವಾಗಲೂ ನಿಮ್ಮ ಬಲಗೈಯನ್ನು ಬಳಸಿ. ಎಡಗೈಯನ್ನು ಬಡಿಸಲು ಮತ್ತು ಗ್ಲಾಸ್ಗಳನ್ನು ಹಿಡಿದಿಡಲು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.">
+          In South India, eating with your hands is a sensory experience. Always use your right hand for eating. The
+          left hand is reserved for serving and holding glasses.</p>
+      </div>
+      <div class="glass-panel" style="padding: 30px; border-radius: 16px;">
+        <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--accent);" class="i18n"
+          data-en="The Banana Leaf Architecture" data-jp="バナナの葉の構造" data-hi="केले के पत्ते की वास्तुकला"
+          data-ta="வாழை இலை கட்டிடக்கலை" data-te="అరటి ఆకు వాస్తుశిల్పం" data-ml="വാഴയില വാസ്തുവിദ്യ"
+          data-kn="ಬಾಳೆ ಎಲೆ ವಾಸ್ತುಶಿಲ್ಪ">The Banana Leaf Architecture</h4>
+        <p class="i18n"
+          data-en="The leaf is more than a plate; it's a map. Sweets and snacks occupy the top half. Rice forms the foundation at the bottom center. Curries encircle the rice. Once finished, fold the leaf towards you to signify a satisfying meal."
+          data-jp="葉はお皿以上のもので、地図のようなものです。上部にはスイーツやスナックが、下部中央にはご飯が盛られます。カレーはご飯を囲みます。食べ終わったら、満足のしるしとして葉を手前に折りたたみます。"
+          data-hi="पत्ता एक प्लेट से बढ़कर है; यह एक नक्शा है। मिठाइयाँ और स्नैक्स ऊपरी आधे हिस्से पर कब्जा करते हैं। चावल निचले केंद्र में नींव बनाते हैं। करी चावल को घेरती है। समाप्त होने पर, संतोषजनक भोजन को दर्शाने के लिए पत्ते को अपनी ओर मोड़ें।"
+          data-ta="இலை ஒரு தட்டை விட அதிகம்; அது ஒரு வரைபடம். இனிப்புகள் மற்றும் தின்பண்டங்கள் மேல் பாதியை ஆக்கிரமித்துள்ளன. அரிசி கீழ் மையத்தில் அடித்தளத்தை உருவாக்குகிறது. கறிகள் அரிசியை சுற்றி உள்ளன. முடித்தவுடன், திருப்திகரமான உணவைக் குறிக்க இலையை உங்களை நோக்கி மடிக்கவும்."
+          data-te="ఆకు కేవలం ప్లేట్ మాత్రమే కాదు; అది ఒక మ్యాప్. స్వీట్లు మరియు స్నాక్స్ పై భాగాన్ని ఆక్రమిస్తాయి. బియ్యం దిగువ మధ్యలో పునాదిని ఏర్పరుస్తుంది. కూరలు అన్నం చుట్టూ ఉంటాయి. పూర్తయిన తర్వాత, సంతృప్తికరమైన భోజనాన్ని సూచించడానికి ఆకును మీ వైపుకి మడిచిపెట్టండి."
+          data-ml="ഇല ഒരു പ്ലേറ്റിനേക്കാൾ കൂടുതലാണ്; അതൊരു ഭൂപടമാണ്. മധുരപലഹാരങ്ങളും ലഘുഭക്ഷണങ്ങളും മുകൾ പകുതിയിൽ സ്ഥാനം പിടിക്കുന്നു. അരി താഴെ മധ്യഭാഗത്ത് അടിത്തറ ഉണ്ടാക്കുന്നു. കറികൾ ചോറിനെ ചുറ്റുന്നു. പൂർത്തിയാകുമ്പോൾ, തൃപ്തികരമായ ഭക്ഷണം സൂചിപ്പിക്കാൻ ഇല നിങ്ങളുടെ അടുത്തേക്ക് മടക്കുക."
+          data-kn="ಎಲೆಯು ಕೇವಲ ತಟ್ಟೆಗಿಂತ ಹಚ್ಚಿನದ್ದಾಗಿದೆ; ಇದು ಒಂದು ನಕ್ಷೆ. ಸಿಹಿತಿಂಡಿಗಳು ಮತ್ತು ತಿಂಡಿಗಳು ಮೇಲಿನ ಅರ್ಧಭಾಗವನ್ನು ಆಕ್ರಮಿಸುತ್ತವೆ. ಅಕ್ಕಿ ಕೆಳಭಾಗದ ಮಧ್ಯದಲ್ಲಿ ಅಡಿಪಾಯವನ್ನು ರೂಪಿಸುತ್ತದೆ. ಮೇಲೋಗರಗಳು ಅಕ್ಕಿಯನ್ನು ಸುತ್ತುವರೆದಿವೆ. ಮುಗಿದ ನಂತರ, ತೃಪ್ತಿದಾಯಕ ಭೋಜನವನ್ನು ಸೂಚಿಸಲು ಎಲೆಯನ್ನು ನಿಮ್ಮ ಕಡೆಗೆ ಮಡಚಿ.">
+          The leaf is more than a plate; it's a map. Sweets and snacks occupy the top half. Rice forms the foundation at
+          the bottom center. Curries encircle the rice. Once finished, fold the leaf towards you to signify a satisfying
+          meal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chef Maha's Spice Cabinet: A Technical Matrix -->
+  <section id="spice-cabinet" class="container" style="padding-top: 100px;">
+    <h2 class="uppercase text-secondary i18n" data-en="The Spice Cabinet" data-jp="スパイスの小部屋" data-hi="मसाला कैबिनेट"
+      data-ta="மசாலா அமைச்சரவை" data-te="మసాలా క్యాబినెట్" data-ml="സുഗന്ധവ്യഞ്ജന കാബിനറ്റ്" data-kn="ಮಸಾಲೆ ಕ್ಯಾಬಿನೆಟ್">
+      The Spice
+      Cabinet</h2>
+    <div class="grid grid-4" style="gap: 20px; margin-top: 40px;">
+      <div class="glass-panel" style="padding: 20px; border-radius: 12px; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 10px;">🌟</div>
+        <h4 style="color: var(--accent);">Star Anise</h4>
+        <p style="font-size: 0.8rem; opacity: 0.7;">Anasifali</p>
+      </div>
+      <div class="glass-panel" style="padding: 20px; border-radius: 12px; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 10px;">🪵</div>
+        <h4 style="color: var(--accent);">Cinnamon</h4>
+        <p style="font-size: 0.8rem; opacity: 0.7;">Pattai</p>
+      </div>
+      <div class="glass-panel" style="padding: 20px; border-radius: 12px; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 10px;">🫑</div>
+        <h4 style="color: var(--accent);">Black Pepper</h4>
+        <p style="font-size: 0.8rem; opacity: 0.7;">Milagu</p>
+      </div>
+      <div class="glass-panel" style="padding: 20px; border-radius: 12px; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 10px;">🌿</div>
+        <h4 style="color: var(--accent);">Curry Leaves</h4>
+        <p style="font-size: 0.8rem; opacity: 0.7;">Kariveppilai</p>
+      </div>
+      <div class="glass-panel" style="padding: 20px; border-radius: 12px; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 10px;">🟢</div>
+        <h4 style="color: var(--accent);">Cardamom</h4>
+        <p style="font-size: 0.8rem; opacity: 0.7;">Elakkai</p>
+      </div>
+      <div class="glass-panel" style="padding: 20px; border-radius: 12px; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 10px;">🔴</div>
+        <h4 style="color: var(--accent);">Guntur Chili</h4>
+        <p style="font-size: 0.8rem; opacity: 0.7;">Milagai</p>
+      </div>
+      <div class="glass-panel" style="padding: 20px; border-radius: 12px; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 10px;">🟡</div>
+        <h4 style="color: var(--accent);">Turmeric</h4>
+        <p style="font-size: 0.8rem; opacity: 0.7;">Manjal</p>
+      </div>
+      <div class="glass-panel" style="padding: 20px; border-radius: 12px; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 10px;">🥥</div>
+        <h4 style="color: var(--accent);">Desiccated Coconut</h4>
+        <p style="font-size: 0.8rem; opacity: 0.7;">Thengai</p>
+      </div>
+    </div>
+
+    <!-- Detailed Menu: The Infinite Compendium -->
+    <section id="menu" class="container" style="padding-top: 100px;">
+      <h2 class="uppercase text-secondary i18n" data-en="The Infinite Compendium" data-jp="無限のお品書き"
+        data-hi="अनंत संग्रह" data-ta="எல்லையற்ற தொகுப்பு" data-te="అనంతమైన సంకలనం" data-ml="അനന്തമായ ശേഖരം"
+        data-kn="ಅನಂತ ಸಂಕಲನ">The Infinite
+        Compendium</h2>
+      <h3 style="font-size: 3rem; margin-top: 15px; margin-bottom: 50px;" class="i18n"
+        data-en="A Journey Through Chettinad" data-jp="チェティナードへの旅" data-hi="चेट्टीनाड की यात्रा"
+        data-ta="செட்டிநாடு வழியாக ஒரு பயணம்" data-te="చెట్టినాడ్ ద్వారా ఒక ప్రయాణం"
+        data-ml="ചെട്ടിനാട്ടിലൂടെ ഒരു യാത്ര" data-kn="ಚೆಟ್ಟಿನಾಡ್ ಮೂಲಕ ಒಂದು ಪ್ರಯಾಣ">A Journey Through Chettinad</h3>
+
+      <div class="grid grid-2" style="gap: 60px;">
+        <!-- Category: Meals -->
+        <div class="menu-category">
+          <h3 class="i18n" data-en="Banana Leaf Meals (Unlimited Refills)" data-jp="バナナリーフミールス (お代わり自由)"
+            data-hi="केले के पत्ते का भोजन" data-ta="வாழை இலை உணவு" data-te="అరటి ఆకు భోజనం" data-ml="വാഴയില ഭക്ഷണം"
+            data-kn="ಬಾಳೆ ಎಲೆ ಊಟ">Banana Leaf Meals</h3>
+          <div class="menu-item"><span class="i18n" data-en="Chettinad Veg Meal" data-jp="チェティナード・ベジミールス">Chettinad Veg
+              Meal</span><span class="menu-price">¥2,300</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Non-Veg Chicken Meal" data-jp="ノンベジ・チキンミールス">Non-Veg
+              Chicken
+              Meal</span><span class="menu-price">¥2,500</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Non-Veg Mutton Meal" data-jp="ノンベジ・マトンミールス">Non-Veg Mutton
+              Meal</span><span class="menu-price">¥2,700</span></div>
+        </div>
+
+        <!-- Category: Dosa Masterpieces -->
+        <div class="menu-category">
+          <h3 class="i18n" data-en="Dosa Masterpieces" data-jp="ドーサの名作" data-hi="डोसा मास्टरपीस"
+            data-ta="தோசை தலைசிறந்த படைப்புகள்" data-te="దోస కళాఖండాలు" data-ml="ദോശ മാസ്റ്റർപീസുകൾ"
+            data-kn="ದೋಸೆ ಮಾಸ್ಟರ್‌ಪೀಸ್">Dosa Masterpieces</h3>
+          <div class="menu-item"><span class="i18n" data-en="Plain Dosa" data-jp="プレーン・ドーサ">Plain Dosa</span><span
+              class="menu-price">¥1,100</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Masala Dosa" data-jp="マサラ・ドーサ">Masala Dosa</span><span
+              class="menu-price">¥1,400</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Paper Roast Dosa" data-jp="ペーパー・ロースト・ドーサ">Paper Roast
+              Dosa</span><span class="menu-price">¥1,500</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Ghee Roast Dosa" data-jp="ギー・ロースト・ドーサ">Ghee Roast
+              Dosa</span><span class="menu-price">¥1,600</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Onion Masala Dosa" data-jp="オニオン・マサラ・ドーサ">Onion Masala
+              Dosa</span><span class="menu-price">¥1,500</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Mysore Masala Dosa" data-jp="マイソール・マサラ・ドーサ">Mysore Masala
+              Dosa</span><span class="menu-price">¥1,650</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Kal Dosa (2 pcs)" data-jp="カル・ドーサ">Kal Dosa (2
+              pcs)</span><span class="menu-price">¥1,200</span></div>
+        </div>
+
+        <!-- Category: Outhappams -->
+        <div class="menu-category">
+          <h3 class="i18n" data-en="Soft Outhappams" data-jp="ふんわりウッタパム" data-hi="नरम उत्तपम"
+            data-ta="மென்மையான ஊத்தப்பம்" data-te="సాఫ్ట్ ఊతప్పం" data-ml="മൃദുവായ ഊത്തപ്പം" data-kn="ಮೃದುವಾದ ಉತ್ತಪ್ಪಂ">
+            Soft Outhappams</h3>
+          <div class="menu-item"><span class="i18n" data-en="Plain Outhappam" data-jp="プレーン・ウッタパム">Plain
+              Outhappam</span><span class="menu-price">¥1,100</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Onion Chili Outhappam" data-jp="オニオン・チリ・ウッタパム">Onion Chili
+              Outhappam</span><span class="menu-price">¥1,350</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Tomato Onion Outhappam" data-jp="トマト・オニオン・ウッタパム">Tomato
+              Onion
+              Outhappam</span><span class="menu-price">¥1,350</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Vegetable Outhappam" data-jp="ベジタブル・ウッタパム">Vegetable
+              Outhappam</span><span class="menu-price">¥1,400</span></div>
+        </div>
+
+        <!-- Category: Tiffin Classics -->
+        <div class="menu-category">
+          <h3 class="i18n" data-en="Tiffin Classics" data-jp="ティフィン・クラシック">Tiffin Classics</h3>
+          <div class="menu-item"><span class="i18n" data-en="Idli (3 pcs)" data-jp="イドゥリ (3個)">Idli (3 pcs)</span><span
+              class="menu-price">¥1,100</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Sambar Idli (Dipped)" data-jp="サンバル・イドゥリ">Sambar Idli
+              (Dipped)</span><span class="menu-price">¥1,250</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Medu Vada (2 pcs)" data-jp="メドゥ・ワダ (2個)">Medu Vada (2
+              pcs)</span><span class="menu-price">¥950</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Sambar Vada (Dipped)" data-jp="サンバル・ワダ">Sambar Vada
+              (Dipped)</span><span class="menu-price">¥1,100</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Poori Masala (2 pcs)" data-jp="プーリー・マサラ">Poori Masala (2
+              pcs)</span><span class="menu-price">¥1,400</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Chapati Kurma (2 pcs)" data-jp="チャパティ・クルマ">Chapati Kurma (2
+              pcs)</span><span class="menu-price">¥1,300</span></div>
+        </div>
+
+        <!-- Category: Biryani & Rice -->
+        <div class="menu-category">
+          <h3 class="i18n" data-en="Biryani & Fragrant Rice" data-jp="ビリヤニ & 香り米">Biryani & Fragrant Rice</h3>
+          <div class="menu-item"><span class="i18n" data-en="Chettinad Chicken Biryani"
+              data-jp="チェティナード・チキンビリヤニ">Chettinad Chicken Biryani</span><span class="menu-price">¥1,800</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Mutton Biryani" data-jp="マトンビリヤニ">Mutton
+              Biryani</span><span class="menu-price">¥2,100</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Lemon Rice" data-jp="レモンライス">Lemon Rice</span><span
+              class="menu-price">¥1,300</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Curd Rice" data-jp="カードライス">Curd Rice</span><span
+              class="menu-price">¥1,200</span></div>
+        </div>
+
+        <!-- Category: Chettinad Curries -->
+        <div class="menu-category">
+          <h3 class="i18n" data-en="Chettinad Curries" data-jp="チェティナード・カレー">Chettinad Curries</h3>
+          <div class="menu-item"><span class="i18n" data-en="Chicken Chettinad" data-jp="チキン・チェティナード">Chicken
+              Chettinad</span><span class="menu-price">¥1,600</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Mutton Chukka (Dry)" data-jp="マトン・チュッカ">Mutton Chukka
+              (Dry)</span><span class="menu-price">¥1,900</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Fish Curry (Madras Style)" data-jp="フィッシュカレー">Fish Curry
+              (Madras Style)</span><span class="menu-price">¥1,850</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Paneer Butter Masala" data-jp="パニール・バター・マサラ">Paneer Butter
+              Masala</span><span class="menu-price">¥1,500</span></div>
+        </div>
+
+        <!-- Category: Desserts & Coffee -->
+        <div class="menu-category">
+          <h3 class="i18n" data-en="Desserts & Filter Coffee" data-jp="デザート & フィルターコーヒー">Desserts & Coffee</h3>
+          <div class="menu-item"><span class="i18n" data-en="Payasam of the Day" data-jp="日替わりパヤサム">Payasam of the
+              Day</span><span class="menu-price">¥600</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Gulab Jamun (2 pcs)" data-jp="グラブジャムン">Gulab Jamun (2
+              pcs)</span><span class="menu-price">¥550</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Madras Filter Coffee" data-jp="マドラス・フィルター・コーヒー">Madras
+              Filter
+              Coffee</span><span class="menu-price">¥500</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Mango Lassi" data-jp="マンゴーラッシー">Mango Lassi</span><span
+              class="menu-price">¥700</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Salt/Sweet Lassi" data-jp="ラッシー (塩・甘)">Salt/Sweet
+              Lassi</span><span class="menu-price">¥600</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Masala Chai" data-jp="マサラチャイ">Masala Chai</span><span
+              class="menu-price">¥500</span></div>
+        </div>
+
+        <!-- Category: Sides & Add-ons -->
+        <div class="menu-category">
+          <h3 class="i18n" data-en="Sides & Bites" data-jp="サイドメニュー">Sides & Bites</h3>
+          <div class="menu-item"><span class="i18n" data-en="Chicken 65" data-jp="チキン65">Chicken 65</span><span
+              class="menu-price">¥1,100</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Omelette (Masala)" data-jp="オムレツ">Omelette
+              (Masala)</span><span class="menu-price">¥600</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Paper Papadam" data-jp="パパダム">Paper Papadam</span><span
+              class="menu-price">¥300</span></div>
+          <div class="menu-item"><span class="i18n" data-en="Extra Parotta (1 pc)" data-jp="追加パロッタ">Extra Parotta (1
+              pc)</span><span class="menu-price">¥450</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Purity Protocol: Nutrition, Halal & Purity -->
+    <section id="purity" class="container">
+      <h2 class="uppercase text-secondary i18n" data-en="The Purity Protocol" data-jp="純粋性の規約"
+        data-hi="शुद्धता प्रोटोकॉल" data-ta="தூய்மை நெறிமுறை" data-te="ప్యూరిటీ ప్రోటోకాల్"
+        data-ml="ശുദ്ധീകരണ പ്രോട്ടോക്കോൾ" data-kn="ಶುದ್ಧತೆಯ ಶಿಷ್ಟಾಚಾರ">The Purity Protocol</h2>
+      <div class="grid grid-3" style="gap: 30px; margin-top: 40px;">
+        <div class="glass-panel" style="padding: 30px; border-radius: 20px;">
+          <h4 style="color: var(--accent); margin-bottom: 20px;" class="i18n" data-en="Halal & Sourcing"
+            data-jp="ハラルと調達" data-hi="हलाल और सोर्सिंग" data-ta="ஹலால் மற்றும் கொள்முதல்" data-te="హలాల్ & సోర్సింగ్"
+            data-ml="ഹലാൽ & സോഴ്സിംഗ്" data-kn="ಹಲಾಲ್ ಮತ್ತು ಮೂಲ">Halal & Sourcing</h4>
+          <p class="i18n"
+            data-en="100% Halal Certified meat sources. We exclusively procure from trusted suppliers who uphold the highest standards of ritual purity and quality."
+            data-jp="100%ハラル認証済みの肉を使用。最高基準の純粋さと品質を守る信頼できるサプライヤーからのみ調達しています。"
+            data-hi="100% हलाल प्रमाणित मांस स्रोत। हम विशेष रूप से विश्वसनीय आपूर्तिकर्ताओं से खरीदारी करते हैं जो अनुष्ठानिक शुद्धता और गुणवत्ता के उच्चतम मानकों को बनाए रखते हैं।"
+            data-ta="100% ஹலால் சான்றளிக்கப்பட்ட இறைச்சி ஆதாரங்கள். சடங்கு தூய்மை மற்றும் தரத்தின் மிக உயர்ந்த தரத்தை நிலைநிறுத்தும் நம்பகமான சப்ளையர்களிடமிருந்து மட்டுமே நாங்கள் வாங்குகிறோம்."
+            data-te="100% హలాల్ ధృవీకరించబడిన మాంసం మూలాలు. ఆచార స్వచ్ఛత మరియు నాణ్యత యొక్క అత్యున్నత ప్రమాణాలను సమర్థించే విశ్వసనీయ సరఫరాదారుల నుండి మాత్రమే మేము ప్రత్యేకంగా సేకరిస్తాము."
+            data-ml="100% ഹലാൽ സർട്ടിഫൈഡ് ഇറച്ചി സ്രോതസ്സുകൾ. ആചാരപരമായ ശുദ്ധിയുടെയും ഗുണമേന്മയുടെയും ഉയർന്ന നിലവാരം പുലർത്തുന്ന വിശ്വസ്തരായ വിതരണക്കാരിൽ നിന്ന് മാത്രമാണ് ഞങ്ങൾ സംഭരിക്കുന്നത്."
+            data-kn="100% ಹಲಾಲ್ ಪ್ರಮಾಣೀಕೃತ ಮಾಂಸದ ಮೂಲಗಳು. ಧಾರ್ಮಿಕ ಶುದ್ಧತೆ ಮತ್ತು ಗುಣಮಟ್ಟದ ಉನ್ನತ ಮಾನದಂಡಗಳನ್ನು ಎತ್ತಿಹಿಡಿಯುವ ವಿಶ್ವಾಸಾರ್ಹ ಪೂರೈಕೆದಾರರಿಂದ ಮಾತ್ರ ನಾವು ಪ್ರತ್ಯೇಕವಾಗಿ ಸಂಗ್ರಹಿಸುತ್ತೇವೆ.">
+            100% Halal Certified meat sources. We exclusively procure from trusted suppliers who uphold the highest
+            standards of ritual purity and quality.</p>
+        </div>
+        <div class="glass-panel" style="padding: 30px; border-radius: 20px;">
+          <h4 style="color: var(--accent); margin-bottom: 20px;" class="i18n" data-en="Nutritional Transparency"
+            data-jp="栄養の透明性" data-hi="पोषण संबंधी पारदर्शिता" data-ta="ஊட்டச்சத்து வெளிப்படைத்தன்மை"
+            data-te="పోషక పారదర్శకత" data-ml="പോഷക സുതാര്യത" data-kn="ಪೌಷ್ಟಿಕಾಂಶದ ಪಾರದರ್ಶಕತೆ">Nutritional Transparency
+          </h4>
+          <div style="font-size: 0.85rem; line-height: 2;">
+            <div style="display: flex; justify-content: space-between;"><span class="i18n"
+                data-en="Chettinad Meal (Avg.)" data-jp="ミールス (平均)">Chettinad Meal (Avg.)</span><span>850 kcal</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;"><span class="i18n" data-en="Protein Content"
+                data-jp="タンパク質">Protein Content</span><span>28g</span></div>
+            <div style="display: flex; justify-content: space-between;"><span class="i18n" data-en="Fiber Richness"
+                data-jp="食物繊維">Fiber Richness</span><span class="i18n" data-en="High" data-jp="高">High</span></div>
+          </div>
+        </div>
+        <div class="glass-panel" style="padding: 30px; border-radius: 20px;">
+          <h4 style="color: var(--accent); margin-bottom: 20px;" class="i18n" data-en="Vegan & Gluten-Free"
+            data-jp="ヴィーガン & グルテンフリー" data-hi="शाकाहारी और ग्लूटेन-मुक्त" data-ta="வேகன் மற்றும் பசையம் இல்லாதது"
+            data-te="వీగన్ & గ్లూటెన్-ఫ్రీ" data-ml="വീഗൻ & ഗ്ലൂറ്റൻ രഹിതം" data-kn="ಸಸ್ಯಾಹಾರಿ ಮತ್ತು ಅಂಟು-ಮುಕ್ತ">Vegan &
+            Gluten-Free</h4>
+          <p class="i18n"
+            data-en="Dosa batter is naturally fermented (rice & lentils), making it gluten-free. Most of our veg items are prepared with coconut oil or sunflower oil, perfect for vegan diners."
+            data-jp="ドーサの生地は米と豆の自然発酵で、グルテンフリーです。多くの野菜料理はココナッツオイルやひまわり油で調理され、ヴィーガンの方にも最適です。"
+            data-hi="डोसा बैटर प्राकृतिक रूप से किण्वित (चावल और दाल) होता है, जो इसे ग्लूटेन-मुक्त बनाता है। हमारे अधिकांश शाकाहारी आइटम नारियल तेल या सूरजमुखी के तेल के साथ तैयार किए जाते हैं, जो शाकाहारी भोजन करने वालों के लिए उपयुक्त हैं।"
+            data-ta="தோசை மாவு இயற்கையாக புளிக்கவைக்கப்படுகிறது (அரிசி மற்றும் பருப்பு), இது பசையம் இல்லாதது. எங்களது காய்கறி உணவுகள் பெரும்பாலும் தேங்காய் எண்ணெய் அல்லது சூரியகாந்தி எண்ணெயுடன் தயாரிக்கப்படுகின்றன, இது வேகன் உண்பவர்களுக்கு ஏற்றது."
+            data-te="దోస పిండి సహజంగా పులియబెట్టినది (బియ్యం & పప్పులు), ఇది గ్లూటెన్ రహితమైనది. మా శాఖాహార వస్తువులు చాలా వరకు కొబ్బరి నూనె లేదా సన్‌ఫ్లవర్ ఆయిల్‌తో తయారు చేయబడతాయి, ఇవి శాకాహారులకు సరైనవి."
+            data-ml="ദോശ മാവ് സ്വാഭാവികമായും പുളിപ്പിച്ചതാണ് (അരിയും പരിപ്പും), ഇത് ഗ്ലൂറ്റൻ രഹിതമാക്കുന്നു. ഞങ്ങളുടെ മിക്ക വെജിറ്റേറിയൻ വിഭവങ്ങളും വെളിച്ചെണ്ണയിലോ സൂര്യകാന്തി എണ്ണയിലോ ആണ് തയ്യാറാക്കുന്നത്, ഇത് വീഗൻ ഭക്ഷണപ്രേമികൾക്ക് അനുയോജ്യമാണ്."
+            data-kn="ದೋಸೆ ಹಿಟ್ಟು ಸ್ವಾಭಾವಿಕವಾಗಿ ಹುದುಗಿಸಿದ (ಅಕ್ಕಿ ಮತ್ತು ಬೇಳೆಕಾಳುಗಳು), ಇದು ಅಂಟು-ಮುಕ್ತವಾಗಿದೆ. ನಮ್ಮ ಹೆಚ್ಚಿನ ಸಸ್ಯಾಹಾರಿ ಪದಾರ್ಥಗಳನ್ನು ತೆಂಗಿನ ಎಣ್ಣೆ ಅಥವಾ ಸೂರ್ಯಕಾಂತಿ ಎಣ್ಣೆಯಿಂದ ತಯಾರಿಸಲಾಗುತ್ತದೆ, ಇದು ಸಸ್ಯಾಹಾರಿಗಳಿಗೆ ಸೂಕ್ತವಾಗಿದೆ.">
+            Dosa batter is naturally fermented, making it gluten-free. Most veg items are vegan-friendly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temple to Table: Sourcing Philosophy -->
+    <section id="sourcing" class="container" style="padding-top: 100px;">
+      <h2 class="uppercase text-secondary i18n" data-en="Temple to Table" data-jp="寺院から食卓へ" data-hi="मंदिर से मेज तक"
+        data-ta="கோவிலில் இருந்து மேசைக்கு" data-te="దేవాలయం నుండి టేబుల్ వరకు"
+        data-ml="ക്ഷേത്രത്തിൽ നിന്ന് മേശയിലേക്ക്" data-kn="ದೇವಸ್ಥಾನದಿಂದ ಟೇಬಲ್‌ಗೆ">Temple to Table</h2>
+      <div class="glass-panel"
+        style="padding: 50px; border-radius: 30px; margin-top: 40px; background: var(--glass-bg);">
+        <h3 style="font-size: 2.2rem; margin-bottom: 25px;" class="i18n" data-en="Our Sourcing Manifesto"
+          data-jp="私たちの調達宣言" data-hi="हमारा सोर्सिंग घोषणापत्र" data-ta="எங்கள் ஆதார அறிக்கை"
+          data-te="మా సోర్సింగ్ మేనిఫెస్టో" data-ml="ഞങ്ങളുടെ സോഴ്സിംഗ് മാനിഫെസ്റ്റോ" data-kn="ನಮ್ಮ ಮೂಲ ಪ್ರಣಾಳಿಕೆ">Our
+          Sourcing Manifesto</h3>
+        <p style="font-size: 1.1rem; line-height: 1.8; opacity: 0.9;" class="i18n"
+          data-en="We believe that purity begins at the root. Our spices are sourced directly from small-scale farmers in the Chettinad region, ensuring that every grain of mustard and every leaf of curry carries the authentic terroir of South India. No industrial shortcuts. No compromises."
+          data-jp="私たちは、純粋さは根源から始まると信じています。私たちのスパイスはチェティナード地方の小規模農家から直接調達されており、マスタードの一粒一粒、カレーリーフの一枚一枚に至るまで、南インドの真のテロワールを運びます。工業的な近道も、妥協もありません。">
+          We believe that purity begins at the root. Our spices are sourced directly from small-scale farmers in the
+          Chettinad region, ensuring that every grain carries the authentic terroir of South India.</p>
+        <div class="grid grid-3" style="margin-top: 40px; gap: 30px;">
+          <div style="text-align: center;">
+            <div style="font-size: 3rem;">🚜</div>
+            <h5 style="margin-top: 15px;">Direct Trade</h5>
+            <p style="font-size: 0.8rem; opacity: 0.6;">Empowering small farmers</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 3rem;">🌿</div>
+            <h5 style="margin-top: 15px;">Non-GMO</h5>
+            <p style="font-size: 0.8rem; opacity: 0.6;">100% natural heritage seeds</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 3rem;">📦</div>
+            <h5 style="margin-top: 15px;">Cold-Chain Logic</h5>
+            <p style="font-size: 0.8rem; opacity: 0.6;">Preserving volatile oils</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mangalam Gold: Loyalty & Rewards -->
+    <section id="loyalty" class="container">
+      <div class="glass-panel"
+        style="padding: 60px; border-radius: 30px; border: 2px solid var(--accent); position: relative; overflow: hidden;">
+        <div
+          style="position: absolute; top: -50px; right: -50px; font-size: 10rem; opacity: 0.05; transform: rotate(20deg);">
+          🏆</div>
+        <h2 class="uppercase i18n" data-en="Mangalam Gold" data-jp="マンガラム・ゴールド" data-hi="मंगलम गोल्ड"
+          data-ta="மங்களம் கோல்ட்" data-te="మంగళం గోల్డ్" data-ml="മംഗളം ഗോൾഡ്" data-kn="ಮಂಗಳಂ ಗೋಲ್ಡ್">Mangalam Gold
+        </h2>
+        <h3 style="font-size: 2.5rem; margin-top: 10px;" class="i18n" data-en="Elevate Your Experience"
+          data-jp="体験を豊かにする" data-hi="अपने अनुभव को बेहतर बनाएं" data-ta="உங்கள் அனுபவத்தை மேம்படுத்தவும்"
+          data-te="మీ అనుభవాన్ని మెరుగుపరచండి" data-ml="നിങ്ങളുടെ അനുഭവം ഉയർത്തുക" data-kn="ನಿಮ್ಮ ಅನುಭವವನ್ನು ಹೆಚ್ಚಿಸಿ">
+          Elevate Your Experience</h3>
+        <p style="margin-top: 20px; max-width: 600px;" class="i18n"
+          data-en="Join our elite loyalty program to earn 1 point for every ¥100 spent. Unlock exclusive tasting menus, skip-the-line privileges, and quarterly gifts from Chef Maha."
+          data-jp="100円のご利用ごとに1ポイント貯まるエリート・ロイヤリティ・プログラムにご参加ください。限定テイスティングメニュー、優先案内、シェフ・マハからの四半期ごとのギフトをご利用いただけます。"
+          data-hi="हमारे विशिष्ट लॉयल्टी कार्यक्रम में शामिल हों और खर्च किए गए प्रति ¥100 के लिए 1 अंक अर्जित करें। विशेष चखने के मेनू, लाइन छोड़ने के विशेषाधिकार और शेफ महा से त्रैमासिक उपहार अनलॉक करें।"
+          data-ta="செலவழிக்கும் ஒவ்வொரு ¥100-க்கும் 1 புள்ளியைப் பெற எங்களது எலைட் லாயல்டி திட்டத்தில் சேருங்கள். பிரத்தியேகமான ருசி பார்க்கும் மெனுக்கள், வரிசையில் நிற்காமல் செல்லும் சலுகைகள் மற்றும் செஃப் மஹாவிடமிருந்து காலாண்டு பரிசுகளைப் பெறுங்கள்."
+          data-te="ఖర్చు చేసిన ప్రతి ¥100కి 1 పాయింట్ సంపాదించడానికి మా ఎలైట్ లాయల్టీ ప్రోగ్రామ్‌లో చేరండి. ప్రత్యేకమైన రుచి మెనూలు, స్కిప్-ది-లైన్ అధికారాలు మరియు చెఫ్ మహా నుండి త్రైమాసిక బహుమతులను అన్‌లాక్ చేయండి."
+          data-ml="ചെലവഴിക്കുന്ന ഓരോ ¥100-നും 1 പോയിന്റ് നേടാൻ ഞങ്ങളുടെ എലൈറ്റ് ലോയൽറ്റി പ്രോഗ്രാമിൽ ചേരുക. എക്സ്ക്ലൂസീവ് ടേസ്റ്റിംഗ് മെനുകൾ, സ്കിപ്പ്-ദി-ലൈൻ പ്രത്യേകാവകാശങ്ങൾ, ഷെഫ് മഹയിൽ നിന്നുള്ള ഓരോ മൂന്ന് മാസത്തിലുമുള്ള സമ്മാനങ്ങൾ എന്നിവ നേടൂ."
+          data-kn="ಖರ್ಚು ಮಾಡಿದ ಪ್ರತಿ ¥100 ಗೆ 1 ಪಾಯಿಂಟ್ ಗಳಿಸಲು ನಮ್ಮ ಗಣ್ಯ ಲಾಯಲ್ಟಿ ಪ್ರೋಗ್ರಾಂಗೆ ಸೇರಿಕೊಳ್ಳಿ. ವಿಶೇಷ ರುಚಿಯ ಮೆನುಗಳು, ಸರದಿಯಲ್ಲಿ ನಿಲ್ಲದೆ ಸವಲತ್ತುಗಳು ಮತ್ತು ಬಾಣಸಿಗ ಮಹಾ ಅವರಿಂದ ತ್ರೈಮಾಸಿಕ ಉಡುಗೊರೆಗಳನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ.">
+          Join our elite loyalty program to earn 1 point for every ¥100 spent. Unlock exclusive tasting menus and gifts.
+        </p>
+
+        <div style="margin-top: 40px; background: rgba(255,153,51,0.1); padding: 20px; border-radius: 15px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: 600;">
+            <span class="i18n" data-en="Your Progress (Silver Tier)" data-jp="現在の状況 (シルバー)">Your Progress (Silver
+              Tier)</span>
+            <span>750 / 1000 pts</span>
+          </div>
+          <div style="height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden;">
+            <div style="width: 75%; height: 100%; background: var(--accent); box-shadow: 0 0 15px var(--accent);"></div>
+          </div>
+          <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.7;" class="i18n"
+            data-en="Next Reward: ¥1,500 Gift Certificate" data-jp="次の特典: 1,500円分のお食事券"
+            data-hi="अगला इनाम: ¥1,500 उपहार प्रमाणपत्र" data-ta="அடுத்த வெகுமதி: ¥1,500 பரிசுச் சான்றிதழ்"
+            data-te="తదుపరి రివార్డ్: ¥1,500 బహుమతి ధృవీకరణ పత్రం"
+            data-ml="അടുത്ത പ്രതിഫലം: ¥1,500 ഗിഫ്റ്റ് സർട്ടിഫിക്കറ്റ്"
+            data-kn="ಮುಂದಿನ ಬಹುಮಾನ: ¥1,500 ಉಡುಗೊರೆ ಪ್ರಮಾಣಪತ್ರ">
+            Next Reward: ¥1,500 Gift Certificate</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Content: Allergen Info -->
+    <section id="allergens" class="container" style="padding-top: 80px; border-top: none;">
+      <div class="glass-panel" style="padding: 40px; border-radius: 24px;">
+        <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--accent);" class="i18n"
+          data-en="Allergen & Dietary Information" data-jp="アレルゲン・食物アレルギーに関する情報"
+          data-hi="एलर्जेन और आहार संबंधी जानकारी" data-ta="ஒவ்வாமை மற்றும் உணவு தகவல்"
+          data-te="అలెర్జీ కారకాలు & ఆహార సమాచారం" data-ml="അലർജി & ഡയറ്ററി വിവരങ്ങൾ"
+          data-kn="ಅಲರ್ಜಿ ಮತ್ತು ಆಹಾರದ ಮಾಹಿತಿ">Allergen & Dietary Information</h3>
+        <p class="i18n"
+          data-en="Our kitchen handles mustard, sesame, dairy (ghee/paneer), and nuts (cashews/almonds). While we take extreme care, cross-contamination is possible. Many of our dishes are naturally gluten-free and vegan-friendly. Please speak to Chef Maha directly if you have severe allergies."
+          data-jp="当店のキッチンでは、マスタード、ゴマ、乳製品（ギー/パニール）、ナッツ（カシューナッツ/アーモンド）を取り扱っています。細心の注意を払っておりますが、交差汚染の可能性はあります。当店の料理の多くは自然にグルテンフリーで、ヴィーガンにも対応しています。重度のアレルギーをお持ちの方は、シェフ・マハに直接ご相談ください。"
+          data-hi="हमारी रसोई में सरसों, तिल, डेयरी (घी/पनीर), और मेवे (काजू/बादाम) को संभाला जाता है। हालाँकि हम अत्यधिक सावधानी बरतते हैं, क्रॉस-संदूषण संभव है। हमारे कई व्यंजन प्राकृतिक रूप से लस मुक्त और शाकाहारी-अनुकूल हैं। यदि आपको गंभीर एलर्जी है तो कृपया सीधे शेफ महा से बात करें।"
+          data-ta="தென்னிந்தியாவில், கைகளால் சாப்பிடுவது ஒரு உணர்வுபூர்வமான அனுபவம். சாப்பிடுவதற்கு எப்போதும் வலது கையைப் பயன்படுத்தவும். இடது கை பரிமாறுவதற்கும் கண்ணாடிகளைப் பிடிப்பதற்கும் ஒதுக்கப்பட்டுள்ளது."
+          data-te="మా వంటగది ఆవాలు, నువ్వులు, పాల ఉత్పత్తులు (నెయ్యి/పనీర్) మరియు గింజలను (జీడిపప్పు/బాదం) నిర్వహిస్తుంది. మేము చాలా జాగ్రత్తలు తీసుకున్నప్పటికీ, క్రాస్-కాలుష్యం సాధ్యమే. మా వంటకాల్లో చాలా వరకు సహజంగానే గ్లూటెన్ లేనివి మరియు శాకాహారులకు అనువైనవి. మీకు తీవ్రమైన అలెర్జీలు ఉంటే దయచేసి నేరుగా చెఫ్ మహాతో మాట్లాడండి."
+          data-ml="ഞങ്ങളുടെ അടുക്കള കടുക്, എള്ള്, പാൽ (നെയ്യ്/പനീർ), നട്സ് (കശുവണ്ടി/ബദാം) എന്നിവ കൈകാര്യം ചെയ്യുന്നു. ഞങ്ങൾ അതീവ ശ്രദ്ധ ചെലുത്തുന്നുണ്ടെങ്കിലും, ക്രോസ്-കണ്ടമിനേഷൻ സാധ്യമാണ്. ഞങ്ങളുടെ പല വിഭവങ്ങളും സ്വാഭാവികമായും ഗ്ലൂറ്റൻ രഹിതവും വീഗൻ സൗഹൃദവുമാണ്. നിങ്ങൾക്ക് ഗുരുതരമായ അലർജിയുണ്ടെങ്കിൽ ദയവായി ഷെഫ് മഹാറുമായി നേരിട്ട് സംസാരിക്കുക."
+          data-kn="ನಮ್ಮ ಅಡುಗೆಮನೆಯು ಸಾಸಿವೆ, ಎಳ್ಳು, ಡೈರಿ (ತುಪ್ಪ / ಪನೀರ್), ಮತ್ತು ಬೀಜಗಳನ್ನು (ಗೇರು / ಬಾದಾಮಿ) ನಿರ್ವಹಿಸುತ್ತದೆ. ನಾವು ತೀವ್ರ ಎಚ್ಚರಿಕೆ ವಹಿಸಿದರೂ, ಅಡ್ಡ-ಮಾಲಿನ್ಯದ ಸಾಧ್ಯತೆಯಿದೆ. ನಮ್ಮ ಅನೇಕ ಭಕ್ಷ್ಯಗಳು ಸ್ವಾಭಾವಿಕವಾಗಿ ಅಂಟು-ಮುಕ್ತ ಮತ್ತು ಸಸ್ಯಾಹಾರಿ ಸ್ನೇಹಿಯಾಗಿವೆ. ನಿಮಗೆ ತೀವ್ರವಾದ ಅಲರ್ಜಿಗಳಿದ್ದರೆ ದಯವಿಟ್ಟು ನೇರವಾಗಿ ಬಾಣಸಿಗ ಮಹಾ ಅವರೊಂದಿಗೆ ಮಾತನಾಡಿ."
+          style="font-size: 1rem; line-height: 1.8; opacity: 0.9;">
+          Our kitchen handles mustard, sesame, dairy (ghee/paneer), and nuts (cashews/almonds). While we take extreme
+          care, cross-contamination is possible. Many of our dishes are naturally gluten-free and vegan-friendly. Please
+          speak to Chef Maha directly if you have severe allergies.
+        </p>
+      </div>
+    </section>
+
+    <!-- Feasts of Scale: Catering & Bulk -->
+    <section id="catering" class="container">
+      <h2 class="uppercase text-secondary i18n" data-en="Feasts of Scale" data-jp="規模の宴" data-hi="पैमाने का भोज"
+        data-ta="அளவிலான விருந்துகள்" data-te="ఫీస్ట్ஸ் ఆఫ్ స్కేல்" data-ml="വലിയ വിരുന്നുകൾ" data-kn="ಬೃಹತ್ ಔತಣ">Feasts
+        of Scale</h2>
+      <div class="grid grid-2" style="gap: 40px; margin-top: 40px;">
+        <div class="glass-panel" style="padding: 40px; border-radius: 20px;">
+          <h3 class="i18n" data-en="Corporate Bento Hub" data-jp="法人向け弁当ハブ" data-hi="कॉर्पोरेट बेंटो हब"
+            data-ta="கார்ப்பரேட் பெண்டோ மையம்" data-te="కార్పొరేట్ బెంటో హబ్" data-ml="കോർപ്പറേറ്റ് ബെന്റോ ഹബ്"
+            data-kn="ಕಾರ್ಪೊರೇಟ್ ಬೆಂಟೊ ಹಬ್">Corporate Bento Hub</h3>
+          <p style="margin: 20px 0;" class="i18n"
+            data-en="Elevate your office lunch with our premium Chettinad bento boxes. Bulk delivery available for orders over 10 units. Hot, fresh, and perfectly balanced for productivity."
+            data-jp="プレミアム・チェティナード弁当でオフィスのランチを豊かに。10個以上のご注文で一括配送いたします。温かく、新鮮で、午後の仕事に最適なバランスです。"
+            data-hi="हमारे प्रीमियम चेट्टीनाड बेंटो बॉक्स के साथ अपने कार्यालय के दोपहर के भोजन को बेहतर बनाएं। 10 से अधिक इकाइयों के ऑर्डर के लिए थोक डिलीवरी उपलब्ध है। उत्पादकता के लिए गर्म, ताज़ा और पूरी तरह से संतुलित।"
+            data-ta="எங்கள் பிரீமியம் செட்டிநாடு பெண்டோ பாக்ஸ்கள் மூலம் உங்கள் அலுவலக மதிய உணவை மேம்படுத்துங்கள். 10 யூனிட்டுகளுக்கு மேற்பட்ட ஆர்டர்களுக்கு மொத்த டெலிவரி கிடைக்கும். உற்பத்தித்திறனுக்காக சூடான, புதிய மற்றும் கச்சிதமான சமச்சீரானது."
+            data-te="మా ప్రీమియం చెట్టినాడు బెంటో బాక్సులతో మీ ఆఫీస్ లంచ్‌ని మెరుగుపరచండి. 10 యూనిట్లకు పైగా ఆర్డర్‌ల కోసం బల్క్ డెలివరీ అందుబాటులో ఉంది. ఉత్పాదకత కోసం వేడిగా, తాజాగా మరియు సంపూర్ణంగా సమతుల్యంగా ఉంటుంది."
+            data-ml="ഞങ്ങളുടെ പ്രീമിയം ചെട്ടിനാട് ബെന്റോ ബോക്സുകൾ ഉപയോഗിച്ച് നിങ്ങളുടെ ഓഫീസ് ഉച്ചഭക്ഷണം മികച്ചതാക്കുക. 10 യൂണിറ്റിൽ കൂടുതൽ ഓർഡറുകൾക്ക് ബൾക്ക് ഡെലിവറി ലഭ്യമാണ്. ഉൽപ്പാദനക്ഷമതയ്ക്കായി ചൂടുള്ളതും പുതിയതും കൃത്യമായി സന്തുലിതവുമായ ഭക്ഷണം."
+            data-kn="ನಮ್ಮ ಪ್ರೀಮಿಯಂ ಚೆಟ್ಟಿನಾಡ್ ಬೆಂಟೊ ಬಾಕ್ಸ್‌ಗಳೊಂದಿಗೆ ನಿಮ್ಮ ಕಚೇರಿ ಊಟವನ್ನು ಹೆಚ್ಚಿಸಿ. 10 ಕ್ಕೂ ಹೆಚ್ಚು ಆರ್ಡರ್‌ಗಳಿಗೆ ಬೃಹತ್ ವಿತರಣೆ ಲಭ್ಯವಿದೆ. ಬಿಸಿಯಾದ, ತಾಜಾ ಮತ್ತು ಉತ್ಪಾದಕತೆಗಾಗಿ ಸಮತೋಲಿತವಾಗಿದೆ.">
+            Elevate your office lunch with our premium Chettinad bento boxes. Bulk delivery available for orders over 10
+            units.</p>
+          <ul style="list-style: none; opacity: 0.8; font-size: 0.9rem;">
+            <li class="i18n" data-en="✓ Customized Spice Levels" data-jp="✓ 辛さのカスタマイズ可能">✓ Customized Spice Levels</li>
+            <li class="i18n" data-en="✓ Eco-Friendly Packaging" data-jp="✓ 環境に優しい包装">✓ Eco-Friendly Packaging</li>
+            <li class="i18n" data-en="✓ Direct to Office Delivery" data-jp="✓ オフィスへ直接配送">✓ Direct to Office Delivery
+            </li>
+          </ul>
+        </div>
+        <div class="glass-panel" style="padding: 40px; border-radius: 20px;">
+          <h3 class="i18n" data-en="Private Events & Celebrations" data-jp="プライベートイベント & お祝い"
+            data-hi="निजी कार्यक्रम और उत्सव" data-ta="தனியார் நிகழ்வுகள் மற்றும் கொண்டாட்டங்கள்"
+            data-te="ప్రైవేట్ ఈవెంట్స్ & వేడుకలు" data-ml="സ്വകാര്യ ഇവന്റുകളും ആഘോഷങ്ങളും"
+            data-kn="ಖಾಸಗಿ ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಆಚರಣೆಗಳು">Private Events</h3>
+          <p style="margin: 20px 0;" class="i18n"
+            data-en="From weddings to birthday galas, we bring the authentic Sri Mangalam experience to your venue. Live Dosa stations and customized Chettinad menus for up to 200 guests."
+            data-jp="結婚式から誕生日のパーティーまで、本場スリ・マンガラムの体験を会場にお届けします。ライブ・ドーサ・ステーションや、最大200名様までのチェティナード・メニューをご用意。"
+            data-hi="शादियों से लेकर जन्मदिन के उत्सव तक, हम आपके स्थान पर प्रामाणिक श्री मंगलम अनुभव लाते हैं। 200 मेहमानों तक के लिए लाइव डोसा स्टेशन और अनुकूलित चेट्टीनाड मेनू।"
+            data-ta="திருமணங்கள் முதல் பிறந்தநாள் விழாக்கள் வரை, உங்கள் இடத்திற்கு உண்மையான ஸ்ரீ மங்களம் அனுபவத்தை நாங்கள் கொண்டு வருகிறோம். 200 விருந்தினர்கள் வரை நேரடி தோசை நிலையங்கள் மற்றும் தனிப்பயனாக்கப்பட்ட செட்டிநாடு மெனுக்கள்."
+            data-te="పెళ్లిళ్ల నుండి పుట్టినరోజు వేడుకల వరకు, మేము మీ వేదికపైకి అసలైన శ్రీ మంగళం అనుభవాన్ని తీసుకువస్తాము. 200 మంది అతిథుల వరకు లైవ్ దోస స్టేషన్లు మరియు అనుకూలీకరించిన చెట్టినాడు మెనూలు."
+            data-ml="വിവാഹങ്ങൾ മുതൽ ജന്മദിനാഘോഷങ്ങൾ വരെ, ഞങ്ങൾ നിങ്ങളുടെ വേദിയിലേക്ക് ആധികാരികമായ ശ്രീ മംഗളം അനുഭവം എത്തിക്കുന്നു. 200 അതിഥികൾ വരെ ലൈവ് ദോശ സ്റ്റേഷനുകളും ഇഷ്ടാനുസൃതമാക്കിയ ചെട്ടിനാട് മെനുകളും."
+            data-kn="ಮದುವೆಗಳಿಂದ ಹಿಡಿದು ಹುಟ್ಟುಹಬ್ಬದ ಸಂಭ್ರಮದವರೆಗೆ, ನಿಮ್ಮ ಸ್ಥಳಕ್ಕೆ ನಾವು ಅಧಿಕೃತ ಶ್ರೀ ಮಂಗಳಂ ಅನುಭವವನ್ನು ತರುತ್ತೇವೆ. 200 ಅತಿಥಿಗಳವರೆಗೆ ಲೈವ್ ದೋಸೆ ಸ್ಟೇಷನ್‌ಗಳು ಮತ್ತು ಕಸ್ಟಮೈಸ್ ಮಾಡಿದ ಚೆಟ್ಟಿನಾಡ್ ಮೆನುಗಳು.">
+            From weddings to birthday galas, we bring the authentic experience to your venue.</p>
+          <a href="mailto:catering@srimangalam.jp" class="submenu-item active i18n"
+            style="text-align: center; justify-content: center;" data-en="Request Quote" data-jp="見積もりを依頼する"
+            data-hi="उद्धरण का अनुरोध करें" data-ta="மேற்கோள் கோரவும்" data-te="కోట్ అభ్యర్థించండి"
+            data-ml="ക്வோട്ട് അഭ്യർത്ഥിക്കുക" data-kn="ಉಲ್ಲೇಖಕ್ಕಾಗಿ ವಿನಂತಿಸಿ">Request Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vault of Value: Promotions & Daily Deals -->
+    <section id="vault" class="container">
+      <h2 class="uppercase text-secondary i18n" data-en="The Vault of Value" data-jp="価値の宝庫" data-hi="मूल्य की तिजोरी"
+        data-ta="மதிப்புமிக்க சலுகைகள்" data-te="వాల్యూ వాల్ట్" data-ml="മൂല്യമുള്ള ഓഫറുകൾ" data-kn="ಮೌಲ್ಯದ ಪೆಟ್ಟಿಗೆ">
+        The
+        Vault of Value</h2>
+      <div class="grid grid-3" style="gap: 20px; margin-top: 40px;">
+        <div class="glass-panel" style="padding: 30px; border-radius: 20px; border-top: 4px solid var(--accent);">
+          <span
+            style="font-size: 0.8rem; background: var(--accent); color: white; padding: 2px 8px; border-radius: 10px;"
+            class="i18n" data-en="MONDAY SPECIAL" data-jp="月曜限定">MONDAY</span>
+          <h4 style="margin-top: 15px;">Dosa Dash</h4>
+          <p class="text-secondary i18n" data-en="20% OFF all Dosa variations" data-jp="全ドーサ 20% OFF">20% OFF all Dosa
+            variations</p>
+        </div>
+        <div class="glass-panel" style="padding: 30px; border-radius: 20px;">
+          <span
+            style="font-size: 0.8rem; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 10px;"
+            class="i18n" data-en="HAPPY HOURS" data-jp="ハッピーアワー">HAPPY HOURS</span>
+          <h4 style="margin-top: 15px;">Chai & Bites</h4>
+          <p class="text-secondary i18n" data-en="Complimentary Chai with any Medu Vada" data-jp="メドゥワダ注文でチャイ無料">Free
+            Chai
+            with Medu Vada</p>
+        </div>
+        <div class="glass-panel" style="padding: 30px; border-radius: 20px;">
+          <span
+            style="font-size: 0.8rem; border: 1px solid var(--accent); color: var(--accent); padding: 2px 8px; border-radius: 10px;"
+            class="i18n" data-en="COUPON" data-jp="クーポン">COUPON</span>
+          <h4 style="margin-top: 15px;">WELCOME500</h4>
+          <p class="text-secondary i18n" data-en="¥500 OFF your first meal over ¥3000" data-jp="初回3,000以上で500円OFF">¥500
+            OFF first meal</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Founder's Manifesto: Chef Maha's Vision -->
+    <section id="manifesto" class="container" style="padding-top: 100px;">
+      <h2 class="uppercase text-secondary i18n" data-en="Founder's Manifesto" data-jp="創業者の宣言"
+        data-hi="संस्थापक का घोषणापत्र" data-ta="நிறுவனரின் அறிக்கை" data-te="వ్యవస్థాపక మేనిఫెస్టో"
+        data-ml="സ്ഥാപകന്റെ മാനിഫെസ്റ്റോ" data-kn="ಸ್ಥಾಪಕರ ಪ್ರಣಾಳಿಕೆ">Founder's Manifesto</h2>
+      <div class="glass-panel" style="padding: 60px; border-radius: 30px; margin-top: 40px; position: relative;">
+        <div style="font-size: 5rem; position: absolute; top: 20px; left: 20px; opacity: 0.1;">"</div>
+        <p style="font-size: 1.5rem; line-height: 1.6; font-style: italic; color: var(--accent); position: relative; z-index: 1;"
+          class="i18n"
+          data-en="My mission is not just to feed, but to transport. Every dosa I spread is a map back to the vibrant streets of my youth. To cook is to remember, and to serve is to share that memory with the world."
+          data-jp="私の使命は、ただ食事を提供することではなく、皆様を異郷へと誘うことです。私が焼くドーサの一枚一枚が、私の青春の活気に満ちた街並みへの地図なのです。料理とは記憶することであり、提供することはその記憶を世界と分かち合うことなのです。">
+          My mission is not just to feed, but to transport. Every dosa I spread is a map back to the vibrant streets of
+          my youth. To cook is to remember, and to serve is to share that memory with the world.
+        </p>
+        <div style="margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+          <h5 style="font-size: 1.2rem;">Chef Mahalingam</h5>
+          <p class="text-secondary">Soshigaya, Tokyo</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Mangalam Library: Recommended Reading -->
+    <section id="library" class="container" style="padding-top: 100px;">
+      <h2 class="uppercase text-secondary i18n" data-en="Mangalam Library" data-jp="マンガラム文庫" data-hi="मंगलम पुस्तकालय"
+        data-ta="மங்களம் நூலகம்" data-te="మంగళం లైబ్రరీ" data-ml="മംഗളം ലൈബ്രറി" data-kn="ಮಂಗಳಂ ಗ್ರಂಥಾಲಯ">Mangalam
+        Library</h2>
+      <div class="grid grid-2" style="gap: 40px; margin-top: 40px;">
+        <div class="glass-panel" style="padding: 30px; border-radius: 20px;">
+          <h4 style="color: var(--accent); margin-bottom: 15px;">The Chettinad Heritage</h4>
+          <p style="font-size: 0.9rem; opacity: 0.7;">By Dr. S. Muthaiah. An exhaustive exploration of the architecture
+            and culinary history of the Nattukottai Chettiars.</p>
+        </div>
+        <div class="glass-panel" style="padding: 30px; border-radius: 20px;">
+          <h4 style="color: var(--accent); margin-bottom: 15px;">Spice: The History of Temptation</h4>
+          <p style="font-size: 0.9rem; opacity: 0.7;">By Jack Turner. A global perspective on how spices like pepper and
+            cardamom shaped the modern world.</p>
+        </div>
+        <div class="glass-panel" style="padding: 30px; border-radius: 20px;">
+          <h4 style="color: var(--accent); margin-bottom: 15px;">Grains of Gold</h4>
+          <p style="font-size: 0.9rem; opacity: 0.7;">A technical breakdown of ancient Indian rice varieties and their
+            unique fermentation characteristics.</p>
+        </div>
+        <div class="glass-panel" style="padding: 30px; border-radius: 20px;">
+          <h4 style="color: var(--accent); margin-bottom: 15px;">The Art of South Indian Cooking</h4>
+          <p style="font-size: 0.9rem; opacity: 0.7;">A deep dive into the 30-step process of tempering and
+            spice-layering used in traditional Brahmin and Chettinad kitchens.</p>
+        </div>
+      </div>
+    </section>
+    <h2 class="uppercase text-secondary i18n" data-en="Signature Masterclass" data-jp="シェフのマスタークラス"
+      data-hi="हस्ताक्षर मास्टरक्लास" data-ta="சிக்னேச்சர் மாஸ்டர்கிளாஸ்" data-te="సిగ్నేచర్ మాస్టర్‌క్లాస్"
+      data-ml="സിഗ്നേച്ചർ മാസ്റ്റർക്ലാസ്" data-kn="ಸಿಗ್ನೇಚರ್ ಮಾಸ್ಟರ್ಕ್ಲಾಸ್">Signature Masterclass</h2>
+    <div class="glass-panel" style="padding: 50px; border-radius: 30px; margin-top: 40px;">
+      <h3 style="font-size: 2.2rem; margin-bottom: 25px;" class="i18n" data-en="The Medicinal Soul of Tamil Nadu: Rasam"
+        data-jp="タミル・ナードゥの薬膳：ラッサム">The Medicinal Soul of Rasam</h3>
+      <div class="grid grid-2" style="gap: 50px;">
+        <div>
+          <h5 style="color: var(--accent); margin-bottom: 15px;">Ingredients Matrix</h5>
+          <ul style="opacity: 0.8; line-height: 2;">
+            <li>Tamarind Pulp (Golf ball size)</li>
+            <li>Black Pepper & Cumin (Coarsely ground)</li>
+            <li>Fresh Toor Dal Water (1 cup)</li>
+            <li>Ripe Tomatoes (Crushed by hand)</li>
+            <li>Garlic Cloves (Bruised)</li>
+            <li>Curry Leaves & Fresh Coriander</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: var(--accent); margin-bottom: 15px;">The 7-Step Ritual</h5>
+          <ol style="opacity: 0.8; line-height: 1.8; padding-left: 20px;">
+            <li>Extract the tamarind essence into 500ml water.</li>
+            <li>Hand-crush the tomatoes directly into the extract.</li>
+            <li>Add the dal water for structural richness.</li>
+            <li>Temper mustard and cumin in a separate pot.</li>
+            <li>Pour the liquid over the crackling seeds.</li>
+            <li>Wait for the first frothy boil (do not over-boil).</li>
+            <li>Garnish instantly and cover to trap the volatile oils.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhood Guide: The Soshigaya Spirit -->
+  <section id="neighborhood" class="container" style="padding-top: 100px;">
+    <h2 class="uppercase text-secondary i18n" data-en="Soshigaya Neighborhood" data-jp="祖師谷周辺ガイド"
+      data-hi="सोशिगया पड़ोस" data-ta="சோஷிகயா சுற்றுப்புறம்" data-te="సోషిగయా పొరుగు" data-ml="സോഷിഗയ അയൽപക്കം"
+      data-kn="ಸೋಷಿಗಯಾ ನೆರೆಹೊರೆ">Soshigaya Neighborhood</h2>
+    <div class="grid grid-3" style="gap: 30px; margin-top: 40px;">
+      <div class="glass-panel" style="padding: 25px; border-radius: 15px;">
+        <div style="font-size: 2rem; margin-bottom: 10px;">🦸‍♂️</div>
+        <h5 class="i18n" data-en="Ultraman Statue" data-jp="ウルトラマン像">Ultraman Statue</h5>
+        <p style="font-size: 0.8rem; opacity: 0.6;">A 2-minute walk from our door. Soshigaya is the birthplace of the
+          legendary hero.</p>
+      </div>
+      <div class="glass-panel" style="padding: 25px; border-radius: 15px;">
+        <div style="font-size: 2rem; margin-bottom: 10px;">🌳</div>
+        <h5 class="i18n" data-en="Soshigaya Park" data-jp="祖師谷公園">Soshigaya Park</h5>
+        <p style="font-size: 0.8rem; opacity: 0.6;">Perfect for a post-Dosa walk along the Sen-gawa river.</p>
+      </div>
+      <div class="glass-panel" style="padding: 25px; border-radius: 15px;">
+        <div style="font-size: 2rem; margin-bottom: 10px;">⛩️</div>
+        <h5 class="i18n" data-en="Hachimangu Shrine" data-jp="八幡宮">Hachimangu Shrine</h5>
+        <p style="font-size: 0.8rem; opacity: 0.6;">Experience the local spiritual heart of Setagaya.</p>
+      </div>
+    </div>
+  </section>
+  <h2 class="uppercase text-secondary i18n" data-en="Mangalam Merch Hub" data-jp="マンガラム・ショップ" data-hi="मंगलम मर्च हब"
+    data-ta="மங்களம் மெர்ச் ஹப்" data-te="మంగళం మెర్చ్ హబ్" data-ml="മംഗളം മെർച്ച് ഹബ്" data-kn="ಮಂಗಳಂ ಮರ್ಚ ಹಬ್">
+    Mangalam Merch Hub</h2>
+  <div class="grid grid-4" style="gap: 20px; margin-top: 40px;">
+    <div class="glass-panel" style="padding: 20px; border-radius: 15px; text-align: center;">
+      <div style="font-size: 3rem; margin-bottom: 15px;">🎒</div>
+      <h5 class="i18n" data-en="Chef Maha's Apron" data-jp="シェフ・マハののエプロン">Chef Maha's Apron</h5>
+      <p style="font-size: 0.8rem; opacity: 0.6; margin: 10px 0;">Heavy-duty denim with spice-stain resistance.</p>
+      <div class="menu-price">¥4,500</div>
+    </div>
+    <div class="glass-panel" style="padding: 20px; border-radius: 15px; text-align: center;">
+      <div style="font-size: 3rem; margin-bottom: 15px;">🏺</div>
+      <h5 class="i18n" data-en="Signature Spice Trio" data-jp="特製スパイス3種セット">Signature Spice Trio</h5>
+      <p style="font-size: 0.8rem; opacity: 0.6; margin: 10px 0;">Guntur Chili, Star Anise, and Chettinad Masala.
+      </p>
+      <div class="menu-price">¥3,200</div>
+    </div>
+    <div class="glass-panel" style="padding: 20px; border-radius: 15px; text-align: center;">
+      <div style="font-size: 3rem; margin-bottom: 15px;">📔</div>
+      <h5 class="i18n" data-en="The Mangalam Cookbook" data-jp="マンガラム・レシピ本">Mangalam Cookbook</h5>
+      <p style="font-size: 0.8rem; opacity: 0.6; margin: 10px 0;">30 years of secrets from Chennai to Tokyo.</p>
+      <div class="menu-price">¥5,800</div>
+    </div>
+    <div class="glass-panel" style="padding: 20px; border-radius: 15px; text-align: center;">
+      <div style="font-size: 3rem; margin-bottom: 15px;">☕</div>
+      <h5 class="i18n" data-en="Traditional Filter Set" data-jp="伝統のフィルターセット">Filter Coffee Set</h5>
+      <p style="font-size: 0.8rem; opacity: 0.6; margin: 10px 0;">Brass filter and dabarah for authentic brewing.
+      </p>
+      <div class="menu-price">¥2,800</div>
+    </div>
+  </div>
+  </section>
+
+  <!-- Global Footprint: The Mangalam Network -->
+  <section id="global" class="container" style="padding-top: 100px;">
+    <h2 class="uppercase text-secondary i18n" data-en="Global Footprint" data-jp="グローバル展開" data-hi="वैश्विक पदचिह्न"
+      data-ta="உலகளாவிய தடம்" data-te="గ్లోబల్ ఫుట్‌ప్రింట్" data-ml="ആഗോള കാൽപ്പാടുകൾ" data-kn="ಜಾಗತಿಕ ಹೆಜ್ಜೆಗುರುತು">
+      Global Footprint</h2>
+    <div class="glass-panel" style="padding: 40px; border-radius: 24px; margin-top: 40px;">
+      <div class="grid grid-3" style="gap: 30px;">
+        <div>
+          <h4 style="color: var(--accent);">Tokyo, JP</h4>
+          <p style="font-size: 0.9rem; opacity: 0.7;">Soshigaya-Okura Headquarters (Est. 2015)</p>
+        </div>
+        <div>
+          <h4 style="color: var(--accent);">Chennai, IN</h4>
+          <p style="font-size: 0.9rem; opacity: 0.7;">Heritage Lab (Est. 1990)</p>
+        </div>
+        <div>
+          <h4 style="color: var(--accent);">Singapore, SG</h4>
+          <p style="font-size: 0.9rem; opacity: 0.7;">Central Hub (Upcoming 2025)</p>
+        </div>
+      </div>
+      <div style="margin-top: 40px; border-top: 1px solid var(--border-color); padding-top: 30px; text-align: center;">
+        <p class="i18n" data-en="Expanding the soul of South India, one banana leaf at a time."
+          data-jp="バナナリーフ一枚一枚に、南インドの魂を込めて広げ続けます。">Expanding the soul of South India.</p>
+      </div>
+    </div>
+  </section>
+  <h2 class="uppercase text-secondary i18n" data-en="The Mangalam Glossary" data-jp="マンガラム用語辞典" data-hi="मंगलम शब्दावली"
+    data-ta="மங்களம் அகராதி" data-te="మంగళం గ్లోసరీ" data-ml="മംഗളം ഗ്ലോസറി" data-kn="ಮಂಗಳಂ ಗ್ಲglossary">The Mangalam
+    Glossary</h2>
+  <div class="grid grid-2" style="gap: 40px; margin-top: 40px; font-size: 0.9rem;">
+    <div>
+      <p><strong>A - Appam</strong>: Fermented rice pancake with a soft center and lacy edges.</p>
+      <p><strong>B - Biryani</strong>: Fragrant Basmati rice layered with slow-cooked Chettinad spices.</p>
+      <p><strong>C - Chettinad</strong>: A region in Tamil Nadu known for its bold, complex use of spices.</p>
+      <p><strong>D - Dosa</strong>: Savory crepe made from fermented rice and lentil batter.</p>
+      <p><strong>E - Elakkai</strong>: Cardamom, the queen of spices used for aroma.</p>
+      <p><strong>F - Filter Coffee</strong>: Traditional South Indian coffee brewed with chicory blends.</p>
+      <p><strong>G - Ghee</strong>: Clarified butter, the soul of Indian griddle cooking.</p>
+      <p><strong>H - Halal</strong>: Permissible food prepared according to ritual standards.</p>
+      <p><strong>I - Idli</strong>: Steamed savory rice cakes, the staple of South Indian breakfast.</p>
+      <p><strong>J - Jaggery</strong>: Unrefined cane sugar used in traditional desserts.</p>
+      <p><strong>K - Kurma</strong>: Rich, nutty gravy made with coconut and cashew paste.</p>
+      <p><strong>L - Lassi</strong>: Refreshing yogurt-based drink, sweet or salted.</p>
+      <p><strong>M - Masala</strong>: A complex blend of ground spices used as a base for curries.</p>
+      <p><strong>N - Nila</strong>: Moon, often used to describe the shape of a perfect Appam.</p>
+      <p><strong>O - Outhappam</strong>: Thicker version of a Dosa, topped with fresh vegetables.</p>
+    </div>
+    <div>
+      <p><strong>P - Parotta</strong>: Layered, flaky flatbread made from refined flour.</p>
+      <p><strong>Q - Quality</strong>: The Mangalam standard for every grain sourced.</p>
+      <p><strong>R - Rasam</strong>: Spicy, tangy soup prepared with tamarind and pepper.</p>
+      <p><strong>S - Sambar</strong>: Lentil-based vegetable stew, essential with Idli and Dosa.</p>
+      <p><strong>T - Thali</strong>: A complete meal served on a round platter (or Banana Leaf).</p>
+      <p><strong>U - Urda</strong>: Black gram lentil, the key to batter fermentation.</p>
+      <p><strong>V - Vada</strong>: Savory, deep-fried lentil donut, crispy on the outside.</p>
+      <p><strong>W - Water</strong>: Filtered and temperature-controlled for perfect batter.</p>
+      <p><strong>X - Xyber-Fidelity</strong>: The modern precision applied to ancient recipes.</p>
+      <p><strong>Y - Yogurt</strong>: Hand-churned curd used for cooling sides and lassis.</p>
+      <p><strong>Z - Zest</strong>: The vibrant energy in every Sri Mangalam dish.</p>
+      <p><strong>i - i18n</strong>: Supporting 7 languages for a global Gastronome community.</p>
+    </div>
+  </div>
+  </section>
+
+  <!-- Gastronome Hub: FAQ & Reviews -->
+  <section id="faq" class="container">
+    <h2 class="uppercase text-secondary i18n" data-en="Gastronome Hub" data-jp="美食家ハブ" data-hi="गैस्ट्रोनोम हब"
+      data-ta="காஸ்ட்ரோனோம் மையம்" data-te="గాస్ట్రోనోಮ್ హబ్" data-ml="ഗ്യാസ്ട്രോണോം ഹബ്" data-kn="ಗ್ಯಾಸ್ಟ್ರೋನೋಮ್ ಹಬ್">
+      Gastronome Hub</h2>
+    <div style="margin-top: 40px;">
+      <details class="glass-panel" style="padding: 20px; border-radius: 15px; margin-bottom: 15px;">
+        <summary style="cursor: pointer; font-weight: 600;" class="i18n" data-en="Do I need a reservation?"
+          data-jp="予約は必要ですか？">Do I need a reservation?</summary>
+        <p style="margin-top: 15px; opacity: 0.8;" class="i18n"
+          data-en="Reservations are recommended for weekend dinner. Lunch is walk-in only."
+          data-jp="週末のディナーは予約をお勧めします。ランチは直接お越しください。">Reservations recommended for dinner.</p>
+      </details>
+      <details class="glass-panel" style="padding: 20px; border-radius: 15px; margin-bottom: 15px;">
+        <summary style="cursor: pointer; font-weight: 600;" class="i18n" data-en="Is there children's seating?"
+          data-jp="子供用の椅子はありますか？">Is there children's seating?</summary>
+        <p style="margin-top: 15px; opacity: 0.8;" class="i18n"
+          data-en="Yes, we have high-chairs and spice-matched menus for children."
+          data-jp="はい、ハイチェアと辛さを抑えたお子様用メニューをご用意しています。">Yes, we are child-friendly.</p>
+      </details>
+      <details class="glass-panel" style="padding: 20px; border-radius: 15px; margin-bottom: 15px;">
+        <summary style="cursor: pointer; font-weight: 600;" class="i18n"
+          data-en="How to reach from Soshigaya-Okura station?" data-jp="祖師ヶ谷大蔵駅からの行き方は？">How to reach from
+          Soshigaya-Okura station?</summary>
+        <p style="margin-top: 15px; opacity: 0.8;" class="i18n"
+          data-en="Take the North Exit, walk for 2 minutes past the Ultraman statue, we are in the B1F of the Sanko Building."
+          data-jp="北口を出て、ウルトラマン像を通り過ぎて徒歩2分。三興ビルの地下1階です。">North Exit, 2 mins walk.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Guest Chronicles: Testimonials -->
+  <section id="reviews" class="container">
+    <h2 class="uppercase text-secondary i18n" data-en="Guest Chronicles" data-jp="お客様の声" data-hi="अतिथि इतिहास"
+      data-ta="விருந்தினர் பதிவுகள்" data-te="గెస్ట్ క్రానికల్స్" data-ml="അതിഥി ചരിത്രം" data-kn="ಅತಿಥಿ ವೃತ್ತಾಂತ">
+      Guest
+      Chronicles</h2>
+    <div class="grid grid-3" style="gap: 20px; margin-top: 40px;">
+      <div class="glass-panel" style="padding: 30px; border-radius: 20px; font-style: italic;">
+        <p style="margin-bottom: 20px;">"The best Dosa in Tokyo, hands down. The Masala is authentic and the sambar
+          has
+          that perfect Chettinad punch. Better than what I had in Chennai!"</p>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 50%;"></div>
+          <div>
+            <p style="font-weight: 600; font-style: normal;">Rahul S.</p>
+            <p style="font-size: 0.8rem; opacity: 0.6;">Google Review</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass-panel" style="padding: 30px; border-radius: 20px; font-style: italic;">
+        <p style="margin-bottom: 20px;">"Finally found a place that serves real Banana Leaf meals in Setagaya. The
+          refills are generous and the hospitality from Chef Maha is unmatched."</p>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 40px; height: 40px; background: var(--text-secondary); border-radius: 50%;"></div>
+          <div>
+            <p style="font-weight: 600; font-style: normal;">Yuki T.</p>
+            <p style="font-size: 0.8rem; opacity: 0.6;">Tabelog ELITE</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass-panel" style="padding: 30px; border-radius: 20px; font-style: italic;">
+        <p style="margin-bottom: 20px;">"A vibrant piece of South India hidden in a B1 basement. The Saffron Mode on
+          their website is what brought me in—the food is as beautiful as the design."</p>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div>
+            <p style="font-weight: 600; font-style: normal;">Elena K.</p>
+            <p style="font-size: 0.8rem; opacity: 0.6;">Local Guide</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Culinary Arts: The Secret Preparation -->
+  <section id="education" class="container">
+    <h2 class="uppercase text-secondary i18n" data-en="Culinary Arts" data-jp="料理の芸術" data-hi="पाक कला"
+      data-ta="சமையல் கலை" data-te="పాక కళలు" data-ml="പാചക കല" data-kn="ಪಾಕ ಕಲೆ">Culinary Arts</h2>
+    <div class="glass-panel"
+      style="margin-top: 40px; padding: 50px; border-radius: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+      <div>
+        <h3 style="font-size: 2rem; margin-bottom: 20px;" class="i18n" data-en="The 24-Hour Fermentation"
+          data-jp="24時間の発酵">The 24-Hour Fermentation</h3>
+        <p class="i18n"
+          data-en="Our secret lies in time. We stone-grind our rice and lentils and let them ferment naturally for 24 hours in a temperature-controlled vault. This creates the probiotic richness and iconic tang of a true Mangalam Dosa."
+          data-jp="私たちの秘密は「時間」にあります。石臼で挽いた米と豆を、温度管理された保管庫で24時間自然発酵させます。これにより、本物のマンガラム・ドーサ特有のプロバイオティクスの豊かさと酸味が生まれます。">
+          Our
+          secret lies in time. We stone-grind our rice and lentils and let them ferment naturally for 24 hours.</p>
+        <div style="margin-top: 30px; display: flex; gap: 20px;">
+          <div style="text-align: center;">
+            <div style="font-size: 1.5rem;">🏺</div>
+            <p style="font-size: 0.7rem; margin-top: 5px;">Stone Ground</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 1.5rem;">⏳</div>
+            <p style="font-size: 0.7rem; margin-top: 5px;">24h Ferment</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 1.5rem;">🌡️</div>
+            <p style="font-size: 0.7rem; margin-top: 5px;">Bio-Control</p>
+          </div>
+        </div>
+      </div>
+      <div
+        style="background: rgba(255,153,51,0.1); padding: 40px; border-radius: 20px; border: 1px dashed var(--accent);">
+        <h4 style="margin-bottom: 20px;" class="i18n" data-en="The Golden Ratio" data-jp="黄金比率">The Golden Ratio</h4>
+        <p style="font-size: 0.9rem; margin-bottom: 20px;" class="i18n"
+          data-en="Every batter batch is measured for the perfect balance of crispness and chew. It is a science and an art passed down through generations."
+          data-jp="すべての生地は、パリパリ感ともっちり感の完璧なバランスのために測定されています。それは世代を超えて受け継がれてきた科学であり、芸術です。">Perfect balance of crispness
+          and chew.</p>
+        <div style="height: 5px; background: var(--accent); width: 85%; border-radius: 5px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Art of the Griddle: Dosa Science -->
+  <section id="griddle-science" class="container">
+    <h2 class="uppercase text-secondary i18n" data-en="The Art of the Griddle" data-jp="鉄板の芸術" data-hi="तवे की कला"
+      data-ta="தோசைக்கல்லின் கலை" data-te="గ్రిడిల్ ఆర్ట్" data-ml="ദോശക്കല്ലിലെ കല" data-kn="ಹಂಚಿನ ಕಲೆ">The Art of
+      the Griddle</h2>
+    <div class="grid grid-5" style="gap: 15px; margin-top: 40px;">
+      <div class="glass-panel" style="padding: 20px; border-radius: 15px; border-bottom: 3px solid var(--accent);">
+        <h5 style="margin-bottom: 10px;">01. Heating</h5>
+        <p style="font-size: 0.75rem; opacity: 0.8;" class="i18n"
+          data-en="Optimal griddle temp: 220°C. Flick water to test for the 'Dancing Bead' effect."
+          data-jp="最適な温度: 220℃。水を弾いて状態を確認します。">Optimal temp: 220°C.</p>
+      </div>
+      <div class="glass-panel" style="padding: 20px; border-radius: 15px;">
+        <h5 style="margin-bottom: 10px;">02. Centering</h5>
+        <p style="font-size: 0.75rem; opacity: 0.8;" class="i18n"
+          data-en="A single ladle of batter at the precise geometric center of the casting."
+          data-jp="鋳造の中心に、お玉一杯の生地を正確に流し込みます。">Ladle at the center.</p>
+      </div>
+      <div class="glass-panel" style="padding: 20px; border-radius: 15px;">
+        <h5 style="margin-bottom: 10px;">03. Spiraling</h5>
+        <p style="font-size: 0.75rem; opacity: 0.8;" class="i18n"
+          data-en="Clockwise centrifugal motion expanding the batter into a micro-thin crystal layer."
+          data-jp="時計回りの遠心力で、生地を極薄の層へと広げます。">Clockwise spiral motion.</p>
+      </div>
+      <div class="glass-panel" style="padding: 20px; border-radius: 15px;">
+        <h5 style="margin-bottom: 10px;">04. Ghee Infusion</h5>
+        <p style="font-size: 0.75rem; opacity: 0.8;" class="i18n"
+          data-en="Perimeter drizzle of premium A2 Ghee for that iconic 1:1 golden crispness."
+          data-jp="周囲にプレミアムA2ギーを注ぎ、黄金色のパリパリ感を作ります。">Premium A2 Ghee drizzle.</p>
+      </div>
+      <div class="glass-panel" style="padding: 20px; border-radius: 15px;">
+        <h5 style="margin-bottom: 10px;">05. The Fold</h5>
+        <p style="font-size: 0.75rem; opacity: 0.8;" class="i18n"
+          data-en="Scraping at the 360-second mark to deliver structural integrity and crunch."
+          data-jp="絶妙なタイミングで剥がし、最高の食感をお届けします。">The final crunch fold.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Roots: Local Collaboration -->
+  <section id="community" class="container">
+    <h2 class="uppercase text-secondary i18n" data-en="Community Roots" data-jp="地域との絆" data-hi="सामुदायिक जड़ें"
+      data-ta="சமூக வேர்கள்" data-te="కమ్యూనిటీ రూట్స్" data-ml="കമ്മ്യൂണിറ്റി റൂട്ട്സ്" data-kn="ಸಮುದಾಯದ ಬೇರುಗಳು">
+      Community Roots</h2>
+    <div class="glass-panel"
+      style="padding: 40px; border-radius: 24px; margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+      <div
+        style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; border-left: 4px solid #4CAF50;">
+        <h4 style="margin-bottom: 15px;">Tokyo Farmer Alliance</h4>
+        <p class="i18n"
+          data-en="We partner with local organic farmers in Setagaya and Saitama to source the freshest Eggplant, Okra, and Radish for our daily Sambars. Tropical soul, Japanese ground."
+          data-jp="世田谷や埼玉の有機農家と提携し、サティナード・サンバルのための新鮮な野菜を調達しています。南国の魂を日本の大地から。">We partner with local organic farmers
+          in Tokyo.</p>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 4rem;">🤝</div>
+        <h5 style="margin-top: 15px;">Cultural Exchange</h5>
+        <p style="font-size: 0.8rem; opacity: 0.6;">Bridging Chennai and Soshigaya since 2015</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mangalam Sustainability Pledge -->
+  <section id="sustainability" class="container" style="padding-top: 100px; padding-bottom: 100px;">
+    <h2 class="uppercase text-secondary i18n" data-en="Sustainability Pledge" data-jp="サステナビリティへの誓い"
+      data-hi="स्थिरता की शपथ" data-ta="நிலைத்தன்மை உறுதிமொழி" data-te="సుస్థిరత ప్రతిజ్ఞ" data-ml="സുസ്ഥിരത പ്രതിജ്ഞ"
+      data-kn="ಸುಸ್ಥಿರತೆಯ ಪ್ರತಿಜ್ಞೆ">Sustainability Pledge</h2>
+    <div class="glass-panel" style="padding: 40px; border-radius: 24px; margin-top: 40px; border: 1px solid #4CAF50;">
+      <p style="font-size: 1.1rem; opacity: 0.9;" class="i18n"
+        data-en="We pledge to minimize our carbon footprint by eliminating single-use plastics and composting 100% of our organic waste. Our banana leaves are biodegradable, and our water filtration system is designed for zero-waste output. For the planet, for the future."
+        data-jp="私たちは、使い捨てプラスチックを排除し、有機廃棄物を100%堆肥化することで、炭素排出量を最小限に抑えることを誓います。バナナの葉は生分解性であり、水ろ過システムは廃棄物ゼロを目指して設計されています。地球のために、未来のために。">
+        We pledge to minimize our carbon footprint by eliminating single-use plastics and composting 100% of our organic
+        waste.
+      </p>
+    </div>
+  </section>
+
+  <!-- Reach Us -->
+  <section id="reach" class="container">
+    <h2 class="uppercase text-secondary i18n" data-en="Location" data-jp="アクセス" data-hi="स्थान" data-ta="இடம்"
+      data-te="స్థానం" data-ml="സ്ഥാനം" data-kn="ಸ್ಥಳ">Location</h2>
+    <div class="grid grid-2" style="margin-top: 40px;">
+      <div>
+        <h3 class="i18n" data-en="Soshigaya-Okura" data-jp="祖師ヶ谷大蔵" data-hi="सोशिगया-ओकुरा" data-ta="சோஷிகயா-ஓகுரா"
+          data-te="సోషిగయా-ఓకురా" data-ml="സോഷിഗയ-ഒകുറ" data-kn="ಸೋಷಿಗಯ-ಓಕುರಾ">Soshigaya-Okura</h3>
+        <p style="margin-top: 20px;">東京都世田谷区祖師谷3-33-2</p>
+        <p class="text-secondary">3-33-2 Soshigaya, Setagaya-ku, Tokyo</p>
+      </div>
+      <div class="glass-panel" style="border-radius: 16px; overflow: hidden; height: 300px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.9702!2d139.6054!3d35.6429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f38d!2zU3JpIE1hbmdhbGFt!5e0!3m2!1sen!2sjp!4v1!5m2!1sen!2sjp"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic XS Components -->
+  <div id="animated-cookie" class="animated-cookie">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+      <path d="M8.5 8.5v.01"></path>
+      <path d="M16 12.5v.01"></path>
+    </svg>
+  </div>
+
+  <div id="cookie-popup" class="glass-panel cookie-popup hidden">
+    <h4 class="uppercase text-secondary i18n" data-en="Privacy Preferences" data-jp="プライバシー設定"
+      data-hi="गोपनीयता प्राथमिकताएं" data-ta="தனியுரிமை விருப்பத்தேர்வுகள்" data-te="గోప్యతా ప్రాధాన్యతలు"
+      data-ml="സ്വകാര്യതാ മുൻഗണനകൾ" data-kn="ಗೌಪ್ಯತೆ ಆದ್ಯತೆಗಳು" style="margin-bottom: 15px;">Privacy</h4>
+    <p class="i18n" data-en="We use cookies to enhance your experience." data-jp="最高の体験を提供するためにクッキーを使用しています。"
+      data-hi="हम आपके अनुभव को बढ़ाने के लिए कुकीज़ का उपयोग करते हैं।"
+      data-ta="உங்கள் அனுபவத்தை மேம்படுத்த குக்கீகளைப் பயன்படுத்துகிறோம்."
+      data-te="మీ అనుభవాన్ని మెరుగుపరచడానికి మేము కుక్కీలను ఉపయోగిస్తాము।"
+      data-ml="നിങ്ങളുടെ അനുഭവം മെച്ചപ്പെടുത്താൻ ഞങ്ങൾ കുക്കികൾ ഉപയോഗിക്കുന്നു।"
+      data-kn="ನಿಮ್ಮ ಅನುಭವವನ್ನು ಹೆಚ್ಚಿಸಲು ನಾವು ಕುಕೀಗಳನ್ನು ಬಳಸುತ್ತೇವೆ।">We use cookies to enhance your experience.</p>
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;">
+        <span class="i18n" data-en="Essential" data-jp="必須" data-hi="आवश्यक" data-ta="அத்தியாவசியமான" data-te="అవసరమైన"
+          data-ml="അത്യാവശ്യമായ" data-kn="ಅಗತ್ಯ">Essential</span>
+        <div class="toggle-switch"><input type="checkbox" checked disabled><span class="slider"></span></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;">
+        <span class="i18n" data-en="Analytics" data-jp="分析" data-hi="विश्लेषिकी" data-ta="பகுப்பாய்வு"
+          data-te="విశ్లేషణలు" data-ml="അനലിറ്റിക്സ്" data-kn="ವಿಶ್ಲೇಷಣೆ">Analytics</span>
+        <label class="toggle-switch"><input type="checkbox" id="analytics-toggle"><span class="slider"></span></label>
+      </div>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <button id="btn-save-cookie" class="submenu-item i18n" style="flex:1; padding: 10px;" data-en="Save" data-jp="保存"
+        data-hi="बचाना" data-ta="சேமி" data-te="సేవ్ చేయండి" data-ml="സൂക്ഷിക്കുക" data-kn="ಸಾಚು">Save</button>
+      <button id="btn-accept-cookie" class="submenu-item active i18n" style="flex:1; padding: 10px;" data-en="Accept"
+        data-jp="承諾" data-hi="स्वीकार करना" data-ta="ஏற்றுக்கொள்" data-te="అంగీకరించు" data-ml="സ്വീകരിക്കുക"
+        data-kn="ಸ್ವೀಕರಿಸಿ">Accept</button>
+    </div>
+  </div>
+
+  <!-- Liquid Glass Nav 2.0 (Intelligent Control Capsule) -->
+  <nav id="main-nav" class="bottom-nav">
+    <!-- Compact/Main Bar -->
+    <div id="nav-main-bar"
+      style="display: flex; align-items: center; gap: inherit; width: 100%; justify-content: center;">
+      <button id="menu-toggle" class="nav-item active">
+        <div class="current-indicator" data-section="home">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          </svg>
+          <span class="i18n" data-en="Home" data-jp="ホーム" data-hi="घर" data-ta="முகப்பு" data-te="హోమ్" data-ml="വീട്"
+            data-kn="ಮುಖಪುಟ">Home</span>
+        </div>
+        <div class="current-indicator hidden" data-section="about">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          <span class="i18n" data-en="The Master" data-jp="職人" data-hi="मास्टर" data-ta="மாஸ்டர்" data-te="మాస్టర్"
+            data-ml="മാസ്റ്റർ" data-kn="മാസ്ಟರ್">The Master</span>
+        </div>
+        <div class="current-indicator hidden" data-section="heritage">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 8v4l3 3" />
+            <path d="M12 2a10 10 0 1 0 10 10" />
+          </svg>
+          <span class="i18n" data-en="Heritage" data-jp="伝統" data-hi="विरासत" data-ta="பாரம்பரியம்" data-te="హెరిటేజ్"
+            data-ml="പൈതൃകം" data-kn="പരಂಪരെ">Heritage</span>
+        </div>
+        <div class="current-indicator hidden" data-section="etiquette">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 8v4l3 3" />
+          </svg>
+          <span class="i18n" data-en="Experience" data-jp="体験" data-hi="अनुभव" data-ta="அனுபவம்" data-te="అనుభవం"
+            data-ml="അനുഭവം" data-kn="ಅನುಭವ">Experience</span>
+        </div>
+        <div class="current-indicator hidden" data-section="menu">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+          <span class="i18n" data-en="Cuisine" data-jp="品書" data-hi="व्यंजन" data-ta="உணவு" data-te="వంటకాలు"
+            data-ml="പാചകരീതി" data-kn="ಪಾಕಪದ್ಧತಿ">Cuisine</span>
+        </div>
+        <div class="current-indicator hidden" data-section="merch">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="i18n" data-en="Merch" data-jp="ショップ" data-hi="मर्च" data-ta="மெர்ச்" data-te="మెర్చ్"
+            data-ml="മെർച്ച്" data-kn="ಮರ್ಚ">Merch</span>
+        </div>
+        <div class="current-indicator hidden" data-section="reach">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span class="i18n" data-en="Location" data-jp="場所" data-hi="स्थान" data-ta="இடம்" data-te="స్థానం"
+            data-ml="സ്ഥാനം" data-kn="ಸ್ಥಳ">Location</span>
+        </div>
+      </button>
+
+      <div class="nav-divider" style="width: 1px; height: 20px; background: var(--border-color); opacity: 0.5;"></div>
+
+      <button id="lang-menu-toggle" class="nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="2" y1="12" x2="22" y2="12" />
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+        <span id="lang-text">EN</span>
+      </button>
+
+      <div class="nav-divider" style="width: 1px; height: 20px; background: var(--border-color); opacity: 0.5;"></div>
+
+      <button id="theme-menu-toggle" class="nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <span id="theme-text">Dark</span>
+      </button>
+    </div>
+
+    <!-- Internal Submenus (Morph Targets) -->
+    <div id="internal-nav-sub" class="internal-submenu">
+      <div class="submenu-grid">
+        <a href="#home" class="submenu-item active i18n" data-en="Home" data-jp="ホーム" data-hi="घर" data-ta="முகப்பு"
+          data-te="హోమ్" data-ml="വീട്" data-kn="ಮುಖಪುಟ">Home</a>
+        <a href="#about" class="submenu-item i18n" data-en="The Master" data-jp="職人" data-hi="मास्टर" data-ta="மாஸ்டர்"
+          data-te="మాస్టర్" data-ml="മാസ്റ്റർ" data-kn="മാസ്ಟರ್">The Master</a>
+        <a href="#heritage" class="submenu-item i18n" data-en="Heritage" data-jp="伝統" data-hi="विरासत"
+          data-ta="பாரம்பரியம்" data-te="హెరిటేజ్" data-ml="പൈതൃകം" data-kn="പരಂಪರೆ">Heritage</a>
+        <a href="#etiquette" class="submenu-item i18n" data-en="Experience" data-jp="体験" data-hi="अनुभव"
+          data-ta="அனுபவம்" data-te="అనుభవం" data-ml="അനുഭവം" data-kn="ಅನುಭವ">Experience</a>
+        <a href="#menu" class="submenu-item i18n" data-en="Cuisine" data-jp="品書" data-hi="व्यंजन" data-ta="உணவு"
+          data-te="వంటకాలు" data-ml="പാചകരീതി" data-kn="ಪಾಕಪದ್ಧതി">Cuisine</a>
+        <a href="#merch" class="submenu-item i18n" data-en="Merch" data-jp="ショップ" data-hi="मर्च" data-ta="மெர்ச்"
+          data-te="మెర్చ్" data-ml="മെർച്ച്" data-kn="ಮರ್ಚ">Merch</a>
+        <a href="#reach" class="submenu-item i18n" data-en="Location" data-jp="場所" data-hi="स्थान" data-ta="இடம்"
+          data-te="స్థానం" data-ml="സ്ഥാനം" data-kn="ಸ್ಥಳ">Location</a>
+        <div id="cookie-trigger-internal" class="submenu-item"><span class="i18n" data-en="Privacy" data-jp="設定"
+            data-hi="गोपनीयता" data-ta="தனியுரிமை" data-te="గోప్యత" data-ml="സ്വകാര്യത" data-kn="ಗೌಪ್ಯತೆ">Privacy</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="internal-lang-sub" class="internal-submenu">
+      <div class="submenu-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="submenu-item lang-option" data-lang="en">EN</div>
+        <div class="submenu-item lang-option" data-lang="jp">JP</div>
+        <div class="submenu-item lang-option" data-lang="hi">HI</div>
+        <div class="submenu-item lang-option" data-lang="ta">TA</div>
+        <div class="submenu-item lang-option" data-lang="te">TE</div>
+        <div class="submenu-item lang-option" data-lang="ml">ML</div>
+        <div class="submenu-item lang-option" data-lang="kn">KN</div>
+      </div>
+    </div>
+
+    <div id="internal-theme-sub" class="internal-submenu">
+      <div class="submenu-grid">
+        <div class="submenu-item theme-option" data-theme-val="dark">Dark</div>
+        <div class="submenu-item theme-option" data-theme-val="light">Light</div>
+        <div class="submenu-item theme-option" data-theme-val="saffron">Golden</div>
+        <div class="submenu-item theme-option" data-theme-val="rainbow">Rainbow</div>
+        <div class="submenu-item theme-option" data-theme-val="calm">Calm</div>
+        <div class="submenu-item theme-option" data-theme-val="nature">Nature</div>
+      </div>
+    </div>
+  </nav>
+
+  <footer>
+    <p>&copy; 2026 Sri Mangalam Soshigaya-Okura</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- Initialization & State ---
+      const state = {
+        lang: localStorage.getItem('lang-preference') || 'en',
+        theme: localStorage.getItem('theme-preference') || 'dark',
+        nav: {
+          compact: false,
+          expanded: false,
+          activeSub: null,
+          scrollLastY: window.pageYOffset,
+          velocity: 0,
+          isScrolling: false
+        }
+      };
+
+      // Configuration for Liquid Physics
+      const config = {
+        spring: { stiffness: 0.15, damping: 0.75, mass: 1 },
+        morph: {
+          compactWidth: '220px',
+          expandedWidth: '400px',
+          compactHeight: '64px',
+          expandedHeight: 'auto', // Calculated dynamically
+          compactRadius: '40px',
+          expandedRadius: '24px'
+        }
+      };
+
+      const selectors = {
+        nav: document.getElementById('main-nav'),
+        mainBar: document.getElementById('nav-main-bar'),
+        subMain: document.getElementById('internal-nav-sub'),
+        subLang: document.getElementById('internal-lang-sub'),
+        subTheme: document.getElementById('internal-theme-sub'),
+        cookie: document.getElementById('cookie-popup'),
+        roll: document.getElementById('animated-cookie'),
+        menuBtn: document.getElementById('menu-toggle'),
+        langBtn: document.getElementById('lang-menu-toggle'),
+        themeBtn: document.getElementById('theme-menu-toggle'),
+        indicators: document.querySelectorAll('.current-indicator'),
+        themeText: document.getElementById('theme-text'),
+        langText: document.getElementById('lang-text')
+      };
+
+      // --- Animation Engine (Spring Physics) ---
+      const springState = {
+        width: 100, // percentage or px
+        height: 64,
+        radius: 40,
+        blur: 16,
+        padding: 30,
+        opacity: 1,
+        labelOpacity: 1,
+        target: { width: 100, height: 64, radius: 40, blur: 16, padding: 30, opacity: 1, labelOpacity: 1 },
+        vel: { width: 0, height: 0, radius: 0, blur: 0, padding: 0, opacity: 0, labelOpacity: 0 }
+      };
+
+      const updateSpring = (key) => {
+        const force = (springState.target[key] - springState[key]) * config.spring.stiffness;
+        springState.vel[key] = (springState.vel[key] + force) * config.spring.damping;
+        springState[key] += springState.vel[key];
+      };
+
+      const applyPhysics = () => {
+        ['width', 'height', 'radius', 'blur', 'padding', 'opacity', 'labelOpacity'].forEach(updateSpring);
+
+        const nav = selectors.nav;
+        nav.style.setProperty('--nav-width', `${springState.width}%`);
+        nav.style.setProperty('--nav-height', `${springState.height}px`);
+        nav.style.setProperty('--nav-radius', `${springState.radius}px`);
+        nav.style.setProperty('--nav-blur', `${springState.blur}px`);
+        nav.style.setProperty('--nav-padding', `12px ${springState.padding}px`);
+        nav.style.setProperty('--nav-item-opacity', springState.opacity);
+        nav.style.setProperty('--nav-label-opacity', springState.labelOpacity);
+        nav.style.setProperty('--nav-label-display', springState.labelOpacity < 0.1 ? 'none' : 'block');
+
+        requestAnimationFrame(applyPhysics);
+      };
+
+      applyPhysics(); // Start loop
+
+      // --- Interaction Logic ---
+      const setNavState = (isCompact, isExpanded = false, activeSub = null) => {
+        state.nav.compact = isCompact;
+        state.nav.expanded = isExpanded;
+        state.nav.activeSub = activeSub;
+
+        // Update Physics Targets
+        if (isExpanded && activeSub) {
+          const subEl = document.getElementById(`internal-${activeSub}-sub`);
+          const targetHeight = 80 + subEl.scrollHeight;
+          springState.target = { width: 95, height: targetHeight, radius: 30, blur: 24, padding: 20, opacity: 1, labelOpacity: 1 };
+
+          // Toggle Visibility
+          [selectors.subMain, selectors.subLang, selectors.subTheme].forEach(s => s.classList.remove('visible'));
+          subEl.classList.add('visible');
+        } else if (isCompact) {
+          springState.target = { width: 45, height: 50, radius: 50, blur: 32, padding: 15, opacity: 0.7, labelOpacity: 0 };
+          [selectors.subMain, selectors.subLang, selectors.subTheme].forEach(s => s.classList.remove('visible'));
+        } else {
+          springState.target = { width: 90, height: 64, radius: 40, blur: 16, padding: 30, opacity: 1, labelOpacity: 1 };
+          [selectors.subMain, selectors.subLang, selectors.subTheme].forEach(s => s.classList.remove('visible'));
+        }
+      };
+
+      // --- Scroll Engine ---
+      window.addEventListener('scroll', () => {
+        const curY = window.pageYOffset;
+        const delta = curY - state.nav.scrollLastY;
+        state.nav.velocity = delta;
+
+        if (curY < 50) {
+          setNavState(false); // Expanded at top
+        } else if (delta > 10 && !state.nav.expanded) {
+          setNavState(true); // Compact on scroll down
+        } else if (delta < -20) {
+          setNavState(false); // Restore on scroll up
+        }
+
+        state.nav.scrollLastY = curY;
+      }, { passive: true });
+
+      // --- Event Handlers ---
+      const toggleSub = (type) => {
+        if (state.nav.expanded && state.nav.activeSub === type) {
+          setNavState(state.nav.scrollLastY > 50); // Close
+        } else {
+          setNavState(false, true, type); // Open/Switch
+
+          // Subtle Wobble on Open
+          selectors.nav.style.setProperty('--nav-rotation', '2deg');
+          setTimeout(() => selectors.nav.style.setProperty('--nav-rotation', '0deg'), 300);
+        }
+      };
+
+      const createRipple = (e, el) => {
+        const ripple = document.createElement('div');
+        ripple.className = 'ripple';
+        const rect = el.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = `${size}px`;
+        ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+        ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+        el.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      };
+
+      const handleNavClick = (e, type) => {
+        createRipple(e, selectors.nav);
+        toggleSub(type);
+      };
+
+      selectors.menuBtn.onclick = (e) => { e.stopPropagation(); handleNavClick(e, 'nav'); };
+      selectors.langBtn.onclick = (e) => { e.stopPropagation(); handleNavClick(e, 'lang'); };
+      selectors.themeBtn.onclick = (e) => { e.stopPropagation(); handleNavClick(e, 'theme'); };
+
+      // 3D Magnetic Wobble on Desktop
+      selectors.nav.onmousemove = (e) => {
+        if (window.innerWidth < 768) return;
+        const rect = selectors.nav.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        selectors.nav.style.setProperty('--nav-shake-x', `${x * 10}px`);
+        selectors.nav.style.setProperty('--nav-shake-y', `${y * 10}px`);
+        selectors.nav.style.setProperty('--nav-rotation', `${x * 4}deg`);
+      };
+
+      selectors.nav.onmouseleave = () => {
+        selectors.nav.style.setProperty('--nav-shake-x', '0px');
+        selectors.nav.style.setProperty('--nav-shake-y', '0px');
+        selectors.nav.style.setProperty('--nav-rotation', '0deg');
+      };
+
+      document.onclick = (e) => {
+        if (!selectors.nav.contains(e.target) && state.nav.expanded) {
+          setNavState(state.nav.scrollLastY > 50);
+        }
+      };
+
+      // --- Language & Theme Logic ---
+      const updateI18n = () => {
+        document.querySelectorAll('.i18n').forEach(el => {
+          el.textContent = el.getAttribute(`data-${state.lang}`) || el.getAttribute('data-en');
+        });
+        selectors.langText.textContent = state.lang.toUpperCase();
+        document.querySelectorAll('.lang-option').forEach(btn =>
+          btn.classList.toggle('active', btn.dataset.lang === state.lang)
+        );
+      };
+
+      const updateTheme = () => {
+        document.documentElement.setAttribute('data-theme', state.theme);
+        selectors.themeText.textContent = state.theme.charAt(0).toUpperCase() + state.theme.slice(1);
+        document.querySelectorAll('.theme-option').forEach(btn =>
+          btn.classList.toggle('active', btn.dataset.themeVal === state.theme)
+        );
+      };
+
+      document.querySelectorAll('.lang-option').forEach(btn => {
+        btn.onclick = () => {
+          state.lang = btn.dataset.lang;
+          localStorage.setItem('lang-preference', state.lang);
+          updateI18n();
+          setNavState(state.nav.scrollLastY > 50);
+        };
+      });
+
+      document.querySelectorAll('.theme-option').forEach(btn => {
+        btn.onclick = () => {
+          state.theme = btn.dataset.themeVal;
+          localStorage.setItem('theme-preference', state.theme);
+          updateTheme();
+          setNavState(state.nav.scrollLastY > 50);
+        };
+      });
+
+      // --- Initialization ---
+      updateI18n();
+      updateTheme();
+
+      // Intersection Observer for Active Section
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id || 'home';
+            selectors.indicators.forEach(ind => ind.classList.toggle('hidden', ind.dataset.section !== id));
+          }
+        });
+      }, { rootMargin: '-20% 0px -60% 0px' });
+      document.querySelectorAll('section, header').forEach(s => observer.observe(s));
+
+      // Quick-Close on nav link click
+      selectors.subMain.querySelectorAll('a').forEach(a => {
+        a.onclick = () => setNavState(state.nav.scrollLastY > 50);
+      });
+    });
+  </script>
+</body>
+
+</html>
