@@ -310,7 +310,8 @@
       width: 100%;
       max-height: 70vh;
       object-fit: cover;
-      border-radius: 4px;
+      border-radius: 6px;
+      filter: saturate(0.92) contrast(1.04);
     }
     .hero-meta {
       max-width: var(--max);
@@ -351,7 +352,8 @@
       width: 100%;
       aspect-ratio: 3 / 4;
       object-fit: cover;
-      border-radius: 4px;
+      border-radius: 6px;
+      filter: saturate(0.92) contrast(1.04);
     }
     .about-body p {
       font-family: var(--font-display);
@@ -512,22 +514,263 @@
     .menu-single .menu-cat { margin-bottom: 36px; }
     .menu-single .menu-cat:last-child { margin-bottom: 0; }
 
+    /* ---------- Featured (seasonal) ---------- */
+    .menu-featured {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto 80px;
+      padding: clamp(32px, 5vw, 56px) clamp(28px, 5vw, 52px);
+      background: linear-gradient(135deg, #fffaf0 0%, #fff3d9 100%);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .menu-featured::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 85% -10%, rgba(194, 90, 20, 0.10), transparent 45%),
+        radial-gradient(circle at -10% 110%, rgba(194, 90, 20, 0.06), transparent 45%);
+    }
+    .menu-featured > * { position: relative; }
+    .menu-featured .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
+      font-family: var(--font-body);
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+    }
+    .menu-featured h3 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin-bottom: 6px;
+    }
+    .menu-featured .jp-sub {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--text-soft);
+      font-size: clamp(0.98rem, 1.3vw, 1.08rem);
+      margin-bottom: 24px;
+      max-width: 38em;
+      line-height: 1.55;
+    }
+    .menu-featured .price-pill {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 10px;
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      padding: 9px 20px;
+      border-radius: 999px;
+      margin-bottom: 32px;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .menu-featured .price-pill .amount {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    .menu-featured ol.course {
+      list-style: none;
+      counter-reset: course;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 44px;
+      padding: 0;
+      margin: 0 0 24px;
+    }
+    .menu-featured ol.course li {
+      counter-increment: course;
+      padding: 12px 0 12px 38px;
+      border-bottom: 1px solid rgba(194, 90, 20, 0.12);
+      position: relative;
+    }
+    .menu-featured ol.course li::before {
+      content: counter(course, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 14px;
+      font-family: var(--font-body);
+      font-variant-numeric: tabular-nums;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .menu-featured ol.course li .dish {
+      display: block;
+      color: var(--text);
+      font-size: 0.96rem;
+      font-weight: 500;
+    }
+    .menu-featured ol.course li .desc {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      margin-top: 3px;
+      line-height: 1.5;
+    }
+    .menu-featured .foot {
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      font-style: italic;
+      line-height: 1.65;
+      max-width: 40em;
+    }
+    @media (max-width: 720px) {
+      .menu-featured ol.course { grid-template-columns: 1fr; gap: 0; }
+    }
+
     /* ---------- Gallery ---------- */
+    .gallery-feature {
+      margin: 0 auto 14px;
+      max-width: var(--max);
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+    }
+    .gallery-feature img {
+      width: 100%;
+      aspect-ratio: 21 / 9;
+      object-fit: cover;
+      filter: saturate(0.9) contrast(1.04);
+      display: block;
+    }
+    .gallery-feature figcaption {
+      position: absolute;
+      left: clamp(18px, 3vw, 32px);
+      bottom: clamp(14px, 2.5vw, 24px);
+      color: #fff;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+      line-height: 1.4;
+      max-width: 28em;
+      text-shadow: 0 1px 16px rgba(0, 0, 0, 0.55);
+      letter-spacing: 0.01em;
+    }
+    .gallery-feature::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.1) 30%, transparent 55%);
+    }
+
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
+      margin-top: 36px;
     }
+    .gallery-grid .tile {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 6px;
+      aspect-ratio: 4 / 5;
+      isolation: isolate;
+    }
+    .gallery-grid .tile.tile-wide { grid-column: span 2; aspect-ratio: 3 / 2; }
+    .gallery-grid .tile.tile-tall { grid-row: span 2; aspect-ratio: 4 / 8.5; }
     .gallery-grid img {
       width: 100%;
-      aspect-ratio: 4 / 5;
+      height: 100%;
       object-fit: cover;
-      border-radius: 4px;
-      transition: transform 0.5s ease, filter 0.3s ease;
-      filter: saturate(1.05);
+      display: block;
+      filter: saturate(0.92) contrast(1.04);
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.3s ease;
     }
-    .gallery-grid a { display: block; overflow: hidden; border-radius: 4px; }
-    .gallery-grid a:hover img { transform: scale(1.04); }
+    .gallery-grid .tile::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 30%, transparent 55%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+    .gallery-grid .tile .cap {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 12px;
+      color: #fff;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.85rem;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 2;
+    }
+    .gallery-grid .tile:hover img { transform: scale(1.035); filter: saturate(1) contrast(1.04); }
+    .gallery-grid .tile:hover::after { opacity: 1; }
+    .gallery-grid .tile:hover .cap { opacity: 1; transform: translateY(0); }
+
+    /* ---------- Menu Showcase (physical menu photos) ---------- */
+    .menu-showcase {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(16px, 2.5vw, 32px);
+      max-width: 820px;
+      margin: 0 auto 56px;
+    }
+    .menu-showcase figure {
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .menu-showcase a { display: block; overflow: hidden; flex: 1; }
+    .menu-showcase img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      filter: saturate(0.96) contrast(1.02);
+    }
+    .menu-showcase a:hover img { transform: scale(1.02); }
+    .menu-showcase figcaption {
+      padding: 14px 18px;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu-showcase figcaption .cap-title {
+      font-family: var(--font-display);
+      font-style: normal;
+      text-transform: none;
+      letter-spacing: -0.005em;
+      font-size: 0.95rem;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+
     .gallery-foot {
       margin-top: 40px;
       text-align: center;
@@ -624,6 +867,9 @@
       .menu-tab { padding: 12px 12px; font-size: 0.85rem; }
 
       .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .gallery-grid .tile.tile-wide { grid-column: span 2; aspect-ratio: 16 / 9; }
+      .gallery-grid .tile.tile-tall { grid-row: span 1; aspect-ratio: 4 / 5; }
+      .menu-showcase { grid-template-columns: 1fr; }
       .visit-grid { grid-template-columns: 1fr; }
       .hero-meta { flex-direction: column; gap: 6px; align-items: center; }
       .hero-meta span + span { text-align: center; }
@@ -631,6 +877,8 @@
 
     @media (max-width: 420px) {
       .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-grid .tile.tile-wide,
+      .gallery-grid .tile.tile-tall { grid-column: span 1; grid-row: span 1; aspect-ratio: 4 / 5; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -656,14 +904,11 @@
       </button>
 
       <nav class="topnav-links" id="topnav-links">
-        <a href="#about" class="i18n" data-en="About" data-jp="お店について" data-hi="हमारे बारे में"
-          data-ta="எங்களைப் பற்றி" data-te="మా గురించి" data-ml="ഞങ്ങളെ കുറിച്ച്" data-kn="ನಮ್ಮ ಬಗ್ಗೆ">About</a>
-        <a href="#menu" class="i18n" data-en="Menu" data-jp="お品書き" data-hi="मेनू" data-ta="மெனு" data-te="మెను"
-          data-ml="മെനു" data-kn="ಮೆನು">Menu</a>
-        <a href="#gallery" class="i18n" data-en="Gallery" data-jp="ギャラリー" data-hi="गैलरी" data-ta="கேலரி"
-          data-te="గ్యాలరీ" data-ml="ഗാലറി" data-kn="ಗ್ಯಾಲರಿ">Gallery</a>
-        <a href="#visit" class="i18n" data-en="Visit" data-jp="ご来店" data-hi="दौरा" data-ta="வருகை" data-te="సందర్శన"
-          data-ml="സന്ദർശനം" data-kn="ಭೇಟಿ">Visit</a>
+        <a href="#about" class="i18n" data-en="About" data-jp="お店について"
+          data-ta="எங்களைப் பற்றி">About</a>
+        <a href="#menu" class="i18n" data-en="Menu" data-jp="お品書き" data-ta="மெனு">Menu</a>
+        <a href="#gallery" class="i18n" data-en="Gallery" data-jp="ギャラリー" data-ta="கேலரி">Gallery</a>
+        <a href="#visit" class="i18n" data-en="Visit" data-jp="ご来店" data-ta="வருகை">Visit</a>
       </nav>
 
       <div class="lang">
@@ -673,11 +918,7 @@
         <div class="lang-menu" id="lang-menu" role="menu">
           <button data-lang="en">EN — English</button>
           <button data-lang="jp">JP — 日本語</button>
-          <button data-lang="hi">HI — हिन्दी</button>
           <button data-lang="ta">TA — தமிழ்</button>
-          <button data-lang="te">TE — తెలుగు</button>
-          <button data-lang="ml">ML — മലയാളം</button>
-          <button data-lang="kn">KN — ಕನ್ನಡ</button>
         </div>
       </div>
     </div>
@@ -688,19 +929,13 @@
     <!-- ============== HERO ============== -->
     <section id="home" class="hero">
       <div class="container">
-        <p class="eyebrow i18n" data-en="Tabelog Hyakumeiten 2024" data-jp="食べログ百名店 2024"
-          data-hi="टैबलॉग Hyakumeiten 2024" data-ta="டபேலாக் Hyakumeiten 2024" data-te="టేబ్‌లాగ్ Hyakumeiten 2024"
-          data-ml="ടാബ്‌ലോഗ് Hyakumeiten 2024" data-kn="ಟಾಬೆಲಾಗ್ Hyakumeiten 2024">Tabelog Hyakumeiten 2024</p>
+        <p class="eyebrow i18n" data-en="Tabelog Hyakumeiten 2024" data-jp="食べログ百名店 2024" data-ta="டபேலாக் Hyakumeiten 2024">Tabelog Hyakumeiten 2024</p>
         <h1 class="display">Sri Mangalam</h1>
         <p class="jp">スリマンガラム</p>
         <p class="tagline i18n"
           data-en="Chettinad cuisine, served on banana leaves, two minutes from Soshigaya-Okura Station."
           data-jp="バナナリーフに盛られたチェティナード料理。祖師ヶ谷大蔵駅から徒歩2分。"
-          data-hi="चेट्टीनाड व्यंजन, केले के पत्ते पर परोसा गया, सोशिगया-ओकुरा स्टेशन से दो मिनट की दूरी पर।"
-          data-ta="செட்டிநாடு உணவு வகைகள், வாழை இலையில் பரிமாறப்படுகிறது, சோஷிகயா-ஓகுரா நிலையத்திலிருந்து இரண்டு நிமிடங்களில்."
-          data-te="చెట్టినాడు వంటకాలు, అరటి ఆకుపై వడ్డించబడుతుంది, సోషిగయ-ఒకురా స్టేషన్ నుండి రెండు నిమిషాల దూరంలో."
-          data-ml="ചെട്ടിനാട് വിഭവങ്ങൾ, വാഴയിലയിൽ വിളമ്പുന്നു, സോഷിഗായ-ഒകുരാ സ്റ്റേഷനിൽ നിന്ന് രണ്ട് മിനിറ്റ് അകലെ."
-          data-kn="ಚೆಟ್ಟಿನಾಡ್ ಪಾಕಪದ್ಧತಿ, ಬಾಳೆ ಎಲೆಯ ಮೇಲೆ ಬಡಿಸಲಾಗುತ್ತದೆ, ಸೋಷಿಗಾಯ-ಒಕುರಾ ನಿಲ್ದಾಣದಿಂದ ಎರಡು ನಿಮಿಷಗಳ ದೂರದಲ್ಲಿ.">
+          data-ta="செட்டிநாடு உணவு வகைகள், வாழை இலையில் பரிமாறப்படுகிறது, சோஷிகயா-ஓகுரா நிலையத்திலிருந்து இரண்டு நிமிடங்களில்.">
           Chettinad cuisine, served on banana leaves, two minutes from Soshigaya-Okura Station.</p>
       </div>
       <div class="hero-photo">
@@ -717,11 +952,8 @@
     <section id="about" class="about">
       <div class="container">
         <header class="section-head">
-          <p class="eyebrow i18n" data-en="The Chef" data-jp="シェフ" data-hi="शेफ़" data-ta="சமையற்காரர்"
-            data-te="చెఫ్" data-ml="ഷെഫ്" data-kn="ಬಾಣಸಿಗ">The Chef</p>
-          <h2 class="display i18n" data-en="Theevan Mahalingam." data-jp="テーヴァン・マハリンガム。"
-            data-hi="तेवन महालिंगम।" data-ta="தீவன் மகாலிங்கம்." data-te="తీవన్ మహాలింగం."
-            data-ml="തീവൻ മഹാലിംഗം." data-kn="ತೀವನ್ ಮಹಾಲಿಂಗಂ.">Theevan Mahalingam.</h2>
+          <p class="eyebrow i18n" data-en="The Chef" data-jp="シェフ" data-ta="சமையற்காரர்">The Chef</p>
+          <h2 class="display i18n" data-en="Theevan Mahalingam." data-jp="テーヴァン・マハリンガム。" data-ta="தீவன் மகாலிங்கம்.">Theevan Mahalingam.</h2>
         </header>
 
         <div class="about-grid">
@@ -764,11 +996,8 @@
     <section id="menu" class="menu">
       <div class="container">
         <header class="section-head">
-          <p class="eyebrow i18n" data-en="The Menu" data-jp="お品書き" data-hi="मेनू" data-ta="மெனு" data-te="మెను"
-            data-ml="മെനു" data-kn="ಮೆನು">The Menu</p>
-          <h2 class="display i18n" data-en="A journey through Chettinad." data-jp="チェティナードへの旅。"
-            data-hi="चेट्टीनाड की यात्रा।" data-ta="செட்டிநாடு வழியாக ஒரு பயணம்." data-te="చెట్టినాడ్ ద్వారా ఒక ప్రయాణం."
-            data-ml="ചെട്ടിനാട്ടിലൂടെ ഒരു യാത്ര." data-kn="ಚೆಟ್ಟಿನಾಡ್ ಮೂಲಕ ಒಂದು ಪ್ರಯಾಣ.">A journey through Chettinad.
+          <p class="eyebrow i18n" data-en="The Menu" data-jp="お品書き" data-ta="மெனு">The Menu</p>
+          <h2 class="display i18n" data-en="A journey through Chettinad." data-jp="チェティナードへの旅。" data-ta="செட்டிநாடு வழியாக ஒரு பயணம்.">A journey through Chettinad.
           </h2>
           <p class="lede i18n"
             data-en="Twenty-four-hour fermented batters, hand-ground spice blends, and the cast-iron precision of Chef Mahalingam. Different menu by mealtime — Sundays are for biryani."
@@ -777,22 +1006,112 @@
             Mahalingam. Different menu by mealtime — Sundays are for biryani.</p>
         </header>
 
+        <!-- ===== Featured / Tamil Puthandu Special ===== -->
+        <div class="menu-featured" role="region" aria-labelledby="puthandu-heading">
+          <span class="badge i18n" data-en="Now Serving" data-jp="期間限定メニュー"
+            data-ta="இப்போது வழங்கப்படுகிறது">Now Serving</span>
+          <h3 id="puthandu-heading" class="i18n" data-en="Tamil Puthandu Special" data-jp="タミルニューイヤースペシャル"
+            data-ta="தமிழ் புத்தாண்டு சிறப்பு">Tamil Puthandu Special</h3>
+          <p class="jp-sub i18n"
+            data-en="An eleven-dish banana-leaf course marking Tamil New Year — Chef Maha's festival table, brought to Setagaya."
+            data-jp="タミル正月を祝う、バナナリーフに盛られた全11品のスペシャルコース。マハさんの祝祭の食卓を、そのまま世田谷へ。"
+            data-ta="தமிழ் புத்தாண்டைக் கொண்டாடும் 11 உணவு வாழை இலை பாடம்.">An eleven-dish banana-leaf course
+            marking Tamil New Year — Chef Maha's festival table, brought to Setagaya.</p>
+          <div class="price-pill"><span class="amount">¥2,800</span><span class="i18n" data-en="per person"
+              data-jp="お一人様">per person</span></div>
+
+          <ol class="course">
+            <li>
+              <span class="dish i18n" data-en="Poosanikai Manjal Paal"
+                data-jp="プーサニカイ・マンジャル・パール">Poosanikai Manjal Paal</span>
+              <span class="desc i18n"
+                data-en="Pumpkin curry simmered in turmeric &amp; coconut milk"
+                data-jp="ターメリックとココナッツミルクで煮込んだカボチャのカレー">Pumpkin curry simmered in turmeric &amp; coconut milk</span>
+            </li>
+            <li>
+              <span class="dish i18n" data-en="Gutti Vankaya" data-jp="グッティ・ヴァンカヤ">Gutti Vankaya</span>
+              <span class="desc i18n"
+                data-en="Andhra-style eggplant stuffed with nuts &amp; spices"
+                data-jp="インド・アンドラスタイルのナッツを挟んだナスのカレー">Andhra-style eggplant stuffed with nuts &amp; spices</span>
+            </li>
+            <li>
+              <span class="dish i18n" data-en="Mochai Payaru Vendakkai Kuzhambu"
+                data-jp="モチャイ・パヤル・ヴェンダッカイ・クザンブ">Mochai Payaru Vendakkai Kuzhambu</span>
+              <span class="desc i18n"
+                data-en="Tangy curry of mochai beans &amp; okra"
+                data-jp="モチャイ豆とオクラの酸味のあるカレー">Tangy curry of mochai beans &amp; okra</span>
+            </li>
+            <li>
+              <span class="dish i18n" data-en="Srimangalam Special Sambar"
+                data-jp="スリマンガラム特製サンバル">Srimangalam Special Sambar</span>
+              <span class="desc i18n"
+                data-en="The house sambar everyone keeps coming back for"
+                data-jp="みんな大好きスリマンガラム特製の美味しいサンバル">The house sambar everyone keeps coming back for</span>
+            </li>
+            <li>
+              <span class="dish i18n" data-en="Karnataka Style Paruppu"
+                data-jp="カルナータカスタイルのパルップ">Karnataka Style Paruppu</span>
+              <span class="desc i18n" data-en="Karnataka-style lentil curry"
+                data-jp="インド・カルナータカスタイルの豆カレー">Karnataka-style lentil curry</span>
+            </li>
+            <li>
+              <span class="dish i18n" data-en="Mango Kuzhambu" data-jp="マンゴー・クザンブ">Mango Kuzhambu</span>
+              <span class="desc i18n" data-en="Sweet-sour mango curry"
+                data-jp="マンゴーのカレー">Sweet-sour mango curry</span>
+            </li>
+            <li>
+              <span class="dish i18n" data-en="Pachai Arisi Sadham"
+                data-jp="パチャイ・アリシ・サダム">Pachai Arisi Sadham</span>
+              <span class="desc i18n" data-en="Fresh-cooked rice"
+                data-jp="ライス">Fresh-cooked rice</span>
+            </li>
+            <li>
+              <span class="dish i18n" data-en="Pachai Puli Rasam"
+                data-jp="パチャイ・プリ・ラッサム">Pachai Puli Rasam</span>
+              <span class="desc i18n" data-en="Finished-cold rasam, no reheating"
+                data-jp="加熱しないで仕上げるラッサム">Finished-cold rasam, no reheating</span>
+            </li>
+            <li>
+              <span class="dish i18n" data-en="Pulicha Keerai Kadaiyal"
+                data-jp="プリチャ・キーライ・カダイヤル">Pulicha Keerai Kadaiyal</span>
+              <span class="desc i18n" data-en="Tangy mashed spinach"
+                data-jp="酸味の効いたほうれん草のカレー">Tangy mashed spinach</span>
+            </li>
+            <li>
+              <span class="dish i18n" data-en="Kerala Style Aviyal"
+                data-jp="ケララスタイル・アヴィヤル">Kerala Style Aviyal</span>
+              <span class="desc i18n"
+                data-en="Kerala-style coconut vegetable medley"
+                data-jp="インド・ケララスタイルのココナッツ野菜カレー">Kerala-style coconut vegetable medley</span>
+            </li>
+            <li>
+              <span class="dish i18n" data-en="Pineapple Payasam"
+                data-jp="パイナップル・パヤサム">Pineapple Payasam</span>
+              <span class="desc i18n" data-en="Sweet pineapple rice pudding"
+                data-jp="パイナップルの入った甘いライスプディング">Sweet pineapple rice pudding</span>
+            </li>
+          </ol>
+
+          <p class="foot i18n"
+            data-en="Seasonal course — please call ahead to confirm availability. The regular lunch, dinner and Sunday-biryani menus below remain available at all times."
+            data-jp="季節限定コースです。ご提供状況はお電話にてご確認ください。通常のランチ・ディナー・日曜ビリヤニメニューはいつでもご注文いただけます。">
+            Seasonal course — please call ahead to confirm availability. The regular lunch, dinner and Sunday-biryani
+            menus below remain available at all times.</p>
+        </div>
+
         <!-- Tabs -->
         <div class="menu-tabs" role="tablist" aria-label="Menu by mealtime">
           <button class="menu-tab" data-tab="lunch" role="tab">
-            <span class="i18n" data-en="Lunch" data-jp="ランチ" data-hi="दोपहर" data-ta="மதியம்" data-te="లంచ్"
-              data-ml="ഉച്ച" data-kn="ಮಧ್ಯಾಹ್ನ">Lunch</span>
+            <span class="i18n" data-en="Lunch" data-jp="ランチ" data-ta="மதியம்">Lunch</span>
             <span class="small i18n" data-en="11:30 – 14:30" data-jp="11:30 – 14:30">11:30 – 14:30</span>
           </button>
           <button class="menu-tab" data-tab="dinner" role="tab">
-            <span class="i18n" data-en="Dinner" data-jp="ディナー" data-hi="रात" data-ta="இரவு" data-te="డిన్నర్"
-              data-ml="അത്താഴം" data-kn="ರಾತ್ರಿ ಊಟ">Dinner</span>
+            <span class="i18n" data-en="Dinner" data-jp="ディナー" data-ta="இரவு">Dinner</span>
             <span class="small i18n" data-en="17:30 – 22:00" data-jp="17:30 – 22:00">17:30 – 22:00</span>
           </button>
           <button class="menu-tab" data-tab="sunday" role="tab">
-            <span class="i18n" data-en="Sunday Biryani" data-jp="日曜ビリヤニ" data-hi="रविवार बिरयानी"
-              data-ta="ஞாயிறு பிரியாணி" data-te="ఆదివారం బిర్యానీ" data-ml="ഞായർ ബിരിയാണി"
-              data-kn="ಭಾನುವಾರ ಬಿರಿಯಾನಿ">Sunday Biryani</span>
+            <span class="i18n" data-en="Sunday Biryani" data-jp="日曜ビリヤニ"
+              data-ta="ஞாயிறு பிரியாணி">Sunday Biryani</span>
             <span class="small i18n" data-en="Sunday only" data-jp="日曜限定">Sunday only</span>
           </button>
         </div>
@@ -809,8 +1128,7 @@
           <div class="menu-grid">
 
             <div class="menu-cat">
-              <h3 class="i18n" data-en="Curry Sets" data-jp="カレーセット" data-hi="करी सेट" data-ta="கறி செட்"
-                data-te="కర్రీ సెట్" data-ml="കറി സെറ്റ്" data-kn="ಕರಿ ಸೆಟ್">Curry Sets</h3>
+              <h3 class="i18n" data-en="Curry Sets" data-jp="カレーセット" data-ta="கறி செட்">Curry Sets</h3>
               <p class="sub i18n" data-en="Comes with parotta, chapati or rice" data-jp="パロタ、チャパティまたはライス付き">Comes with
                 parotta, chapati or rice</p>
               <div class="menu-item"><span class="name"><span class="code">CS-01</span><span class="i18n"
@@ -910,8 +1228,8 @@
 
             <!-- Banana Leaf Meals -->
             <div class="menu-cat">
-              <h3 class="i18n" data-en="Banana Leaf Meals" data-jp="バナナリーフミールス" data-hi="केले के पत्ते का भोजन"
-                data-ta="வாழை இலை உணவு" data-te="అరటి ఆకు భోజనం" data-ml="വാഴയില ഭക്ഷണം" data-kn="ಬಾಳೆ ಎಲೆ ಊಟ">Banana
+              <h3 class="i18n" data-en="Banana Leaf Meals" data-jp="バナナリーフミールス"
+                data-ta="வாழை இலை உணவு">Banana
                 Leaf Meals</h3>
               <p class="sub i18n" data-en="Unlimited refills (お代わり自由)" data-jp="お代わり自由">Unlimited refills (お代わり自由)
               </p>
@@ -1135,48 +1453,57 @@
 
             <!-- Beverages -->
             <div class="menu-cat">
-              <h3 class="i18n" data-en="Beverages" data-jp="ソフトドリンク">Beverages</h3>
+              <h3 class="i18n" data-en="Soft Drinks" data-jp="ソフトドリンク">Soft Drinks</h3>
               <div class="menu-item"><span class="name i18n" data-en="Cola" data-jp="コーラ">Cola</span><span
                   class="price">¥400</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="Orange / Apple Juice"
-                    data-jp="オレンジ／アップルジュース">Orange / Apple Juice</span><span class="price">¥400</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="Jigarthanda" data-jp="ジガルタンダ">Jigarthanda</span><span
-                  class="price">¥600</span></div>
+              <div class="menu-item"><span class="name"><span class="i18n" data-en="Jigarthanda"
+                      data-jp="ジガルタンダ">Jigarthanda</span><span class="note i18n"
+                    data-en="Madurai specialty — milk &amp; ice-cream dessert drink, Chef Mahalingam's signature style"
+                    data-jp="マドゥライ名物のミルクとアイスクリームのデザート。マハリンガムシェフのオリジナルスタイル。">Madurai specialty — milk &amp; ice-cream
+                    dessert drink, Chef Mahalingam's signature style</span></span><span class="price">¥600</span></div>
               <div class="menu-item"><span class="name i18n" data-en="Solty Mor (yogurt drink)"
-                    data-jp="ソルティ・モール">Solty Mor (yogurt drink)</span><span class="price">¥500</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="Solty Lemon Soda" data-jp="ソルティ・レモンソーダ">Solty Lemon
-                  Soda</span><span class="price">¥450</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="Sweet Lemon Soda" data-jp="スイート・レモンソーダ">Sweet Lemon
-                  Soda</span><span class="price">¥450</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="Mango Juice" data-jp="マンゴージュース">Mango
-                  Juice</span><span class="price">¥450</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="Lassi" data-jp="ラッシー">Lassi</span><span
-                  class="price">¥400</span></div>
+                    data-jp="ソルティモール 塩味のヨーグルトドリンク">Solty Mor (yogurt drink)</span><span class="price">¥500</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Lassi (yogurt drink)"
+                    data-jp="ラッシー ヨーグルトドリンク">Lassi (yogurt drink)</span><span class="price">¥400</span></div>
               <div class="menu-item"><span class="name i18n" data-en="Mango Lassi" data-jp="マンゴーラッシー">Mango
                   Lassi</span><span class="price">¥500</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="Hot Chai" data-jp="ティー (チャーイ)">Hot
-                  Chai</span><span class="price">¥400</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="Iced Chai" data-jp="アイスティー (チャーイ)">Iced
-                  Chai</span><span class="price">¥500</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="South Indian Milk Coffee" data-jp="ミルクコーヒー">South
-                  Indian Milk Coffee</span><span class="price">¥450</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="South Indian Iced Milk Coffee"
-                    data-jp="アイスミルクコーヒー">South Indian Iced Milk Coffee</span><span class="price">¥450</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="Dry Ginger & Coriander Masala Coffee"
-                    data-jp="スック・マリ・カーピ">Dry Ginger &amp; Coriander Masala Coffee</span><span
+              <div class="menu-item"><span class="name i18n" data-en="Solty Lemon Soda"
+                    data-jp="ソルティレモンソーダ 塩味のレモンソーダ">Solty Lemon Soda</span><span class="price">¥450</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Sweet Lemon Soda"
+                    data-jp="スイートレモンソーダ 甘いレモンソーダ">Sweet Lemon Soda</span><span class="price">¥450</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Mango Juice" data-jp="マンゴージュース">Mango
+                  Juice</span><span class="price">¥450</span></div>
+              <div class="menu-item"><span class="name"><span class="i18n" data-en="Chai (ミルクティー)"
+                      data-jp="ミルクティー（チャーイ）">Chai (ミルクティー)</span><span class="note i18n"
+                    data-en="Frothy sweet South Indian milk tea"
+                    data-jp="南インドの泡だった甘いミルクティー（チャーイ）">Frothy sweet South Indian milk tea</span></span><span
                   class="price">¥400</span></div>
+              <div class="menu-item"><span class="name"><span class="i18n"
+                      data-en="Kaapi (South Indian Milk Coffee)" data-jp="カーピ（ミルクコーヒー）">Kaapi (South Indian Milk
+                      Coffee)</span><span class="note i18n"
+                    data-en="Frothy sweet South Indian milk coffee"
+                    data-jp="南インドの泡だった甘いミルクコーヒー">Frothy sweet South Indian milk coffee</span></span><span
+                  class="price">¥450</span></div>
+              <div class="menu-item"><span class="name"><span class="i18n"
+                      data-en="Sukku Malli Kaapi (dry ginger &amp; coriander masala coffee)"
+                      data-jp="スック・マリ・カーピ">Sukku Malli Kaapi (dry ginger &amp; coriander masala
+                      coffee)</span><span class="note i18n"
+                    data-en="Warming dry-ginger, coriander &amp; black-pepper brew"
+                    data-jp="ドライジンジャーとコリアンダー、黒胡椒の効いた体を温める飲み物">Warming dry-ginger, coriander &amp; black-pepper
+                    brew</span></span><span class="price">¥400</span></div>
             </div>
 
             <!-- Alcohol -->
             <div class="menu-cat">
               <h3 class="i18n" data-en="Alcohol" data-jp="アルコール">Alcohol</h3>
               <div class="menu-item"><span class="name i18n" data-en="Draft Beer" data-jp="生ビール">Draft
-                  Beer</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="Kingfisher Beer" data-jp="キングフィッシャー">Kingfisher
                   Beer</span><span class="price">¥500</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="Taj Mahal Beer" data-jp="タージマハル">Taj Mahal
-                  Beer</span><span class="price">¥700</span></div>
-              <div class="menu-item"><span class="name i18n" data-en="Salty Lemon Sour" data-jp="塩レモンサワー">Salty Lemon
+              <div class="menu-item"><span class="name"><span class="i18n"
+                      data-en="Indian Beers (Kingfisher / Godfather / Haywards 5000)"
+                      data-jp="インドビール各種 キングフィッシャー／ゴッドファーザー／ヘイワーズ5000">Indian Beers (Kingfisher / Godfather /
+                      Haywards 5000)</span><span class="note i18n" data-en="each"
+                    data-jp="各">each</span></span><span class="price">¥700</span></div>
+              <div class="menu-item"><span class="name i18n" data-en="Solty Lemon Sour" data-jp="塩レモンサワー">Solty Lemon
                   Sour</span><span class="price">¥450</span></div>
               <div class="menu-item"><span class="name i18n" data-en="Old Monk Rum" data-jp="オールドモンク・ラム">Old Monk
                   Rum</span><span class="price">¥700</span></div>
@@ -1272,72 +1599,105 @@
     <section id="gallery" class="gallery">
       <div class="container">
         <header class="section-head">
-          <p class="eyebrow i18n" data-en="Gallery" data-jp="ギャラリー" data-hi="गैलरी" data-ta="கேலரி" data-te="గ్యాలరీ"
-            data-ml="ഗാലറി" data-kn="ಗ್ಯಾಲರಿ">Gallery</p>
+          <p class="eyebrow i18n" data-en="The Room" data-jp="店内の様子" data-ta="உணவகம்">The Room</p>
           <h2 class="display i18n" data-en="Banana leaves &amp; cast iron." data-jp="バナナリーフと鉄鍋。"
-            data-hi="केले के पत्ते और कास्ट आयरन।" data-ta="வாழை இலைகள் மற்றும் வார்ப்பிரும்பு."
-            data-te="అరటి ఆకులు & కాస్ట్ ఐరన్." data-ml="വാഴയിലകളും കാസ്റ്റ് അയണും."
-            data-kn="ಬಾಳೆ ಎಲೆಗಳು ಮತ್ತು ಎರಕಹೊಯ್ದ ಕಬ್ಬಿಣ.">Banana leaves &amp; cast iron.</h2>
+            data-ta="வாழை இலைகள் மற்றும் வார்ப்பிரும்பு.">Banana leaves &amp; cast iron.</h2>
         </header>
 
+        <!-- Feature shot -->
+        <figure class="gallery-feature">
+          <img src="assets/gallery/sri-mangalam-banquet.jpg" loading="lazy"
+            alt="Chef Mahalingam serving guests at a long banana-leaf banquet at Sri Mangalam Soshigaya-Okura">
+          <figcaption class="i18n"
+            data-en="Chef Maha at the table — the long-pour chai and forty hungry friends."
+            data-jp="長机のチャイ、そして四十人の友人たち — マハさんの食卓。"
+            data-ta="சமையற்காரர் மஹா — நீளமான சாய் மற்றும் நாற்பது பசித்த நண்பர்கள்.">Chef Maha at the table — the
+            long-pour chai and forty hungry friends.</figcaption>
+        </figure>
+
+        <!-- Bento grid -->
         <div class="gallery-grid">
-          <a href="assets/gallery/2026-02-22_02-03-00_UTC_2.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/2026-02-22_02-03-00_UTC_2.jpg" loading="lazy"
-              alt="Sri Mangalam banana-leaf meal spread with rice, sambar, rasam and accompaniments">
-          </a>
-          <a href="assets/gallery/2026-02-21_02-28-14_UTC_1.jpg" target="_blank" rel="noopener">
+          <a class="tile" href="assets/gallery/2026-02-21_02-28-14_UTC_1.jpg" target="_blank" rel="noopener">
             <img src="assets/gallery/2026-02-21_02-28-14_UTC_1.jpg" loading="lazy"
-              alt="Crisp golden dosai fresh off the cast-iron griddle at Sri Mangalam">
+              alt="Crisp golden dosai fresh off the cast-iron griddle">
+            <span class="cap i18n" data-en="Dosai, fresh off the griddle" data-jp="焼きたてのドーサ">Dosai, fresh off the
+              griddle</span>
           </a>
-          <a href="assets/gallery/2026-02-21_02-28-14_UTC_2.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/2026-02-21_02-28-14_UTC_2.jpg" loading="lazy"
-              alt="Chettinad curry served with traditional accompaniments">
-          </a>
-          <a href="assets/gallery/2026-02-15_02-25-33_UTC_1.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/2026-02-15_02-25-33_UTC_1.jpg" loading="lazy"
-              alt="Fragrant South Indian dish plated for service">
-          </a>
-          <a href="assets/gallery/2026-02-07_11-33-19_UTC.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/2026-02-07_11-33-19_UTC.jpg" loading="lazy"
-              alt="Authentic Tamil-style preparation at Sri Mangalam Soshigaya">
-          </a>
-          <a href="assets/gallery/2026-02-07_10-57-15_UTC_1.jpg" target="_blank" rel="noopener">
+          <a class="tile tile-tall" href="assets/gallery/2026-02-07_10-57-15_UTC_1.jpg" target="_blank"
+            rel="noopener">
             <img src="assets/gallery/2026-02-07_10-57-15_UTC_1.jpg" loading="lazy"
-              alt="House-made Sri Mangalam dish, hand-plated">
+              alt="Chef Maha writing at a Sri Mangalam table, pen in hand over a notebook beside a laminated menu">
+            <span class="cap i18n" data-en="Chef Maha, between services"
+              data-jp="サービスの合間、マハさんの手元">Chef Maha, between services</span>
           </a>
-          <a href="assets/gallery/2026-02-07_10-48-23_UTC.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/2026-02-07_10-48-23_UTC.jpg" loading="lazy"
-              alt="Sri Mangalam kitchen detail showing spice work and freshly cooked staples">
+          <a class="tile" href="assets/gallery/2026-01-04_02-03-20_UTC.jpg" target="_blank" rel="noopener">
+            <img src="assets/gallery/2026-01-04_02-03-20_UTC.jpg" loading="lazy"
+              alt="Bone-in Chettinad chicken curry in a pale broth, photographed close">
+            <span class="cap i18n" data-en="Bone-in Chettinad chicken"
+              data-jp="骨付きチキンのチェティナードカレー">Bone-in Chettinad chicken</span>
           </a>
-          <a href="assets/gallery/2026-02-07_02-08-58_UTC.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/2026-02-07_02-08-58_UTC.jpg" loading="lazy"
-              alt="Specialty Chettinad dish from Chef Mahalingam's kitchen">
-          </a>
-          <a href="assets/gallery/2026-01-25_02-09-18_UTC_2.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/2026-01-25_02-09-18_UTC_2.jpg" loading="lazy"
-              alt="A signature South Indian preparation served at Sri Mangalam">
-          </a>
-          <a href="assets/gallery/2026-01-24_02-03-43_UTC.jpg" target="_blank" rel="noopener">
+          <a class="tile tile-wide" href="assets/gallery/2026-01-24_02-03-43_UTC.jpg" target="_blank"
+            rel="noopener">
             <img src="assets/gallery/2026-01-24_02-03-43_UTC.jpg" loading="lazy"
               alt="Banana-leaf meal photographed top-down at Sri Mangalam">
+            <span class="cap i18n" data-en="The banana-leaf meal, top-down"
+              data-jp="バナナリーフミールス、真上から">The banana-leaf meal, top-down</span>
           </a>
-          <a href="assets/gallery/2026-01-11_00-54-26_UTC.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/2026-01-11_00-54-26_UTC.jpg" loading="lazy"
-              alt="Hand-poured filter coffee and sweets at Sri Mangalam">
+          <a class="tile" href="assets/gallery/2026-02-21_02-28-14_UTC_2.jpg" target="_blank" rel="noopener">
+            <img src="assets/gallery/2026-02-21_02-28-14_UTC_2.jpg" loading="lazy"
+              alt="Chettinad curry served with traditional accompaniments">
+            <span class="cap i18n" data-en="Chettinad curry, traditional service"
+              data-jp="チェティナードカレー">Chettinad curry, traditional service</span>
           </a>
-          <a href="assets/gallery/2026-01-04_02-03-20_UTC.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/2026-01-04_02-03-20_UTC.jpg" loading="lazy"
-              alt="A close-up of Chettinad spice work at Sri Mangalam Soshigaya-Okura">
+          <a class="tile" href="assets/gallery/2026-02-07_02-08-58_UTC.jpg" target="_blank" rel="noopener">
+            <img src="assets/gallery/2026-02-07_02-08-58_UTC.jpg" loading="lazy"
+              alt="Chicken curry with Japanese shimeji mushrooms in a Chettinad-style gravy at Sri Mangalam">
+            <span class="cap i18n" data-en="Chicken with Japanese shimeji, Chettinad-style"
+              data-jp="しめじ入りチェティナード・チキンカレー">Chicken with Japanese shimeji, Chettinad-style</span>
           </a>
-          <a href="assets/gallery/sri-mangalam-banquet.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/sri-mangalam-banquet.jpg" loading="lazy"
-              alt="Chef Mahalingam serving guests at a long banquet table set with banana leaves and beer mugs at Sri Mangalam Soshigaya-Okura">
+          <a class="tile" href="assets/gallery/2026-02-15_02-25-33_UTC_1.jpg" target="_blank" rel="noopener">
+            <img src="assets/gallery/2026-02-15_02-25-33_UTC_1.jpg" loading="lazy"
+              alt="Fragrant South Indian dish plated for service at Sri Mangalam">
+            <span class="cap i18n" data-en="Plated for service" data-jp="盛り付けの一皿">Plated for service</span>
           </a>
         </div>
 
+        <!-- Menu photographs -->
+        <header class="section-head" style="margin-top: 72px; margin-bottom: 28px;">
+          <p class="eyebrow i18n" data-en="At the Table" data-jp="テーブルにて" data-ta="மேசையில்">At the Table</p>
+          <h2 class="display i18n" data-en="The menus, as printed." data-jp="印刷されたお品書き。"
+            data-ta="அச்சிடப்பட்ட மெனுக்கள்.">The menus, as printed.</h2>
+          <p class="lede i18n"
+            data-en="Two laminated pages from Chef Maha's table — the Tamil New Year course, and the full bar. Tap to zoom."
+            data-jp="マハさんの食卓から2枚のラミネート。タミル正月のコースと、ドリンクメニュー全品。タップで拡大。">Two laminated pages from Chef Maha's
+            table — the Tamil New Year course, and the full bar. Tap to zoom.</p>
+        </header>
+        <div class="menu-showcase">
+          <figure>
+            <a href="assets/gallery/2026-04-18_menu-puthandu-special.jpg" target="_blank" rel="noopener">
+              <img src="assets/gallery/2026-04-18_menu-puthandu-special.jpg" loading="lazy"
+                alt="Sri Mangalam laminated menu — Tamil Puthandu Special, an 11-dish banana-leaf course at ¥2,800">
+            </a>
+            <figcaption>
+              <span class="cap-title i18n" data-en="Tamil Puthandu Special"
+                data-jp="タミルニューイヤースペシャル">Tamil Puthandu Special</span>
+              <span>¥2,800</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <a href="assets/gallery/2026-04-18_menu-drinks.jpg" target="_blank" rel="noopener">
+              <img src="assets/gallery/2026-04-18_menu-drinks.jpg" loading="lazy"
+                alt="Sri Mangalam laminated drink menu — alcohol, soft drinks, South Indian chai and kaapi">
+            </a>
+            <figcaption>
+              <span class="cap-title i18n" data-en="Drinks Menu" data-jp="ドリンクメニュー">Drinks Menu</span>
+              <span class="i18n" data-en="Bar + South Indian" data-jp="バー＋南インド">Bar + South Indian</span>
+            </figcaption>
+          </figure>
+        </div>
+
         <p class="gallery-foot i18n" data-en="More on Instagram → " data-jp="さらにInstagramで → "
-          data-hi="और देखें इंस्टाग्राम पर → " data-ta="மேலும் Instagram-இல் → " data-te="మరింత Instagramలో → "
-          data-ml="കൂടുതൽ Instagram-ൽ → " data-kn="ಹೆಚ್ಚು Instagram-ನಲ್ಲಿ → ">More on Instagram →
+          data-ta="மேலும் Instagram-இல் → ">More on Instagram →
           <a href="https://www.instagram.com/srimangalam_soshigaya/" target="_blank"
             rel="noopener">@srimangalam_soshigaya</a>
         </p>
@@ -1348,18 +1708,14 @@
     <section id="visit" class="visit">
       <div class="container">
         <header class="section-head">
-          <p class="eyebrow i18n" data-en="Visit" data-jp="ご来店" data-hi="दौरा" data-ta="வருகை" data-te="సందర్శన"
-            data-ml="സന്ദർശനം" data-kn="ಭೇಟಿ">Visit</p>
-          <h2 class="display i18n" data-en="Two minutes from the station." data-jp="駅から徒歩2分。"
-            data-hi="स्टेशन से दो मिनट।" data-ta="நிலையத்திலிருந்து இரண்டு நிமிடங்கள்." data-te="స్టేషన్ నుండి రెండు నిమిషాలు."
-            data-ml="സ്റ്റേഷനിൽ നിന്ന് രണ്ട് മിനിറ്റ്." data-kn="ನಿಲ್ದಾಣದಿಂದ ಎರಡು ನಿಮಿಷಗಳು.">Two minutes from the station.
+          <p class="eyebrow i18n" data-en="Visit" data-jp="ご来店" data-ta="வருகை">Visit</p>
+          <h2 class="display i18n" data-en="Two minutes from the station." data-jp="駅から徒歩2分。" data-ta="நிலையத்திலிருந்து இரண்டு நிமிடங்கள்.">Two minutes from the station.
           </h2>
         </header>
 
         <div class="visit-grid">
           <div class="visit-card">
-            <h4 class="i18n" data-en="Address" data-jp="住所" data-hi="पता" data-ta="முகவரி" data-te="చిరునామా"
-              data-ml="വിലാസം" data-kn="ವಿಳಾಸ">Address</h4>
+            <h4 class="i18n" data-en="Address" data-jp="住所" data-ta="முகவரி">Address</h4>
             <p>Sanko Building B1F<br>
               3-33-2 Soshigaya<br>
               Setagaya City, Tokyo 157-0072</p>
@@ -1367,8 +1723,7 @@
           </div>
 
           <div class="visit-card">
-            <h4 class="i18n" data-en="Contact" data-jp="連絡先" data-hi="संपर्क" data-ta="தொடர்பு" data-te="సంప్రదింపులు"
-              data-ml="ബന്ധപ്പെടുക" data-kn="ಸಂಪರ್ಕ">Contact</h4>
+            <h4 class="i18n" data-en="Contact" data-jp="連絡先" data-ta="தொடர்பு">Contact</h4>
             <a href="tel:+81366762812" class="tel">+81 3-6676-2812</a>
             <p style="margin-top: 12px;" class="i18n"
               data-en="Reservations recommended for weekend dinner. Lunch is walk-in."
@@ -1377,8 +1732,7 @@
           </div>
 
           <div class="visit-card">
-            <h4 class="i18n" data-en="Find us" data-jp="リンク" data-hi="हमें ढूंढें" data-ta="எங்களைக் கண்டுபிடியுங்கள்"
-              data-te="మమ్మల్ని కనుగొనండి" data-ml="ഞങ്ങളെ കണ്ടെത്തുക" data-kn="ನಮ್ಮನ್ನು ಹುಡುಕಿ">Find us</h4>
+            <h4 class="i18n" data-en="Find us" data-jp="リンク" data-ta="எங்களைக் கண்டுபிடியுங்கள்">Find us</h4>
             <a href="https://www.instagram.com/srimangalam_soshigaya/" target="_blank" rel="noopener">Instagram
               ↗</a>
             <a href="https://www.youtube.com/@SriMangalamTV" target="_blank" rel="noopener">YouTube ↗</a>
@@ -1416,7 +1770,7 @@
   <!-- ============== Script ============== -->
   <script>
     (function () {
-      const LANGS = ["en", "jp", "hi", "ta", "te", "ml", "kn"];
+      const LANGS = ["en", "jp", "ta"];
       const state = {
         lang: localStorage.getItem("lang-preference") || "en",
         tab: null
